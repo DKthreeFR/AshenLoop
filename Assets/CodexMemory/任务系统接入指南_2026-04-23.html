@@ -1,0 +1,326 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AshenLoop 任务系统接入指南</title>
+  <style>
+    :root {
+      --bg: #0f1115;
+      --panel: #161a22;
+      --panel-2: #1d2330;
+      --text: #e8edf7;
+      --sub: #aeb8c9;
+      --ok: #43d17a;
+      --warn: #ffb84d;
+      --danger: #ff6b6b;
+      --line: #2a3244;
+      --code: #0b0e14;
+      --accent: #6fb1ff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: linear-gradient(180deg, #0c0f14 0%, #131826 100%);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 20px 64px;
+    }
+    h1, h2, h3 { margin: 0 0 12px; line-height: 1.3; }
+    h1 { font-size: 30px; }
+    h2 { font-size: 22px; margin-top: 36px; }
+    h3 { font-size: 18px; margin-top: 20px; }
+    p, li { color: var(--sub); }
+    .card {
+      background: rgba(22, 26, 34, 0.92);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      margin-top: 14px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
+    }
+    .badge {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-right: 8px;
+      color: #081019;
+      background: var(--accent);
+    }
+    .ok { color: var(--ok); }
+    .warn { color: var(--warn); }
+    .danger { color: var(--danger); }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+    pre {
+      background: var(--code);
+      border: 1px solid #262f40;
+      border-radius: 10px;
+      padding: 12px;
+      overflow: auto;
+      color: #cde3ff;
+      font-size: 13px;
+    }
+    code { color: #9fd0ff; }
+    .step { margin: 8px 0; }
+    .file {
+      display: inline-block;
+      margin: 3px 0;
+      padding: 2px 8px;
+      border-radius: 6px;
+      background: #101521;
+      border: 1px solid #2a3650;
+      color: #b8cff4;
+      font-family: Consolas, monospace;
+      font-size: 12px;
+    }
+    .hint {
+      border-left: 3px solid var(--accent);
+      padding-left: 10px;
+      margin: 10px 0;
+      color: #bfd2ef;
+    }
+    .small { font-size: 13px; color: #93a2ba; }
+    .kpi {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 8px;
+    }
+    .kpi .item {
+      background: #111727;
+      border: 1px solid #2b3550;
+      border-radius: 8px;
+      padding: 8px;
+      text-align: center;
+      font-size: 12px;
+      color: #adc1e4;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>AshenLoop 任务系统接入指南（Task + TaskPanel MVC）</h1>
+    <p>生成时间：2026-04-23。目标：把你当前 <code>Assets/Scripts/Task</code> 与 <code>UI/Panels/TaskPanel</code> 真正跑通，并实现你想要的“左侧任务按钮切换右侧任务详情”。</p>
+
+    <div class="card">
+      <span class="badge">当前状态诊断</span>
+      <div class="kpi">
+        <div class="item">TaskService 已生成<br><span class="ok">OK</span></div>
+        <div class="item">TaskPanelController 已支持 SetTaskService<br><span class="ok">OK</span></div>
+        <div class="item">GameMain 还未 Initialize+注入<br><span class="danger">待完成</span></div>
+      </div>
+      <p class="hint">你现在最大缺口不是“类不存在”，而是 <strong>依赖没接线</strong>：<code>GameMain</code> 里还没 <code>_taskService.Initialize(taskDefinitions)</code>，也没把 service 注入到 <code>TaskPanelController</code> 和 <code>TaskManager</code>。</p>
+    </div>
+
+    <h2>1. 架构配图：数据流是怎么走的</h2>
+    <div class="card">
+      <svg viewBox="0 0 1000 320" width="100%" role="img" aria-label="任务系统数据流">
+        <defs>
+          <marker id="arr" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto-start-reverse">
+            <path d="M0,0 L12,6 L0,12 Z" fill="#7cb8ff"></path>
+          </marker>
+        </defs>
+        <rect x="20" y="120" width="170" height="70" rx="10" fill="#172033" stroke="#35537c"/>
+        <text x="105" y="150" fill="#dbe8ff" text-anchor="middle" font-size="15">游戏事件</text>
+        <text x="105" y="172" fill="#9cb4d9" text-anchor="middle" font-size="12">击杀/采集/对话</text>
+
+        <rect x="240" y="120" width="170" height="70" rx="10" fill="#1b2538" stroke="#3f628f"/>
+        <text x="325" y="150" fill="#dbe8ff" text-anchor="middle" font-size="15">TaskManager</text>
+        <text x="325" y="172" fill="#9cb4d9" text-anchor="middle" font-size="12">仅做转发</text>
+
+        <rect x="460" y="70" width="210" height="170" rx="10" fill="#222d45" stroke="#4f79af"/>
+        <text x="565" y="100" fill="#dbe8ff" text-anchor="middle" font-size="16">TaskService（核心）</text>
+        <text x="565" y="125" fill="#b7cae8" text-anchor="middle" font-size="12">Initialize / Accept / Submit</text>
+        <text x="565" y="145" fill="#b7cae8" text-anchor="middle" font-size="12">NotifyTaskProgress</text>
+        <text x="565" y="165" fill="#b7cae8" text-anchor="middle" font-size="12">BuildPanelItems</text>
+        <text x="565" y="185" fill="#86dcae" text-anchor="middle" font-size="12">event: TasksChanged</text>
+
+        <rect x="720" y="50" width="250" height="90" rx="10" fill="#18202f" stroke="#355b88"/>
+        <text x="845" y="82" fill="#dbe8ff" text-anchor="middle" font-size="15">TaskPanelController</text>
+        <text x="845" y="104" fill="#9cb4d9" text-anchor="middle" font-size="12">订阅 TasksChanged</text>
+        <text x="845" y="122" fill="#9cb4d9" text-anchor="middle" font-size="12">Model.SetTasks(...)</text>
+
+        <rect x="720" y="170" width="110" height="70" rx="10" fill="#18222d" stroke="#35677f"/>
+        <text x="775" y="198" fill="#dbe8ff" text-anchor="middle" font-size="14">Model</text>
+        <text x="775" y="216" fill="#9cb4d9" text-anchor="middle" font-size="11">TaskPanelItem[]</text>
+
+        <rect x="860" y="170" width="110" height="70" rx="10" fill="#1b2430" stroke="#3f698e"/>
+        <text x="915" y="198" fill="#dbe8ff" text-anchor="middle" font-size="14">View</text>
+        <text x="915" y="216" fill="#9cb4d9" text-anchor="middle" font-size="11">列表+详情</text>
+
+        <line x1="190" y1="155" x2="240" y2="155" stroke="#7cb8ff" stroke-width="3" marker-end="url(#arr)"/>
+        <line x1="410" y1="155" x2="460" y2="155" stroke="#7cb8ff" stroke-width="3" marker-end="url(#arr)"/>
+        <line x1="670" y1="115" x2="720" y2="95" stroke="#7cb8ff" stroke-width="3" marker-end="url(#arr)"/>
+        <line x1="845" y1="140" x2="845" y2="170" stroke="#7cb8ff" stroke-width="3" marker-end="url(#arr)"/>
+        <line x1="830" y1="205" x2="860" y2="205" stroke="#7cb8ff" stroke-width="3" marker-end="url(#arr)"/>
+      </svg>
+      <p class="small">核心思想：任务规则在 Service，UI 只显示和交互。</p>
+    </div>
+
+    <h2>2. 你的任务面板（左列表 + 右详情）该怎么做</h2>
+    <div class="card">
+      <svg viewBox="0 0 1000 420" width="100%" role="img" aria-label="任务面板交互示意图">
+        <rect x="20" y="20" width="960" height="380" rx="16" fill="#141923" stroke="#34425a"/>
+        <rect x="40" y="40" width="260" height="340" rx="10" fill="#1b2232" stroke="#40506d"/>
+        <text x="170" y="68" fill="#dfe9ff" text-anchor="middle" font-size="16">左侧任务列表（Button）</text>
+
+        <rect x="60" y="90" width="220" height="34" rx="8" fill="#2a3550" stroke="#5e78aa"/>
+        <text x="170" y="112" fill="#e9f1ff" text-anchor="middle" font-size="13">[追踪] 击杀 10 只狼（3/10）</text>
+        <rect x="60" y="132" width="220" height="30" rx="8" fill="#232c41" stroke="#425473"/>
+        <rect x="60" y="170" width="220" height="30" rx="8" fill="#232c41" stroke="#425473"/>
+        <rect x="60" y="208" width="220" height="30" rx="8" fill="#232c41" stroke="#425473"/>
+
+        <rect x="330" y="40" width="630" height="340" rx="10" fill="#1a202b" stroke="#445068"/>
+        <text x="645" y="68" fill="#dfe9ff" text-anchor="middle" font-size="16">右侧详情区（当前选中任务）</text>
+
+        <text x="360" y="105" fill="#ffffff" font-size="20" font-weight="bold">击杀狼群（主线）</text>
+        <text x="360" y="140" fill="#b8c7e0" font-size="14">描述：清理森林入口附近的狼群，确保道路安全。</text>
+        <text x="360" y="170" fill="#b8c7e0" font-size="14">目标：击杀狼 10/10</text>
+        <text x="360" y="200" fill="#8ee0aa" font-size="14">状态：可提交</text>
+        <text x="360" y="230" fill="#b8c7e0" font-size="14">奖励：金币 120</text>
+
+        <rect x="360" y="280" width="120" height="40" rx="8" fill="#2f7ef0"/>
+        <text x="420" y="305" fill="#fff" text-anchor="middle" font-size="14">追踪/取消</text>
+        <rect x="500" y="280" width="120" height="40" rx="8" fill="#33b566"/>
+        <text x="560" y="305" fill="#fff" text-anchor="middle" font-size="14">提交任务</text>
+
+        <line x1="280" y1="107" x2="330" y2="107" stroke="#7cb8ff" stroke-width="3"/>
+        <polygon points="330,107 320,101 320,113" fill="#7cb8ff"/>
+        <text x="245" y="95" fill="#8fb4e9" font-size="12">点击某条任务</text>
+      </svg>
+      <p class="small">你的想法完全正确：左侧点击哪个任务，右侧就显示哪个任务详情。</p>
+    </div>
+
+    <h2>3. 按你当前工程，第一轮最小接线（必须做）</h2>
+    <div class="card">
+      <h3>Step A：在 GameMain 初始化并注入 TaskService</h3>
+      <p>文件：<span class="file">Assets/Scripts/Main/GameMain.cs</span></p>
+      <pre>// 1) 字段
+[SerializeField] private List&lt;TaskData&gt; taskDefinitions;
+private TaskService _taskService;
+
+// 2) Awake 里初始化并注入
+void Awake()
+{
+    gamePanelModel = new GamePanelModel();
+    gamePanelController = new GamePanelController();
+    taskPanelModel = new TaskPanelModel();
+    taskPanelController = new TaskPanelController();
+
+    _taskService = new TaskService();
+    _taskService.Initialize(taskDefinitions);
+
+    taskPanelController.SetTaskService(_taskService);
+    TaskManager.Instance.SetTaskService(_taskService); // 让旧入口转发到新服务
+}</pre>
+
+      <h3>Step B：TaskManager 只做转发，不再自己算任务</h3>
+      <p>文件：<span class="file">Assets/Scripts/Task/TaskManager.cs</span></p>
+      <pre>private TaskService _taskService;
+
+public void SetTaskService(TaskService taskService)
+{
+    _taskService = taskService;
+}
+
+public void NotifyTaskProgress(string targetType, int amount = 1)
+{
+    _taskService?.NotifyTaskProgress(targetType, amount);
+}</pre>
+
+      <h3>Step C：TaskPanelController 退订补全</h3>
+      <p>你目前 <code>OnDispose()</code> 没有退订 <code>TasksChanged</code>，补上避免脏监听。</p>
+      <pre>protected override void OnDispose()
+{
+    View.CloseClicked -= CloseClicked;
+    if (_taskService != null)
+    {
+        _taskService.TasksChanged -= OnTasksChanged;
+    }
+}</pre>
+    </div>
+
+    <h2>4. 如何实现“左侧按钮切换右侧详情”（你最关心）</h2>
+    <div class="card">
+      <h3>你要新增的最小字段</h3>
+      <p>在 <span class="file">TaskPanelModel.cs</span> 里增加：</p>
+      <pre>public string SelectedTaskId { get; private set; }
+public event Action OnSelectedChanged;
+
+public void SelectTask(string taskId)
+{
+    if (SelectedTaskId == taskId) return;
+    SelectedTaskId = taskId;
+    OnSelectedChanged?.Invoke();
+}</pre>
+
+      <h3>Controller 做两件事</h3>
+      <ol>
+        <li class="step">收到 <code>TasksChanged</code> 后：<code>Model.SetTasks(service.BuildPanelItems())</code></li>
+        <li class="step">收到 View 某个任务按钮点击后：<code>Model.SelectTask(taskId)</code></li>
+      </ol>
+
+      <h3>View 渲染逻辑（关键）</h3>
+      <ol>
+        <li class="step">左侧：根据 <code>Model.Items</code> 动态生成按钮</li>
+        <li class="step">点击按钮：抛出 <code>TaskItemClicked(taskId)</code></li>
+        <li class="step">右侧：根据 <code>Model.SelectedTaskId</code> 找到那条数据并显示详情</li>
+      </ol>
+
+      <p class="hint">默认选中策略：<strong>首次打开面板，如果 SelectedTaskId 为空，就自动选第一条任务</strong>。</p>
+    </div>
+
+    <h2>5. 运行时怎么驱动任务进度</h2>
+    <div class="card">
+      <p>在任意游戏逻辑里（怪物死亡、采集成功、交互完成）调用：</p>
+      <pre>TaskManager.Instance.NotifyTaskProgress("Kill_Wolf", 1);
+TaskManager.Instance.NotifyTaskProgress("Collect_Herb", 2);</pre>
+      <p>然后链路是：</p>
+      <pre>TaskManager.NotifyTaskProgress
+    -> TaskService.NotifyTaskProgress
+    -> TasksChanged 事件
+    -> TaskPanelController.OnTasksChanged
+    -> Model.SetTasks(...)
+    -> View 重绘左侧列表 + 右侧详情</pre>
+    </div>
+
+    <h2>6. 你现在项目里最容易踩坑的点</h2>
+    <div class="card">
+      <ul>
+        <li><span class="danger">TaskService 未注入</span>：UI 有类但不会动（你当前就是这个状态）。</li>
+        <li><span class="danger">Controller 没退订事件</span>：切场景后重复刷新、空引用。</li>
+        <li><span class="warn">TaskData 的 targetType 用字符串</span>：后续建议改 enum 或常量表，避免拼写错误。</li>
+        <li><span class="warn">注释编码乱码</span>：建议统一 UTF-8，否则维护成本会越来越高。</li>
+      </ul>
+    </div>
+
+    <h2>7. 你下一步可以直接做什么</h2>
+    <div class="card">
+      <ol>
+        <li>先完成 Step A/B/C（把 service 注入链路跑通）。</li>
+        <li>再做“左列表点击 -> 右详情切换”（加 SelectedTaskId）。</li>
+        <li>验证 3 个用例：
+          <ul>
+            <li>打开任务面板默认选中第一条</li>
+            <li>点击左侧按钮，右侧详情切换</li>
+            <li>调用 NotifyTaskProgress 后，左侧和右侧实时刷新</li>
+          </ul>
+        </li>
+      </ol>
+      <p class="small">等你这一步跑通，我可以下一轮直接给你“任务提交按钮 + 奖励发放 + 前置任务链”的落地代码清单。</p>
+    </div>
+  </div>
+</body>
+</html>

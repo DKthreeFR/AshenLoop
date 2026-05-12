@@ -1,0 +1,480 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>背包系统与UI联动超详细解析</title>
+  <style>
+    body { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; line-height: 1.75; margin: 0; background: #f7f8fb; color: #1f2430; }
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 32px; }
+    h1,h2,h3,h4 { color: #12203a; }
+    h1 { font-size: 34px; margin-bottom: 10px; }
+    h2 { margin-top: 42px; border-left: 5px solid #2f6feb; padding-left: 10px; }
+    h3 { margin-top: 28px; }
+    .meta { color: #5a6478; margin-bottom: 18px; }
+    .panel { background: #fff; border: 1px solid #e3e8f2; border-radius: 12px; padding: 20px; margin: 16px 0; }
+    .tip { background: #eef5ff; border-left: 4px solid #2f6feb; padding: 10px 14px; border-radius: 8px; }
+    .warn { background: #fff5f5; border-left: 4px solid #e55353; padding: 10px 14px; border-radius: 8px; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+    th, td { border: 1px solid #d8dfeb; padding: 8px 10px; text-align: left; vertical-align: top; }
+    th { background: #f2f6ff; }
+    code, pre { font-family: Consolas, Menlo, monospace; }
+    pre { background: #0f172a; color: #e2e8f0; padding: 14px; border-radius: 10px; overflow: auto; }
+    .toc a { display: block; margin: 6px 0; color: #1d4ed8; text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
+    .small { color: #667085; font-size: 13px; }
+    .method { background: #fbfcff; border: 1px dashed #c8d2e6; border-radius: 10px; padding: 12px; margin: 12px 0; }
+    .method h4 { margin: 0 0 6px 0; }
+    .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 900px){ .cols { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <h1>背包系统与 UI 联动超详细解析</h1>
+  <div class="meta">
+    文档时间：2026-04-24<br/>
+    目标：让你从“代码文件级别”完全看明白：<b>背包系统怎么工作、UI怎么工作、两者怎么联动</b>。
+  </div>
+
+  <div class="panel toc">
+    <h2 style="margin-top:0">目录</h2>
+    <a href="#overview">1. 总体总览（你现在这一版到底做到了什么）</a>
+    <a href="#diagram-all">2. 全局架构图（多图）</a>
+    <a href="#runtime-startup">3. 启动与初始化全流程（BagEquipRuntime）</a>
+    <a href="#data-layer">4. 数据层详解（ItemDef / Runtime Model）</a>
+    <a href="#service-layer">5. 服务层详解（Definition / Inventory / Equipment / Move）</a>
+    <a href="#ui-layer">6. UI层详解（View / Slot / DragGhost / Controller）</a>
+    <a href="#linking">7. 系统与UI联动机制（事件、刷新、失败提示）</a>
+    <a href="#save-load">8. 存档读档详解</a>
+    <a href="#method-by-method">9. 每个文件每个方法逐条解释（最细）</a>
+    <a href="#debug">10. 常见问题与排查表</a>
+  </div>
+
+  <h2 id="overview">1. 总体总览</h2>
+  <div class="panel">
+    <p>你现在这版是一个完整可运行的“<b>数据驱动 + 服务仲裁 + MVC面板 + 拖拽交互 + 存档恢复</b>”背包系统。</p>
+    <table>
+      <tr><th>层级</th><th>核心文件</th><th>职责</th></tr>
+      <tr><td>定义层</td><td>ItemDefBase / ItemDef / EquipItemDef</td><td>定义物品静态配置（图标、堆叠、装备槽、攻击防御等）</td></tr>
+      <tr><td>运行时层</td><td>ItemStack / InventoryModel / EquipmentModel / SlotRef</td><td>存玩家当前状态：背包每格有啥、装备栏穿了啥</td></tr>
+      <tr><td>规则层</td><td>ItemDefinitionService / InventoryService / EquipmentService / ItemMoveService</td><td>新增、移除、穿戴、交换、堆叠、合法性判断</td></tr>
+      <tr><td>UI层</td><td>BagEquipPanelView / SlotView / DragGhost / BagEquipPanelController</td><td>动态生成格子、拖拽、显示提示、显示属性</td></tr>
+      <tr><td>编排层</td><td>BagEquipRuntime</td><td>把所有层拼起来，处理初始化、自动保存、载入</td></tr>
+      <tr><td>持久化层</td><td>BagEquipSaveData / BagEquipSaveSystem</td><td>JSON存档与读档</td></tr>
+    </table>
+  </div>
+
+  <h2 id="diagram-all">2. 全局架构图（多图）</h2>
+  <div class="panel">
+    <h3>图1：分层结构图</h3>
+    <pre class="mermaid">
+graph TD
+    A[ItemDef SO层] --> B[ItemDefinitionService]
+    B --> C[InventoryService]
+    B --> D[EquipmentService]
+    B --> E[ItemMoveService]
+    F[InventoryModel] --> C
+    G[EquipmentModel] --> D
+    C --> E
+    D --> E
+    E --> H[BagEquipPanelController]
+    H --> I[BagEquipPanelView]
+    I --> H
+    H --> J[SlotView]
+    H --> K[DragGhost]
+    L[BagEquipRuntime] --> B
+    L --> C
+    L --> D
+    L --> E
+    L --> H
+    L --> M[BagEquipSaveSystem]
+    </pre>
+
+    <h3>图2：启动时序图（Awake）</h3>
+    <pre class="mermaid">
+sequenceDiagram
+    participant R as BagEquipRuntime
+    participant DS as ItemDefinitionService
+    participant IS as InventoryService
+    participant ES as EquipmentService
+    participant MS as ItemMoveService
+    participant UI as UIManager
+    participant C as BagEquipPanelController
+
+    R->>R: BuildRuntime()
+    R->>DS: new(definitions)
+    R->>IS: new(inventory, defs)
+    R->>ES: new(equipment, defs)
+    R->>MS: new(inventory, equipment, IS, ES, defs)
+    R->>R: BuildUIController()
+    R->>C: SetContext(...)
+    R->>UI: BindController(BagAndEquipPanel, C, model)
+    R->>R: HookEvents()
+    alt loadOnStart=true
+      R->>R: TryLoad()
+    else
+      R->>R: InitFromDefaultItems()
+    end
+    R->>ES: RaiseEquipmentChanged()
+    </pre>
+
+    <h3>图3：拖拽时序（成功交换）</h3>
+    <pre class="mermaid">
+sequenceDiagram
+    participant SlotA as SlotView(来源)
+    participant View as BagEquipPanelView
+    participant Ctrl as BagEquipPanelController
+    participant Move as ItemMoveService
+    participant Inv as InventoryService
+    participant Eq as EquipmentService
+
+    SlotA->>View: OnBeginDrag
+    View->>View: 显示 DragGhost
+    SlotA->>View: OnDrag
+    View->>View: Ghost 跟随
+    Note over View: OnDrop 或 EndDrag兜底Raycast
+    View->>Ctrl: MoveRequested(from,to)
+    Ctrl->>Move: TryMove(from,to,out reason)
+    Move->>Inv: NotifyChanged()
+    Move->>Eq: RaiseEquipmentChanged()
+    Inv-->>Ctrl: InventoryChanged
+    Eq-->>Ctrl: EquipmentChanged/StatsChanged
+    Ctrl->>View: Render(...)
+    </pre>
+
+    <h3>图4：存档流程</h3>
+    <pre class="mermaid">
+flowchart LR
+    A[数据变更事件] --> B{autoSave?}
+    B -- yes --> C[BagEquipRuntime.SaveNow]
+    C --> D[ExportSaveData]
+    D --> E[BagEquipSaveSystem.Save]
+    E --> F[bag_equip_save.json]
+    G[启动TryLoad] --> H[BagEquipSaveSystem.Load]
+    H --> I[ImportSaveData]
+    I --> J[Inventory/Equipment恢复]
+    J --> K[NotifyChanged + RaiseEquipmentChanged]
+    </pre>
+
+    <h3>图5：移动规则分支图</h3>
+    <pre class="mermaid">
+flowchart TD
+    A[TryMove] --> B{from/to类型}
+    B -->|Inv->Inv| C[MoveInventoryToInventory]
+    B -->|Inv->Equip| D[MoveInventoryToEquipment]
+    B -->|Equip->Inv| E[MoveEquipmentToInventory]
+    B -->|Equip->Equip| F[MoveEquipmentToEquipment]
+    C --> G[堆叠/交换/空位移动]
+    D --> H[CanEquip校验]
+    E --> I[可堆叠或可换装校验]
+    F --> J[双向槽位合法校验]
+    </pre>
+  </div>
+
+  <h2 id="runtime-startup">3. 启动与初始化全流程（BagEquipRuntime）</h2>
+  <div class="panel">
+    <p><b>BagEquipRuntime</b> 是总入口。你可以把它理解为“背包系统的启动器 + 装配器 + 生命周期管家”。</p>
+    <div class="cols">
+      <div class="tip">
+        <b>它做的事情：</b>
+        <ol>
+          <li>创建运行时数据模型（背包、装备）</li>
+          <li>创建并连接服务层</li>
+          <li>创建 UI Controller 并绑定到 UIManager</li>
+          <li>注册事件，保持数据变化自动刷新和自动存档</li>
+          <li>启动时读档；退出时存档</li>
+        </ol>
+      </div>
+      <div class="warn">
+        <b>它不做的事情：</b>
+        <ol>
+          <li>不直接写“某件物品能不能穿”规则</li>
+          <li>不直接改 UI 细节</li>
+          <li>不直接处理拖拽细节（交给 View + MoveService）</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <h2 id="data-layer">4. 数据层详解</h2>
+  <div class="panel">
+    <h3>4.1 ItemDefBase / ItemDef / EquipItemDef（SO定义）</h3>
+    <p>这三类 ScriptableObject 负责“静态配置”。运行时不会改它们。</p>
+    <table>
+      <tr><th>类</th><th>关键字段</th><th>说明</th></tr>
+      <tr><td>ItemDefBase</td><td>itemId, itemName, itemIcon, stackable, itemMaxStack</td><td>通用基础定义；OnValidate 保证堆叠约束合法</td></tr>
+      <tr><td>ItemDef</td><td>itemType, healAmount</td><td>消耗品类扩展</td></tr>
+      <tr><td>EquipItemDef</td><td>equipmentType, equipSlotType, attack, defense</td><td>装备类扩展；决定可穿槽位和加成</td></tr>
+    </table>
+
+    <h3>4.2 ItemStack</h3>
+    <p>运行时最小库存单元：<code>itemId + count</code>。背包格子和装备槽都复用它。</p>
+
+    <h3>4.3 InventoryModel</h3>
+    <p>固定容量格子列表，空格用 <code>null</code>。提供增删查所需基础接口。</p>
+
+    <h3>4.4 EquipmentModel</h3>
+    <p>字典结构：<code>EquipSlotType -> ItemStack</code>，每个槽位最多一件。</p>
+
+    <h3>4.5 SlotRef / SlotRefType</h3>
+    <p>拖拽通用定位符。用于在 UI 与服务层之间传递来源/目标，不依赖具体 UI 节点。</p>
+  </div>
+
+  <h2 id="service-layer">5. 服务层详解</h2>
+  <div class="panel">
+    <h3>5.1 ItemDefinitionService</h3>
+    <p>做“配置查表”，把 itemId 映射到 SO 定义。所有规则层统一通过它获取配置。</p>
+
+    <h3>5.2 InventoryService</h3>
+    <p>处理背包业务（新增、移除、通知刷新）。</p>
+    <ul>
+      <li><b>TryAddItem</b>：先叠堆，再找空槽，放不下会返回 false</li>
+      <li><b>TryRemoveItem</b>：先统计总量，再分格扣减，防止扣到一半失败</li>
+      <li><b>InventoryChanged 事件</b>：任何变化后发事件，让 Controller 刷新 UI</li>
+    </ul>
+
+    <h3>5.3 EquipmentService</h3>
+    <p>处理装备业务（可穿校验、总属性计算、变化通知）。</p>
+    <ul>
+      <li><b>CanEquip</b>：核心规则：item 必须是 EquipItemDef 且槽位匹配</li>
+      <li><b>CalculateTotalStats</b>：遍历当前所有装备累加 attack/defense</li>
+      <li><b>EquipmentStatsChanged</b>：用于联动角色属性与 UI 文本</li>
+    </ul>
+
+    <h3>5.4 ItemMoveService（规则核心）</h3>
+    <p>统一入口 <code>TryMove(from,to,out reason)</code>。所有拖拽最终都走这里。</p>
+    <ul>
+      <li>Inv->Inv：空位移动/同ID堆叠/交换</li>
+      <li>Inv->Equip：CanEquip校验 + 穿戴或换装</li>
+      <li>Equip->Inv：卸下、可堆叠合并、合法交换</li>
+      <li>Equip->Equip：双向槽位合法再交换</li>
+    </ul>
+    <p>所有失败原因会写到 <code>reason</code>，Controller 再给 View 显示到 tipText。</p>
+  </div>
+
+  <h2 id="ui-layer">6. UI层详解</h2>
+  <div class="panel">
+    <h3>6.1 BagEquipPanelView</h3>
+    <p>纯 View，不做业务判断。职责：</p>
+    <ol>
+      <li>动态生成背包格与装备格（EnsureSlots）</li>
+      <li>渲染图标/数量/选中态/提示文本/属性文本（Render）</li>
+      <li>转发交互事件（点击、拖拽、放下）给 Controller</li>
+      <li>维护 DragGhost 显示与跟随</li>
+      <li>兜底拖拽（OnEndDrag Raycast）降低偶发丢 drop</li>
+    </ol>
+
+    <h3>6.2 SlotView</h3>
+    <p>每个格子独立交互节点：存自己的 SlotRef 和当前 Stack，并抛出拖拽事件。</p>
+
+    <h3>6.3 DragGhost</h3>
+    <p>拖拽虚影，只做显示，不参与业务。通过 CanvasGroup 关闭射线阻挡，避免吞掉 drop。</p>
+
+    <h3>6.4 BagEquipPanelController</h3>
+    <p>桥梁角色：拿 View 事件 -> 调服务 -> 收事件刷新 View。</p>
+    <ul>
+      <li>OnMoveRequested -> ItemMoveService.TryMove</li>
+      <li>InventoryChanged / EquipmentChanged / EquipmentStatsChanged -> RenderAll</li>
+      <li>失败提示写到 _tip，再 Render</li>
+    </ul>
+  </div>
+
+  <h2 id="linking">7. 系统与UI联动机制</h2>
+  <div class="panel">
+    <h3>图6：联动闭环</h3>
+    <pre class="mermaid">
+flowchart LR
+    A[用户拖拽] --> B[BagEquipPanelView发MoveRequested]
+    B --> C[BagEquipPanelController]
+    C --> D[ItemMoveService.TryMove]
+    D --> E[InventoryService.NotifyChanged]
+    D --> F[EquipmentService.RaiseEquipmentChanged]
+    E --> C
+    F --> C
+    C --> G[BagEquipPanelView.Render]
+    G --> H[玩家看到更新结果]
+    </pre>
+
+    <h3>关键点</h3>
+    <ol>
+      <li><b>规则唯一真相在 Service</b>：UI 不判断“可不可以穿”。</li>
+      <li><b>事件驱动刷新</b>：不是每帧刷新，只有变化时刷新。</li>
+      <li><b>失败可解释</b>：reason -> tipText，方便调试和玩家反馈。</li>
+      <li><b>拖拽稳态</b>：OnDrop + EndDrag Raycast 兜底双通道。</li>
+    </ol>
+  </div>
+
+  <h2 id="save-load">8. 存档读档详解</h2>
+  <div class="panel">
+    <h3>存档数据结构</h3>
+    <ul>
+      <li>BagEquipSaveData.inventorySlots：按索引保存背包</li>
+      <li>BagEquipSaveData.equipmentSlots：按槽位保存装备</li>
+    </ul>
+
+    <h3>写入时机</h3>
+    <ol>
+      <li>数据变化事件触发（autoSave=true）</li>
+      <li>应用退出 OnApplicationQuit</li>
+    </ol>
+
+    <h3>读档流程</h3>
+    <ol>
+      <li>Load JSON</li>
+      <li>清空当前背包/装备</li>
+      <li>按索引/槽位恢复</li>
+      <li>过滤脏数据（定义不存在、槽位不匹配）</li>
+      <li>触发 NotifyChanged + RaiseEquipmentChanged 刷UI和属性</li>
+    </ol>
+  </div>
+
+  <h2 id="method-by-method">9. 每个文件每个方法逐条解释（最细）</h2>
+  <div class="panel">
+    <p class="small">下面每条都按“输入/输出/副作用/调用关系”讲，方便你回源码对照。</p>
+
+    <h3>9.1 BagEquipRuntime.cs</h3>
+
+    <div class="method"><h4>Awake()</h4><b>作用：</b>系统启动总流程。<br/>输入：无。输出：无。<br/>副作用：构建全部模型与服务，绑定UI控制器，挂事件，读档或初始化默认物品，触发一次装备属性刷新。</div>
+    <div class="method"><h4>OnDestroy()</h4>解绑事件并 Dispose 控制器，防止脏订阅和重复回调。</div>
+    <div class="method"><h4>OnApplicationQuit()</h4>如果 autoSave 打开，退出前强制存档。</div>
+    <div class="method"><h4>BuildRuntime()</h4>new InventoryModel/EquipmentModel + 4个Service。是运行时依赖注入点。</div>
+    <div class="method"><h4>BuildUIController()</h4>创建 BagEquipModel、BagEquipPanelController，并通过 UIManager.BindController 绑定到 BagAndEquipPanel。</div>
+    <div class="method"><h4>HookEvents()/UnhookEvents()</h4>监听 InventoryChanged、EquipmentChanged、EquipmentStatsChanged。</div>
+    <div class="method"><h4>OnDataChanged()</h4>数据变化时自动存档入口。</div>
+    <div class="method"><h4>OnEquipmentStatsChanged(stats)</h4>把总属性推给 CharacterEquipmentStatsBridge。</div>
+    <div class="method"><h4>InitFromDefaultItems()</h4>把 inspector 的 initialItems 注入到背包。</div>
+    <div class="method"><h4>OpenPanel()/ClosePanel()</h4>打开或关闭背包面板。</div>
+    <div class="method"><h4>SaveNow()</h4>导出当前运行时并写 JSON。</div>
+    <div class="method"><h4>TryLoad()</h4>尝试读档；失败回退到默认物品初始化。</div>
+    <div class="method"><h4>ExportSaveData()</h4>把 Inventory/Equipment 运行时快照转换为可序列化对象。</div>
+    <div class="method"><h4>ImportSaveData(data)</h4>清空后恢复背包和装备，过滤非法数据，再触发刷新事件。</div>
+
+    <h3>9.2 ItemDefBase.cs</h3>
+    <div class="method"><h4>OnValidate()</h4>编辑器约束：不可堆叠时 itemMaxStack=1；可堆叠时最小1。防配置脏数据。</div>
+
+    <h3>9.3 ItemDef.cs / EquipItemDef.cs</h3>
+    <div class="method"><h4>无函数（数据类）</h4>ItemDef 负责消耗品字段；EquipItemDef 负责装备槽位和属性字段。</div>
+
+    <h3>9.4 CharacterEquipmentStatsBridge.cs</h3>
+    <div class="method"><h4>ApplyEquipmentStats(eqStats)</h4>最终角色属性=基础值+装备总加成。</div>
+
+    <h3>9.5 InventoryModel.cs</h3>
+    <div class="method"><h4>InventoryModel(capacity)</h4>固定容量并填充 null 空位。</div>
+    <div class="method"><h4>IsValidIndex(index)</h4>索引安全校验。</div>
+    <div class="method"><h4>GetAt/SetAt/ClearAt</h4>读写单格和清空单格。</div>
+    <div class="method"><h4>FindFirstEmptySlot()</h4>找第一个空位，新增物品时使用。</div>
+
+    <h3>9.6 EquipmentModel.cs</h3>
+    <div class="method"><h4>EquipmentModel()</h4>构造时初始化所有装备槽。</div>
+    <div class="method"><h4>InitializeSlots()</h4>遍历 EquipSlotType，跳过 None，初始化为 null。</div>
+    <div class="method"><h4>IsValidSlot/GetAt/SetAt/ClearAt/ClearAll</h4>装备槽基础访问接口。</div>
+
+    <h3>9.7 ItemStack.cs</h3>
+    <div class="method"><h4>ItemStack(itemId,count)</h4>创建一个库存单位。</div>
+    <div class="method"><h4>Clone()</h4>浅拷贝一个新的 ItemStack。</div>
+
+    <h3>9.8 SlotRef.cs</h3>
+    <div class="method"><h4>SlotRef.Inventory(index)</h4>创建背包槽引用。</div>
+    <div class="method"><h4>SlotRef.Equipment(slotType)</h4>创建装备槽引用。</div>
+    <div class="method"><h4>EqualsTo(other)</h4>比较两个槽引用是否同一个位置。</div>
+
+    <h3>9.9 BagEquipSaveData.cs</h3>
+    <div class="method"><h4>无函数（纯序列化容器）</h4>定义 JSON 结构。</div>
+
+    <h3>9.10 BagEquipSaveSystem.cs</h3>
+    <div class="method"><h4>Save(data)</h4>JsonUtility 序列化并写文件。</div>
+    <div class="method"><h4>Load()</h4>读文件并反序列化。</div>
+    <div class="method"><h4>Delete()</h4>删除存档文件。</div>
+
+    <h3>9.11 ItemDefinitionService.cs</h3>
+    <div class="method"><h4>ItemDefinitionService(definitions)</h4>构造即建索引。</div>
+    <div class="method"><h4>Build(definitions)</h4>清空重建 itemId->def 字典；重复ID告警。</div>
+    <div class="method"><h4>TryGet(itemId)</h4>查任意定义。</div>
+    <div class="method"><h4>TryGetEquip(itemId)</h4>仅查装备定义（as EquipItemDef）。</div>
+    <div class="method"><h4>IsStackable/GetMaxStack</h4>给服务层提供堆叠规则查询。</div>
+
+    <h3>9.12 InventoryService.cs</h3>
+    <div class="method"><h4>TryAddItem(itemId,count)</h4>先叠已有，再填空格；空间不足返回 false；不论成功部分或全部都会发 InventoryChanged。</div>
+    <div class="method"><h4>TryRemoveItem(itemId,count)</h4>先总量校验，再逐格扣减，扣到0清格。</div>
+    <div class="method"><h4>NotifyChanged()</h4>手动触发背包变化事件（给外部操作后刷新UI）。</div>
+
+    <h3>9.13 EquipmentService.cs</h3>
+    <div class="method"><h4>CanEquip(stack,slot)</h4>装备合法性判断核心：必须是 EquipItemDef 且槽位匹配。</div>
+    <div class="method"><h4>TrySet/TryClear</h4>设置或清空装备槽，并触发变化事件。</div>
+    <div class="method"><h4>GetAt(slot)</h4>读取槽位当前装备。</div>
+    <div class="method"><h4>CalculateTotalStats()</h4>累加所有已穿装备的 attack/defense。</div>
+    <div class="method"><h4>RaiseEquipmentChanged()</h4>统一触发 EquipmentChanged + EquipmentStatsChanged。</div>
+
+    <h3>9.14 ItemMoveService.cs（最关键）</h3>
+    <div class="method"><h4>TryMove(from,to,out reason)</h4>统一入口：基础校验 -> 分派到四类分支 -> 返回成功/失败原因。</div>
+    <div class="method"><h4>MoveInventoryToInventory</h4>空位移动 / 同ID堆叠 / 交换；成功后 NotifyChanged。</div>
+    <div class="method"><h4>MoveInventoryToEquipment</h4>CanEquip 校验，通过则穿戴或换装；触发背包与装备事件。</div>
+    <div class="method"><h4>MoveEquipmentToInventory</h4>卸下、可堆叠合并、或合法交换。</div>
+    <div class="method"><h4>MoveEquipmentToEquipment</h4>先校验 from 可进 to，再校验 to 可回 from（双向合法）再交换。</div>
+    <div class="method"><h4>IsValidRef/GetStack</h4>槽位合法和来源读取辅助函数。</div>
+
+    <h3>9.15 BagEquipModel.cs</h3>
+    <div class="method"><h4>SetRuntime(inventory,equipment)</h4>把运行时模型绑定到UI模型。</div>
+    <div class="method"><h4>SetLastFailReason(reason)</h4>缓存最近一次移动失败原因。</div>
+
+    <h3>9.16 BagEquipPanelController.cs</h3>
+    <div class="method"><h4>SetContext(...)</h4>注入服务依赖。</div>
+    <div class="method"><h4>OnInitialize()</h4>订阅View事件 + 订阅Service事件 + EnsureSlots + 首次Render。</div>
+    <div class="method"><h4>OnDispose()</h4>清理所有订阅。</div>
+    <div class="method"><h4>OnCloseClicked()</h4>通过 UIManager 关闭 BagAndEquipPanel。</div>
+    <div class="method"><h4>OnSlotClicked(slotRef)</h4>更新选中并重渲染。</div>
+    <div class="method"><h4>OnMoveRequested(from,to)</h4>调用 MoveService；失败显示 tip，成功清 tip 并重渲染。</div>
+    <div class="method"><h4>OnInventoryChanged / OnEquipmentChanged / OnEquipmentStatsChanged</h4>接事件刷新 UI。</div>
+    <div class="method"><h4>RenderAll()</h4>统一调用 View.Render。</div>
+
+    <h3>9.17 BagEquipPanelView.cs</h3>
+    <div class="method"><h4>Bind/Unbind</h4>绑定关闭按钮、反绑定并清理动态格子。</div>
+    <div class="method"><h4>EnsureSlots</h4>按容量建背包格、按枚举建装备格。</div>
+    <div class="method"><h4>Render</h4>把模型映射到UI：图标、数量、选中、提示、属性。</div>
+    <div class="method"><h4>EnsureInventorySlots / EnsureEquipmentSlots</h4>真正实例化 SlotViewPrefab 并 Setup SlotRef。</div>
+    <div class="method"><h4>BindSlotEvents / UnbindSlotEvents</h4>把每个格子的事件接到 View 回调。</div>
+    <div class="method"><h4>OnSlotBeginDrag / OnSlotDrag</h4>开启拖拽状态并驱动 DragGhost。</div>
+    <div class="method"><h4>OnSlotDrop</h4>拿 pointerDrag 找来源 SlotView，发 MoveRequested。</div>
+    <div class="method"><h4>OnSlotEndDrag</h4>如果 OnDrop 没触发，主动 Raycast 找目标槽位兜底，再隐藏 Ghost。</div>
+    <div class="method"><h4>FindSlotUnderPointer</h4>用 EventSystem.RaycastAll 查鼠标下 SlotView。</div>
+    <div class="method"><h4>ClearSlots</h4>销毁动态实例并解绑事件。</div>
+
+    <h3>9.18 DragGhost.cs</h3>
+    <div class="method"><h4>Awake()</h4>设置 CanvasGroup blocksRaycasts=false，避免拦截 drop；初始隐藏。</div>
+    <div class="method"><h4>Show(sprite,count)</h4>显示拖拽图标与数量。</div>
+    <div class="method"><h4>Follow(screenPos)</h4>跟随鼠标。</div>
+    <div class="method"><h4>Hide()</h4>隐藏虚影。</div>
+
+    <h3>9.19 SlotView.cs</h3>
+    <div class="method"><h4>Awake/OnDestroy</h4>绑定/解绑 Button 点击。</div>
+    <div class="method"><h4>Setup(slotRef)</h4>初始化这个格子的槽位身份。</div>
+    <div class="method"><h4>Refresh(stack,icon,selected)</h4>更新显示状态（图标、数量、选中、空位遮罩）。</div>
+    <div class="method"><h4>OnBeginDrag/OnDrag/OnEndDrag/OnDrop</h4>把 Unity 事件抛给 View 统一处理。</div>
+  </div>
+
+  <h2 id="debug">10. 常见问题与排查表</h2>
+  <div class="panel">
+    <table>
+      <tr><th>现象</th><th>原因</th><th>检查点</th></tr>
+      <tr><td>拖拽有时交换失败</td><td>Drop事件被UI射线层抢走</td><td>DragGhost是否 blocksRaycasts=false；是否已启用 EndDrag兜底</td></tr>
+      <tr><td>能拖动但不能装备</td><td>槽位不匹配</td><td>EquipItemDef.equipSlotType 与目标槽位是否一致</td></tr>
+      <tr><td>提示“该物品不能放入此槽位”</td><td>CanEquip校验未通过</td><td>itemId 对应定义是否为 EquipItemDef</td></tr>
+      <tr><td>重启后背包空</td><td>未保存或未加载</td><td>autoSave/loadOnStart 开关；persistentDataPath文件是否存在</td></tr>
+      <tr><td>面板打不开</td><td>UIManager未注册</td><td>UIPanelId 是否有 BagAndEquipPanel；UIManager.panelEntries 是否绑定</td></tr>
+      <tr><td>格子不生成</td><td>Root或Prefab为空</td><td>BagEquipPanelView.inventoryRoot/equipmentRoot/slotViewPrefab</td></tr>
+    </table>
+  </div>
+
+  <div class="panel small">
+    备注：本解析严格基于你当前工程代码：
+    <code>Assets/Scripts/BagAndEquipment/*</code> 与 <code>Assets/Scripts/UI/Panels/BagAndEquipPanel/*</code>。
+  </div>
+</div>
+
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, theme: 'default', securityLevel: 'loose' });
+</script>
+</body>
+</html>

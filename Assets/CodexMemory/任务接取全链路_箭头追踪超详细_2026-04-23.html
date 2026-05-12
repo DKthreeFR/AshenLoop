@@ -1,0 +1,337 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>任务接取全链路（箭头追踪超详细版）</title>
+  <style>
+    :root{
+      --bg:#0a0f1a;
+      --bg2:#111b2e;
+      --card:#141f33;
+      --line:#304866;
+      --text:#e8f0ff;
+      --sub:#aebddb;
+      --accent:#71b7ff;
+      --ok:#4bd086;
+      --warn:#ffbf5f;
+      --bad:#ff6f6f;
+      --code:#0a1220;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:radial-gradient(1300px 500px at 12% -10%,#22406e 0,#0a0f1a 60%),linear-gradient(180deg,#0a0f1a,#101a2e);color:var(--text);font-family:"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.7}
+    .wrap{max-width:1300px;margin:0 auto;padding:26px 20px 50px}
+    h1{font-size:32px;margin:0 0 10px}
+    h2{font-size:24px;margin:34px 0 12px}
+    h3{font-size:19px;margin:22px 0 8px}
+    p,li{color:var(--sub)}
+    .card{background:rgba(20,31,51,.93);border:1px solid var(--line);border-radius:14px;padding:16px;margin:14px 0;box-shadow:0 12px 30px rgba(0,0,0,.3)}
+    .file{display:inline-block;padding:2px 8px;border-radius:6px;background:#0f1a2b;border:1px solid #3d5370;color:#c9dcff;font-family:Consolas,monospace;font-size:12px}
+    .kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+    .kpi .k{background:#101b2f;border:1px solid #365070;border-radius:8px;padding:8px;text-align:center;font-size:12px;color:#b4caea}
+    .ok{color:var(--ok)} .warn{color:var(--warn)} .bad{color:var(--bad)}
+    table{width:100%;border-collapse:collapse;margin-top:10px}
+    th,td{border:1px solid #355272;padding:8px 10px;vertical-align:top}
+    th{background:#0f1a2d;color:#d6e7ff;text-align:left}
+    pre{background:var(--code);border:1px solid #29425f;border-radius:10px;padding:12px;overflow:auto;color:#c9e4ff;font-size:13px}
+    code{color:#9fd1ff}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    @media(max-width:980px){.grid,.kpi{grid-template-columns:1fr}}
+    .tip{border-left:3px solid var(--accent);padding-left:10px;color:#c2d8f7}
+    .step{background:#0f1829;border:1px solid #35516f;border-radius:8px;padding:8px;margin:6px 0}
+    .small{font-size:12px;color:#89a0c4}
+    .hl{color:#eaf2ff;background:#1c2a43;padding:0 4px;border-radius:4px}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <h1>任务接取全链路（箭头追踪超详细版）</h1>
+  <p>主线：<span class="hl">TaskManager.Instance.AcceptTask("2")</span>。本页把 <code>Task</code> + <code>TaskPanel</code> 下相关代码按“一个方法跳到下一个方法”的方式全走一遍。</p>
+
+  <div class="card">
+    <div class="kpi">
+      <div class="k">入口层<br><strong>GameMain / GamePanel</strong></div>
+      <div class="k">转发层<br><strong>TaskManager</strong></div>
+      <div class="k">业务层<br><strong>TaskService + Runtime</strong></div>
+      <div class="k">展示层<br><strong>TaskPanel MVC</strong></div>
+    </div>
+    <p class="tip">这版重点不是“概念”，而是“调用顺序”。你可以按步骤在 Unity 里逐条打断点验证。</p>
+  </div>
+
+  <h2>0. 先给结论（你关心的最短答案）</h2>
+  <div class="card">
+    <ol>
+      <li><code>GameMain.Start()</code> 先初始化并注入 <code>TaskService</code>。</li>
+      <li><code>TaskManager.AcceptTask("2")</code> 只是转发。</li>
+      <li><code>TaskService.AcceptTask("2")</code> 真正创建/更新任务 runtime 并触发 <code>TasksChanged</code>。</li>
+      <li><code>TaskPanelController.OnTasksChanged()</code> 收到事件后写入 <code>Model.SetTasks(...)</code>。</li>
+      <li><code>Model.OnDataChanged</code> 驱动 <code>View.RenderTaskList(...)</code>，然后 <code>RefreshDetail()</code>。</li>
+      <li>最终左侧列表出现任务，右侧显示详情。</li>
+    </ol>
+  </div>
+
+  <h2>1. 配图 A：从启动到接任务到UI的总箭头图</h2>
+  <div class="card">
+    <svg viewBox="0 0 1260 520" width="100%" role="img" aria-label="总箭头图">
+      <defs>
+        <marker id="arr" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto-start-reverse">
+          <path d="M0,0 L12,6 L0,12 Z" fill="#87c3ff"/>
+        </marker>
+      </defs>
+
+      <rect x="20" y="30" width="220" height="90" rx="10" fill="#1d2d4a" stroke="#5f8fbe"/>
+      <text x="130" y="62" fill="#eaf2ff" text-anchor="middle" font-size="15">GameMain.Start</text>
+      <text x="130" y="84" fill="#b9cdea" text-anchor="middle" font-size="12">Initialize + 注入 service</text>
+
+      <rect x="270" y="30" width="220" height="90" rx="10" fill="#1b2a44" stroke="#5a8ab8"/>
+      <text x="380" y="62" fill="#eaf2ff" text-anchor="middle" font-size="15">TaskManager.AcceptTask("2")</text>
+      <text x="380" y="84" fill="#b9cdea" text-anchor="middle" font-size="12">转发</text>
+
+      <rect x="520" y="30" width="240" height="90" rx="10" fill="#1a2941" stroke="#5a89b7"/>
+      <text x="640" y="62" fill="#eaf2ff" text-anchor="middle" font-size="15">TaskService.AcceptTask("2")</text>
+      <text x="640" y="84" fill="#b9cdea" text-anchor="middle" font-size="12">创建/更新runtime + TasksChanged</text>
+
+      <rect x="790" y="30" width="220" height="90" rx="10" fill="#19273d" stroke="#5785b2"/>
+      <text x="900" y="62" fill="#eaf2ff" text-anchor="middle" font-size="15">TaskPanelController</text>
+      <text x="900" y="84" fill="#b9cdea" text-anchor="middle" font-size="12">OnTasksChanged</text>
+
+      <rect x="1040" y="30" width="200" height="90" rx="10" fill="#1b2638" stroke="#567ca7"/>
+      <text x="1140" y="62" fill="#eaf2ff" text-anchor="middle" font-size="15">TaskPanelModel</text>
+      <text x="1140" y="84" fill="#b9cdea" text-anchor="middle" font-size="12">SetTasks</text>
+
+      <rect x="790" y="170" width="450" height="120" rx="10" fill="#18273a" stroke="#5078a6"/>
+      <text x="1015" y="198" fill="#eaf2ff" text-anchor="middle" font-size="15">TaskPanelView</text>
+      <text x="1015" y="221" fill="#b9cdea" text-anchor="middle" font-size="12">RenderTaskList（左侧按钮）</text>
+      <text x="1015" y="242" fill="#b9cdea" text-anchor="middle" font-size="12">RenderTaskDetail（右侧详情）</text>
+      <text x="1015" y="266" fill="#8de2b0" text-anchor="middle" font-size="13">最终显示到任务面板</text>
+
+      <line x1="240" y1="75" x2="270" y2="75" stroke="#87c3ff" stroke-width="3" marker-end="url(#arr)"/>
+      <line x1="490" y1="75" x2="520" y2="75" stroke="#87c3ff" stroke-width="3" marker-end="url(#arr)"/>
+      <line x1="760" y1="75" x2="790" y2="75" stroke="#87c3ff" stroke-width="3" marker-end="url(#arr)"/>
+      <line x1="1010" y1="75" x2="1040" y2="75" stroke="#87c3ff" stroke-width="3" marker-end="url(#arr)"/>
+      <line x1="1140" y1="120" x2="1140" y2="170" stroke="#87c3ff" stroke-width="3" marker-end="url(#arr)"/>
+
+      <text x="380" y="108" fill="#9fc7f5" font-size="12" text-anchor="middle">Step 1</text>
+      <text x="640" y="108" fill="#9fc7f5" font-size="12" text-anchor="middle">Step 2</text>
+      <text x="900" y="108" fill="#9fc7f5" font-size="12" text-anchor="middle">Step 3</text>
+      <text x="1140" y="108" fill="#9fc7f5" font-size="12" text-anchor="middle">Step 4</text>
+    </svg>
+  </div>
+
+  <h2>2. 先走“启动阶段”箭头（A0 ~ A11）</h2>
+  <div class="card">
+    <p>这里是你还没按按钮之前，系统已经做的所有接线。</p>
+    <div class="step"><strong>A0</strong> → 进入游戏场景，<code>GameMain.Awake()</code> 执行：new 了 <code>taskPanelModel</code> 与 <code>taskPanelController</code>。</div>
+    <div class="step"><strong>A1</strong> → <code>GameMain.Start()</code> 执行：<code>_taskService = new TaskService()</code>。</div>
+    <div class="step"><strong>A2</strong> → <code>_taskService.Initialize(taskDefinitions)</code>：加载 SO 定义字典（但你现在不默认创建 runtime）。</div>
+    <div class="step"><strong>A3</strong> → <code>taskPanelController.SetTaskService(_taskService)</code>：把业务层注入给 Controller。</div>
+    <div class="step"><strong>A4</strong> → <code>TaskManager.Instance.SetTaskService(_taskService)</code>：把业务层注入给转发器。</div>
+    <div class="step"><strong>A5</strong> → <code>UIManager.BindController(UIPanelId.TaskPanel,...)</code>。</div>
+    <div class="step"><strong>A6</strong> → 绑定内部触发 <code>TaskPanelController.OnInitialize()</code>。</div>
+    <div class="step"><strong>A7</strong> → Controller 订阅 View 事件：<code>CloseClicked / TaskItemClicked / SubmitClicked</code>。</div>
+    <div class="step"><strong>A8</strong> → Controller 订阅 Model 事件：<code>OnDataChanged / OnSelectedChanged</code>。</div>
+    <div class="step"><strong>A9</strong> → Controller 订阅 Service 事件：<code>_taskService.TasksChanged += OnTasksChanged</code>。</div>
+    <div class="step"><strong>A10</strong> → Controller 主动拉首帧数据：<code>Model.SetTasks(_taskService.BuildPanelItems())</code>（此时通常为空列表）。</div>
+    <div class="step"><strong>A11</strong> → 面板逻辑已接通，等待“接任务”事件。</div>
+  </div>
+
+  <h2>3. 核心主线：AcceptTask("2") 全链路箭头（B0 ~ B24）</h2>
+  <div class="card">
+    <p>从你这句开始：<code>TaskManager.Instance.AcceptTask("2")</code></p>
+
+    <div class="step"><strong>B0</strong> → 调用点在 <code>GameMain.Start()</code>（你现在写的是示例接取）。</div>
+    <div class="step"><strong>B1</strong> → 进入 <code>TaskManager.AcceptTask(taskId)</code>。</div>
+    <div class="step"><strong>B2</strong> → TaskManager 直接转发：<code>return _taskServiceRef != null && _taskServiceRef.AcceptTask(taskId);</code></div>
+    <div class="step"><strong>B3</strong> → 进入 <code>TaskService.AcceptTask("2")</code>。</div>
+    <div class="step"><strong>B4</strong> → 先查定义表：<code>_definitionByTaskId.TryGetValue("2", out TaskData def)</code>。</div>
+    <div class="step"><strong>B5</strong> → 若查不到（例如 SO 的 taskId 不是 "2"），直接 <code>return false</code>，链路结束。</div>
+    <div class="step"><strong>B6</strong> → 查运行态表：<code>_runtimeByTaskId.TryGetValue("2", out TaskRuntime existing)</code>。</div>
+    <div class="step"><strong>B7</strong> → 若已存在并是 <code>Submitted/InProgress/Completed</code>，拒绝重复接取，返回 false。</div>
+    <div class="step"><strong>B8</strong> → 若不存在 runtime，创建一个新的 <code>TaskRuntime</code>（status=Available, current=0, target=def.targetCount）。</div>
+    <div class="step"><strong>B9</strong> → 写入字典：<code>_runtimeByTaskId.Add("2", runtime)</code>。</div>
+    <div class="step"><strong>B10</strong> → 调 <code>_runtimeByTaskId["2"].MarkAccepted()</code>。</div>
+    <div class="step"><strong>B11</strong> → 在 <code>TaskRuntime.MarkAccepted()</code> 内：status 变 <code>InProgress</code>，记录 AcceptUnixTime。</div>
+    <div class="step"><strong>B12</strong> → 回到 TaskService，触发事件：<code>TasksChanged?.Invoke()</code>。</div>
+    <div class="step"><strong>B13</strong> → <code>TaskPanelController.OnTasksChanged()</code> 被回调。</div>
+    <div class="step"><strong>B14</strong> → Controller 拉最新快照：<code>_taskService.BuildPanelItems()</code>。</div>
+    <div class="step"><strong>B15</strong> → BuildPanelItems 遍历 <code>_runtimeByTaskId</code>（现在有任务2）。</div>
+    <div class="step"><strong>B16</strong> → 用 <code>runtime.TaskId</code> 反查定义字典，拼出 <code>TaskPanelItem</code>。</div>
+    <div class="step"><strong>B17</strong> → 返回 item 列表给 Controller。</div>
+    <div class="step"><strong>B18</strong> → Controller 调 <code>Model.SetTasks(items)</code>。</div>
+    <div class="step"><strong>B19</strong> → Model 清空旧列表并添加新列表（现在至少有任务2）。</div>
+    <div class="step"><strong>B20</strong> → 如果当前无选中项，Model 自动选中第一条并发 <code>OnSelectedChanged</code>。</div>
+    <div class="step"><strong>B21</strong> → 同时触发 <code>OnDataChanged</code>。</div>
+    <div class="step"><strong>B22</strong> → Controller 的 <code>OnModelDataChanged()</code> 调 <code>View.RenderTaskList(...)</code>，左侧按钮重建。</div>
+    <div class="step"><strong>B23</strong> → Controller 的 <code>RefreshDetail()</code> + <code>View.RenderTaskDetail(...)</code>，右侧详情刷新。</div>
+    <div class="step"><strong>B24</strong> → 你在面板上看到任务2（左侧）+任务2详情（右侧）。</div>
+  </div>
+
+  <h2>4. 配图 B：B0~B24 超细时序图</h2>
+  <div class="card">
+    <svg viewBox="0 0 1260 900" width="100%" role="img" aria-label="超细时序图">
+      <defs>
+        <marker id="arr2" markerWidth="11" markerHeight="11" refX="10" refY="5.5" orient="auto-start-reverse">
+          <path d="M0,0 L11,5.5 L0,11 Z" fill="#8fc8ff"/>
+        </marker>
+      </defs>
+      <text x="90" y="28" fill="#dcecff" font-size="13">GameMain</text>
+      <text x="230" y="28" fill="#dcecff" font-size="13">TaskManager</text>
+      <text x="390" y="28" fill="#dcecff" font-size="13">TaskService</text>
+      <text x="560" y="28" fill="#dcecff" font-size="13">TaskRuntime</text>
+      <text x="730" y="28" fill="#dcecff" font-size="13">Controller</text>
+      <text x="910" y="28" fill="#dcecff" font-size="13">Model</text>
+      <text x="1080" y="28" fill="#dcecff" font-size="13">View</text>
+
+      <line x1="90" y1="35" x2="90" y2="860" stroke="#3d5a7d"/>
+      <line x1="230" y1="35" x2="230" y2="860" stroke="#3d5a7d"/>
+      <line x1="390" y1="35" x2="390" y2="860" stroke="#3d5a7d"/>
+      <line x1="560" y1="35" x2="560" y2="860" stroke="#3d5a7d"/>
+      <line x1="730" y1="35" x2="730" y2="860" stroke="#3d5a7d"/>
+      <line x1="910" y1="35" x2="910" y2="860" stroke="#3d5a7d"/>
+      <line x1="1080" y1="35" x2="1080" y2="860" stroke="#3d5a7d"/>
+
+      <!-- B0~B4 -->
+      <line x1="90" y1="80" x2="230" y2="80" stroke="#8fc8ff" stroke-width="2.8" marker-end="url(#arr2)"/>
+      <text x="95" y="70" fill="#a9cff9" font-size="11">B0/B1 AcceptTask("2")</text>
+      <line x1="230" y1="115" x2="390" y2="115" stroke="#8fc8ff" stroke-width="2.8" marker-end="url(#arr2)"/>
+      <text x="235" y="105" fill="#a9cff9" font-size="11">B2 转发</text>
+      <rect x="370" y="130" width="40" height="115" fill="#284567" stroke="#5f8dbc"/>
+      <text x="420" y="148" fill="#bcd7f6" font-size="11">B4 查definition</text>
+      <text x="420" y="165" fill="#bcd7f6" font-size="11">B6 查runtime</text>
+      <text x="420" y="182" fill="#bcd7f6" font-size="11">B8 创建runtime</text>
+      <text x="420" y="199" fill="#bcd7f6" font-size="11">B9 写字典</text>
+      <text x="420" y="216" fill="#bcd7f6" font-size="11">B10 MarkAccepted</text>
+      <text x="420" y="233" fill="#8de2af" font-size="11">B12 TasksChanged</text>
+
+      <line x1="390" y1="255" x2="560" y2="255" stroke="#8fc8ff" stroke-width="2.8" marker-end="url(#arr2)"/>
+      <text x="395" y="245" fill="#a9cff9" font-size="11">B10 调 runtime.MarkAccepted()</text>
+
+      <rect x="540" y="270" width="40" height="55" fill="#2b4b6e" stroke="#5f90c0"/>
+      <text x="590" y="290" fill="#bcd7f6" font-size="11">B11 Status=InProgress</text>
+      <text x="590" y="307" fill="#bcd7f6" font-size="11">记录AcceptUnixTime</text>
+
+      <line x1="390" y1="350" x2="730" y2="350" stroke="#8fc8ff" stroke-width="2.8" marker-end="url(#arr2)"/>
+      <text x="395" y="340" fill="#a9cff9" font-size="11">B12→B13 事件: TasksChanged</text>
+
+      <rect x="710" y="365" width="40" height="170" fill="#294562" stroke="#5f8db8"/>
+      <text x="760" y="385" fill="#bcd7f6" font-size="11">B14 BuildPanelItems</text>
+      <text x="760" y="402" fill="#bcd7f6" font-size="11">B18 Model.SetTasks</text>
+      <text x="760" y="419" fill="#bcd7f6" font-size="11">B22 RenderTaskList</text>
+      <text x="760" y="436" fill="#bcd7f6" font-size="11">B23 RefreshDetail</text>
+
+      <line x1="730" y1="455" x2="390" y2="455" stroke="#8fc8ff" stroke-width="2.8" marker-end="url(#arr2)"/>
+      <text x="522" y="445" fill="#a9cff9" font-size="11">B14 调 service.BuildPanelItems()</text>
+
+      <rect x="370" y="475" width="40" height="90" fill="#274465" stroke="#5f8ebf"/>
+      <text x="420" y="495" fill="#bcd7f6" font-size="11">B15 遍历runtime</text>
+      <text x="420" y="512" fill="#bcd7f6" font-size="11">B16 映射PanelItem</text>
+      <text x="420" y="529" fill="#bcd7f6" font-size="11">B17 return list</text>
+
+      <line x1="390" y1="575" x2="730" y2="575" stroke="#8fc8ff" stroke-width="2.8" marker-end="url(#arr2)"/>
+      <text x="510" y="565" fill="#a9cff9" font-size="11">B17 返回 items</text>
+
+      <line x1="730" y1="615" x2="910" y2="615" stroke="#8fc8ff" stroke-width="2.8" marker-end="url(#arr2)"/>
+      <text x="735" y="605" fill="#a9cff9" font-size="11">B18 Model.SetTasks(items)</text>
+
+      <rect x="890" y="630" width="40" height="120" fill="#2a4767" stroke="#5f8fbe"/>
+      <text x="940" y="650" fill="#bcd7f6" font-size="11">B19 清空+写入</text>
+      <text x="940" y="667" fill="#bcd7f6" font-size="11">B20 默认选中</text>
+      <text x="940" y="684" fill="#8ee2b0" font-size="11">B21 OnDataChanged</text>
+
+      <line x1="910" y1="760" x2="730" y2="760" stroke="#8fc8ff" stroke-width="2.8" marker-end="url(#arr2)"/>
+      <text x="742" y="750" fill="#a9cff9" font-size="11">B21 触发 Controller.OnModelDataChanged()</text>
+
+      <line x1="730" y1="800" x2="1080" y2="800" stroke="#8fc8ff" stroke-width="2.8" marker-end="url(#arr2)"/>
+      <text x="735" y="790" fill="#a9cff9" font-size="11">B22/B23 RenderTaskList + RenderTaskDetail</text>
+
+      <text x="1080" y="835" fill="#8ee2b0" font-size="13" text-anchor="middle">B24 面板展示完成</text>
+    </svg>
+  </div>
+
+  <h2>5. 关键“分支”也讲清楚（为什么有时不显示）</h2>
+  <div class="card">
+    <table>
+      <tr><th>分支点</th><th>条件</th><th>结果</th><th>你会看到什么</th></tr>
+      <tr>
+        <td>TaskService.AcceptTask 的 B4</td>
+        <td><code>_definitionByTaskId</code> 里没有 key="2"</td>
+        <td>直接 return false</td>
+        <td>任务面板不新增任何条目</td>
+      </tr>
+      <tr>
+        <td>TaskService.AcceptTask 的 B7</td>
+        <td>任务已 InProgress/Completed/Submitted</td>
+        <td>拒绝重复接取</td>
+        <td>看起来“点了没反应”</td>
+      </tr>
+      <tr>
+        <td>TaskPanelController 未注入 service</td>
+        <td><code>SetTaskService</code> 没被调用</td>
+        <td>OnInitialize 走 else 分支</td>
+        <td>列表空、详情空</td>
+      </tr>
+      <tr>
+        <td>View 预制体/Root 为空</td>
+        <td><code>TaskItemButtonPrefab</code> 或 <code>TaskListRoot</code> 未绑定</td>
+        <td>RenderTaskList early return</td>
+        <td>数据有但左侧无按钮</td>
+      </tr>
+    </table>
+  </div>
+
+  <h2>6. 把“每个类每个方法”映射成调用责任表</h2>
+  <div class="card">
+    <table>
+      <tr><th>类</th><th>方法</th><th>被谁调用</th><th>下一跳方法</th></tr>
+      <tr><td>GameMain</td><td><code>Start()</code></td><td>Unity生命周期</td><td><code>TaskService.Initialize</code> / <code>TaskManager.SetTaskService</code> / <code>TaskManager.AcceptTask</code></td></tr>
+      <tr><td>TaskManager</td><td><code>AcceptTask</code></td><td>GameMain/NPC脚本</td><td><code>TaskService.AcceptTask</code></td></tr>
+      <tr><td>TaskService</td><td><code>AcceptTask</code></td><td>TaskManager</td><td><code>TaskRuntime.MarkAccepted</code> + <code>TasksChanged</code></td></tr>
+      <tr><td>TaskRuntime</td><td><code>MarkAccepted</code></td><td>TaskService</td><td>返回 TaskService</td></tr>
+      <tr><td>TaskPanelController</td><td><code>OnTasksChanged</code></td><td>TaskService 事件</td><td><code>Model.SetTasks</code></td></tr>
+      <tr><td>TaskPanelModel</td><td><code>SetTasks</code></td><td>Controller</td><td><code>OnDataChanged</code> / <code>OnSelectedChanged</code> 事件</td></tr>
+      <tr><td>TaskPanelController</td><td><code>OnModelDataChanged</code></td><td>Model 事件</td><td><code>View.RenderTaskList</code> + <code>RefreshDetail</code></td></tr>
+      <tr><td>TaskPanelController</td><td><code>RefreshDetail</code></td><td>OnModelDataChanged/OnModelSelectedChanged</td><td><code>View.RenderTaskDetail</code></td></tr>
+      <tr><td>TaskPanelView</td><td><code>RenderTaskList</code></td><td>Controller</td><td>动态生成按钮 + 绑定 TaskItemClicked</td></tr>
+      <tr><td>TaskPanelView</td><td><code>RenderTaskDetail</code></td><td>Controller</td><td>更新右侧文本/提交按钮状态</td></tr>
+    </table>
+  </div>
+
+  <h2>7. 直接可用的“调试打点模板”</h2>
+  <div class="card">
+    <p>你可以按下列顺序加日志，验证每个箭头都走到了：</p>
+    <pre>// GameMain.Start
+Debug.Log("[Trace] A1 GameMain.Start");
+
+// TaskManager.AcceptTask
+Debug.Log($"[Trace] B1 TaskManager.AcceptTask taskId={taskId}");
+
+// TaskService.AcceptTask
+Debug.Log($"[Trace] B3 TaskService.AcceptTask taskId={taskId}");
+
+// TaskService.AcceptTask 成功后
+Debug.Log("[Trace] B12 TasksChanged invoke");
+
+// TaskPanelController.OnTasksChanged
+Debug.Log("[Trace] B13 Controller.OnTasksChanged");
+
+// TaskPanelModel.SetTasks
+Debug.Log($"[Trace] B19 Model.SetTasks count={_items.Count}");
+
+// TaskPanelView.RenderTaskList
+Debug.Log($"[Trace] B22 View.RenderTaskList count={items.Count}");
+
+// TaskPanelView.RenderTaskDetail
+Debug.Log($"[Trace] B23 View.RenderTaskDetail id={item.TaskId}");</pre>
+  </div>
+
+  <h2>8. 你当前项目最关键的两个细节提醒</h2>
+  <div class="card">
+    <ul>
+      <li><span class="warn">字符串 ID 一致性：</span><code>AcceptTask("2")</code> 必须匹配 SO 的 <code>taskId="2"</code>（不是数字2，不是"02"）。</li>
+      <li><span class="warn">状态显示逻辑：</span>提交后想显示“已完成”，需要在 <code>TaskPanelItem</code> 带上 <code>Status</code>，View按状态文本显示。</li>
+    </ul>
+    <p class="small">这份文档是基于你 2026-04-23 当前工程脚本生成，重点对齐你“要超级详细、一个箭头一个箭头”的要求。</p>
+  </div>
+</div>
+</body>
+</html>

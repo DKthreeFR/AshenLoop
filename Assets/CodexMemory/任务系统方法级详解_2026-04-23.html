@@ -1,0 +1,323 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>任务系统方法级详解</title>
+  <style>
+    :root{
+      --bg:#0d1117;
+      --card:#161b22;
+      --card2:#1f2632;
+      --line:#30363d;
+      --text:#e6edf3;
+      --sub:#9da7b3;
+      --ok:#3fb950;
+      --warn:#d29922;
+      --bad:#f85149;
+      --accent:#58a6ff;
+      --code:#0b0f14;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#0d1117,#111827);color:var(--text);font-family:"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.65}
+    .wrap{max-width:1200px;margin:0 auto;padding:24px}
+    h1{font-size:30px;margin:0 0 8px}
+    h2{font-size:22px;margin:28px 0 10px}
+    h3{font-size:18px;margin:20px 0 8px}
+    p,li{color:var(--sub)}
+    .card{background:rgba(22,27,34,.95);border:1px solid var(--line);border-radius:12px;padding:16px;margin:14px 0}
+    .file{display:inline-block;background:#0f1622;border:1px solid #334155;color:#b9d4ff;padding:2px 8px;border-radius:6px;font-family:Consolas,monospace;font-size:12px}
+    .ok{color:var(--ok)} .warn{color:var(--warn)} .bad{color:var(--bad)}
+    .kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .k{background:#101826;border:1px solid #334155;border-radius:8px;padding:8px;text-align:center;font-size:12px}
+    table{width:100%;border-collapse:collapse;margin-top:8px}
+    th,td{border:1px solid #374151;padding:8px 10px;vertical-align:top}
+    th{background:#111827;color:#dbeafe;text-align:left}
+    td code{color:#93c5fd}
+    pre{background:var(--code);border:1px solid #223044;border-radius:10px;padding:12px;overflow:auto;color:#c9e6ff;font-size:13px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media(max-width:960px){.grid,.kpi{grid-template-columns:1fr}}
+    .tip{border-left:3px solid var(--accent);padding-left:10px;color:#bcd0ea}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Task 系统方法级详解（结合你当前工程）</h1>
+  <p>文档目标：逐脚本、逐方法解释 <code>Assets/Scripts/Task</code> 与 <code>UI/Panels/TaskPanel</code> 如何协作；并给出你要的“左侧按钮切换右侧详情”落地方式。</p>
+
+  <div class="card">
+    <div class="kpi">
+      <div class="k">Task 定义层<br><strong>TaskData / TaskStatus</strong></div>
+      <div class="k">Task 运行层<br><strong>TaskRuntime / TaskService</strong></div>
+      <div class="k">UI 展示层<br><strong>TaskPanel MVC</strong></div>
+    </div>
+    <p class="tip">现在你的主干已经有了：<code>TaskService</code> + <code>TaskPanelController.SetTaskService(...)</code>。核心是把注入和事件订阅路径保持唯一。</p>
+  </div>
+
+  <h2>一、Task 文件夹每个脚本在干什么</h2>
+
+  <div class="card">
+    <h3>1) <span class="file">TaskData.cs</span></h3>
+    <p>这是<strong>任务配置</strong>（ScriptableObject）。设计师在 Inspector 填数据，运行时读取。</p>
+    <table>
+      <tr><th>字段</th><th>作用</th><th>示例</th></tr>
+      <tr><td><code>taskId</code></td><td>任务唯一标识，程序索引用</td><td><code>MAIN_001</code></td></tr>
+      <tr><td><code>taskName</code></td><td>任务标题，UI显示</td><td>清理狼群</td></tr>
+      <tr><td><code>desc</code></td><td>任务描述，右侧详情区显示</td><td>击杀森林入口狼群</td></tr>
+      <tr><td><code>targetCount</code></td><td>目标数量</td><td>10</td></tr>
+      <tr><td><code>targetType</code></td><td>进度事件类型（字符串）</td><td><code>Kill_Wolf</code></td></tr>
+      <tr><td><code>rewardGold</code></td><td>奖励</td><td>120</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>2) <span class="file">TaskStatus.cs</span></h3>
+    <p>这是任务生命周期枚举，决定任务当前所处阶段。</p>
+    <table>
+      <tr><th>状态</th><th>含义</th><th>典型进入时机</th></tr>
+      <tr><td><code>Locked</code></td><td>未解锁</td><td>有前置条件未满足</td></tr>
+      <tr><td><code>Available</code></td><td>可接取</td><td>初始化后可领取</td></tr>
+      <tr><td><code>InProgress</code></td><td>进行中</td><td>调用 <code>AcceptTask</code></td></tr>
+      <tr><td><code>Completed</code></td><td>达成目标待提交</td><td>进度达标</td></tr>
+      <tr><td><code>Submitted</code></td><td>已提交领奖</td><td>调用 <code>SubmitTask</code></td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>3) <span class="file">TaskRunTime.cs</span>（TaskRuntime）</h3>
+    <p>这是<strong>任务运行时数据</strong>，表示“当前存档里，这个任务现在进度多少”。</p>
+    <table>
+      <tr><th>成员</th><th>作用</th></tr>
+      <tr><td><code>TaskId</code></td><td>对应哪条 TaskData</td></tr>
+      <tr><td><code>Status</code></td><td>当前状态</td></tr>
+      <tr><td><code>CurrentCount / TargetCount</code></td><td>进度数据</td></tr>
+      <tr><td><code>IsTracked</code></td><td>是否追踪（用于UI高亮）</td></tr>
+      <tr><td><code>AcceptUnixTime / CompleteUnixTime</code></td><td>时间戳（后续做排序/统计）</td></tr>
+      <tr><td><code>IsFinished</code></td><td>便捷只读属性，判断是否达标</td></tr>
+    </table>
+
+    <h4>方法逐个解释</h4>
+    <table>
+      <tr><th>方法</th><th>输入</th><th>逻辑</th><th>输出/副作用</th></tr>
+      <tr>
+        <td><code>ApplyProgress(int amount)</code></td>
+        <td>本次增加量</td>
+        <td>
+          1) 只允许 <code>InProgress</code> 状态推进；<br/>
+          2) 忽略 <code>amount &lt;= 0</code>；<br/>
+          3) 进度累加并上限截断到 <code>TargetCount</code>；<br/>
+          4) 达标后切 <code>Completed</code> 并记录完成时间。
+        </td>
+        <td>修改 <code>CurrentCount/Status/CompleteUnixTime</code></td>
+      </tr>
+      <tr>
+        <td><code>MarkAccepted()</code></td>
+        <td>无</td>
+        <td>把状态切到 <code>InProgress</code>，记录接取时间。</td>
+        <td>修改 <code>Status/AcceptUnixTime</code></td>
+      </tr>
+      <tr>
+        <td><code>MarkSubmitted()</code></td>
+        <td>无</td>
+        <td>把状态切到 <code>Submitted</code>。</td>
+        <td>修改 <code>Status</code></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>4) <span class="file">TaskService.cs</span>（核心）</h3>
+    <p>这是任务系统“大脑”。你的任务规则都应该最终集中在这里，而不是散在 View 或 Controller。</p>
+
+    <h4>内部数据结构</h4>
+    <table>
+      <tr><th>字段</th><th>含义</th><th>为什么要这样</th></tr>
+      <tr><td><code>_definitionByTaskId</code></td><td><code>taskId -> TaskData</code></td><td>快速查配置</td></tr>
+      <tr><td><code>_runtimeByTaskId</code></td><td><code>taskId -> TaskRuntime</code></td><td>快速改进度/状态</td></tr>
+      <tr><td><code>_taskIdsByTargetType</code></td><td><code>targetType -> taskId 列表</code></td><td>收到事件后快速定位受影响任务</td></tr>
+      <tr><td><code>TasksChanged</code></td><td>统一刷新事件</td><td>让UI不用知道业务细节</td></tr>
+    </table>
+
+    <h4>方法逐个解释</h4>
+    <table>
+      <tr><th>方法</th><th>你在什么时候调用</th><th>核心逻辑</th><th>副作用</th></tr>
+      <tr>
+        <td><code>Initialize(IList&lt;TaskData&gt; definitions)</code></td>
+        <td>进入 Game 场景时调用一次</td>
+        <td>
+          清空旧数据 -> 校验每个 TaskData -> 建立三张表；<br/>
+          每个任务默认 runtime 状态 <code>Available</code>，进度0。
+        </td>
+        <td>触发 <code>TasksChanged</code></td>
+      </tr>
+      <tr>
+        <td><code>AcceptTask(string taskId)</code></td>
+        <td>玩家点击“接取任务”按钮</td>
+        <td>仅当状态是 <code>Available</code> 时才接取，调用 <code>runtime.MarkAccepted()</code></td>
+        <td>触发 <code>TasksChanged</code></td>
+      </tr>
+      <tr>
+        <td><code>SubmitTask(string taskId)</code></td>
+        <td>玩家点击“提交任务”按钮</td>
+        <td>仅当状态是 <code>Completed</code> 时提交，调用 <code>runtime.MarkSubmitted()</code></td>
+        <td>触发 <code>TasksChanged</code></td>
+      </tr>
+      <tr>
+        <td><code>NotifyTaskProgress(string targetType, int amount)</code></td>
+        <td>怪物死亡/采集成功时</td>
+        <td>
+          用 <code>targetType</code> 查反向索引 -> 遍历相关任务 -> 调 <code>runtime.ApplyProgress</code>；<br/>
+          只要有变化就发事件。
+        </td>
+        <td>可能触发状态变化（InProgress -> Completed）并刷新UI</td>
+      </tr>
+      <tr>
+        <td><code>BuildPanelItems()</code></td>
+        <td>Controller 刷新面板时</td>
+        <td>把 Runtime + Definition 映射成 UI 可用数据 <code>TaskPanelItem</code></td>
+        <td>返回列表（不改业务状态）</td>
+      </tr>
+      <tr>
+        <td><code>TryGetRuntime(...)</code></td>
+        <td>调试或详情查询</td>
+        <td>字典 TryGet 封装</td>
+        <td>无</td>
+      </tr>
+      <tr>
+        <td><code>SetTracked(taskId, tracked)</code></td>
+        <td>任务追踪开关</td>
+        <td>更新 runtime 的 <code>IsTracked</code></td>
+        <td>触发 <code>TasksChanged</code></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>5) <span class="file">TaskManager.cs</span>（当前是“转发器”）</h3>
+    <p>它现在不负责任务规则，主要负责两件事：</p>
+    <ul>
+      <li><code>IsOpenTaskPanel</code>：给 <code>GameMain</code> 鼠标锁定逻辑用。</li>
+      <li><code>NotifyTaskProgress(...)</code>：转发到 <code>TaskService.NotifyTaskProgress(...)</code>。</li>
+    </ul>
+    <p class="warn">你文件里还有 <code>OnTaskProgressChanged</code> 事件，但目前没有实际使用，可保留作以后扩展，或删掉减少混淆。</p>
+  </div>
+
+  <h2>二、TaskPanel MVC 每个方法怎么工作</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3><span class="file">TaskPanelController.cs</span></h3>
+      <table>
+        <tr><th>方法</th><th>作用</th></tr>
+        <tr><td><code>SetTaskService</code></td><td>注入业务层，建立 Controller 与 Service 的连接。</td></tr>
+        <tr><td><code>OnInitialize</code></td><td>订阅关闭按钮；订阅 <code>TasksChanged</code>；初始化一次 Model 数据。</td></tr>
+        <tr><td><code>OnDispose</code></td><td>退订按钮和事件，防止跨场景残留监听。</td></tr>
+        <tr><td><code>CloseClicked</code></td><td>关闭面板 + 把 <code>IsOpenTaskPanel</code> 设回 false。</td></tr>
+        <tr><td><code>OnTasksChanged</code></td><td>每次业务数据变化时，重新构建并推给 Model。</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3><span class="file">TaskPanelModel.cs</span></h3>
+      <table>
+        <tr><th>方法/字段</th><th>作用</th></tr>
+        <tr><td><code>Items</code></td><td>任务列表只读输出给 View。</td></tr>
+        <tr><td><code>SetTasks</code></td><td>整批替换任务列表并触发 <code>OnDataChanged</code>。</td></tr>
+        <tr><td><code>SelectTask</code></td><td>设置当前选中任务ID，触发 <code>OnSelectedChanged</code>。</td></tr>
+        <tr><td><code>UpsertTaskProgress</code></td><td>按 ID 更新单条进度（当前你可以继续保留）。</td></tr>
+        <tr><td><code>Clear</code></td><td>清空列表。</td></tr>
+      </table>
+      <p class="tip">你的“左侧点击切右侧”核心就靠 <code>SelectedTaskId + OnSelectedChanged</code>。</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="file">TaskPanelView.cs</span></h3>
+    <p>当前只做了关闭按钮和解锁鼠标。下一步你需要给它加：</p>
+    <ol>
+      <li>左侧列表容器（Scroll + Content）</li>
+      <li>任务按钮 prefab（含标题/进度文本）</li>
+      <li>右侧详情文本（标题、描述、进度、状态、奖励）</li>
+      <li>可选：追踪按钮、提交按钮</li>
+    </ol>
+  </div>
+
+  <h2>三、整套系统和 UI 配合起来的运行时逻辑</h2>
+
+  <div class="card">
+    <pre>GameMain.Start
+  -> new TaskService + Initialize(taskDefinitions)
+  -> taskPanelController.SetTaskService(taskService)
+  -> TaskManager.SetTaskService(taskService)
+  -> UIManager.BindController(TaskPanel, taskPanelController, taskPanelModel, false)
+
+玩家点击游戏内“任务面板”按钮（GamePanelController）
+  -> UIManager.OpenPanel(TaskPanel)
+  -> TaskManager.IsOpenTaskPanel = true
+
+任务进度事件（任意玩法脚本）
+  -> TaskManager.NotifyTaskProgress("Kill_Wolf", 1)
+  -> TaskService.NotifyTaskProgress(...)
+  -> TaskService.TasksChanged
+  -> TaskPanelController.OnTasksChanged
+  -> Model.SetTasks(service.BuildPanelItems())
+  -> View 重绘左侧与右侧</pre>
+  </div>
+
+  <h2>四、你这个面板“左侧按钮切换右侧详情”怎么下手（一步步）</h2>
+
+  <div class="card">
+    <h3>Step 1：View 增加事件</h3>
+    <pre>public event Action&lt;string&gt; TaskItemClicked;
+
+// 创建每个按钮时，把 taskId 绑定进去
+button.onClick.AddListener(() =&gt; TaskItemClicked?.Invoke(taskId));</pre>
+
+    <h3>Step 2：Controller 监听点击并写入 Model</h3>
+    <pre>// OnInitialize
+View.TaskItemClicked += OnTaskItemClicked;
+Model.OnDataChanged += RenderListAndDetail;
+Model.OnSelectedChanged += RenderDetailOnly;
+
+private void OnTaskItemClicked(string taskId)
+{
+    Model.SelectTask(taskId);
+}</pre>
+
+    <h3>Step 3：默认选中第一条</h3>
+    <pre>private void OnTasksChanged()
+{
+    var items = _taskService.BuildPanelItems();
+    Model.SetTasks(items);
+    if (items.Count &gt; 0 && string.IsNullOrEmpty(Model.SelectedTaskId))
+        Model.SelectTask(items[0].TaskId);
+}</pre>
+
+    <h3>Step 4：右侧详情渲染</h3>
+    <pre>// 从 Model.Items 里按 SelectedTaskId 找到 item
+// 把 Title/Desc/CurrentCount/TargetCount/CanSubmit 显示到右侧</pre>
+  </div>
+
+  <h2>五、当前代码里你要特别注意的 4 个点</h2>
+  <div class="card">
+    <ul>
+      <li><span class="warn">编码乱码</span>：注释多处乱码，建议统一 UTF-8，避免后续维护困难。</li>
+      <li><span class="warn">TaskManager.Instance 空引用风险</span>：<code>GameMain.LockMouse</code> 依赖它，确保场景里始终有 TaskManager。</li>
+      <li><span class="warn">TaskPanelView 目前还没“列表和详情”控件逻辑</span>：这是你现在“感觉不知道怎么用”的直接原因。</li>
+      <li><span class="ok">TaskService 方向是对的</span>：后续 JSON 存档、前置任务链都应在它里扩展。</li>
+    </ul>
+  </div>
+
+  <h2>六、你可以立刻验证的最小测试</h2>
+  <div class="card">
+    <ol>
+      <li>进入游戏后打开 TaskPanel：确认左侧能生成任务按钮。</li>
+      <li>点击左侧任意按钮：右侧详情切换。</li>
+      <li>在控制台手动调用：<code>TaskManager.Instance.NotifyTaskProgress("Kill_Wolf", 1)</code>，看进度是否刷新。</li>
+      <li>关闭面板再打开：确认选中状态和鼠标锁定逻辑符合预期。</li>
+    </ol>
+  </div>
+
+</div>
+</body>
+</html>

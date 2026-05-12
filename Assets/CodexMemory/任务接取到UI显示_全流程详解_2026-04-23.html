@@ -1,0 +1,385 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>任务接取到UI显示：全流程详解</title>
+  <style>
+    :root{
+      --bg:#0b1020;
+      --bg2:#121b2f;
+      --card:#141b2a;
+      --line:#2b3a55;
+      --text:#e6edff;
+      --sub:#a7b6d1;
+      --ok:#44d17a;
+      --warn:#ffbc55;
+      --bad:#ff6b6b;
+      --accent:#6fb1ff;
+      --code:#0a0f1a;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;color:var(--text);font-family:"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:radial-gradient(1200px 500px at 10% -5%,#213456 0%,#0b1020 55%) fixed, linear-gradient(180deg,#0b1020,#111a2b)}
+    .wrap{max-width:1250px;margin:0 auto;padding:26px 20px 50px}
+    h1{font-size:30px;margin:0 0 6px}
+    h2{font-size:22px;margin:30px 0 10px}
+    h3{font-size:18px;margin:18px 0 8px}
+    p,li{color:var(--sub);line-height:1.68}
+    .card{background:rgba(20,27,42,.92);border:1px solid var(--line);border-radius:14px;padding:16px;margin:14px 0;box-shadow:0 10px 28px rgba(0,0,0,.25)}
+    .file{display:inline-block;background:#0f1727;border:1px solid #334766;color:#c7ddff;padding:2px 8px;border-radius:6px;font-family:Consolas,monospace;font-size:12px}
+    .kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+    .kpi .k{background:#10192b;border:1px solid #324867;border-radius:8px;padding:8px;text-align:center;font-size:12px;color:#b4c8ea}
+    .ok{color:var(--ok)} .warn{color:var(--warn)} .bad{color:var(--bad)}
+    table{width:100%;border-collapse:collapse;margin-top:8px}
+    th,td{border:1px solid #324763;padding:8px 10px;vertical-align:top}
+    th{background:#0f182a;color:#d8e7ff;text-align:left}
+    pre{background:var(--code);border:1px solid #21354f;border-radius:10px;padding:12px;overflow:auto;color:#c9e6ff;font-size:13px}
+    .tip{border-left:3px solid var(--accent);padding-left:10px;color:#c2d7f5}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    @media(max-width:980px){.grid,.kpi{grid-template-columns:1fr}}
+    code{color:#9fd0ff}
+    .small{font-size:12px;color:#8ea1c0}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Task 系统全流程说明（以 <code>TaskManager.Instance.AcceptTask("2")</code> 为主线）</h1>
+  <p>目标：把你当前工程里 <code>Task</code> + <code>TaskPanel</code> 的每个脚本、每个方法如何协同工作讲清楚，并说明最终如何显示到 UI 面板。</p>
+
+  <div class="card">
+    <div class="kpi">
+      <div class="k">任务定义层<br><strong>TaskData</strong></div>
+      <div class="k">任务运行层<br><strong>TaskRuntime + TaskStatus</strong></div>
+      <div class="k">任务服务层<br><strong>TaskService + TaskManager</strong></div>
+      <div class="k">任务UI层<br><strong>TaskPanel MVC</strong></div>
+    </div>
+    <p class="tip">你现在的调用入口是 <code>GameMain.Start -&gt; TaskManager.Instance.AcceptTask("2")</code>。这条链路能跑通的前提是：<code>TaskData.taskId</code> 中必须存在字符串 <code>"2"</code>。</p>
+  </div>
+
+  <h2>一、配图 1：整体架构图（谁负责什么）</h2>
+  <div class="card">
+    <svg viewBox="0 0 1180 350" width="100%" role="img" aria-label="任务系统架构图">
+      <defs>
+        <marker id="arr" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto-start-reverse">
+          <path d="M0,0 L12,6 L0,12 Z" fill="#7cb8ff"/>
+        </marker>
+      </defs>
+      <rect x="20" y="45" width="220" height="110" rx="12" fill="#1a2640" stroke="#4f78a8"/>
+      <text x="130" y="80" fill="#e8f1ff" text-anchor="middle" font-size="16">TaskData (SO)</text>
+      <text x="130" y="103" fill="#adc2df" text-anchor="middle" font-size="12">配置：id/名称/描述/目标/奖励</text>
+
+      <rect x="280" y="45" width="220" height="110" rx="12" fill="#1e2b45" stroke="#5c83b5"/>
+      <text x="390" y="80" fill="#e8f1ff" text-anchor="middle" font-size="16">TaskService</text>
+      <text x="390" y="103" fill="#adc2df" text-anchor="middle" font-size="12">Initialize / Accept / Submit / Notify</text>
+
+      <rect x="540" y="45" width="220" height="110" rx="12" fill="#1c2a41" stroke="#5982b2"/>
+      <text x="650" y="80" fill="#e8f1ff" text-anchor="middle" font-size="16">TaskRuntime</text>
+      <text x="650" y="103" fill="#adc2df" text-anchor="middle" font-size="12">状态/进度/追踪/时间</text>
+
+      <rect x="800" y="45" width="360" height="110" rx="12" fill="#182436" stroke="#5679a6"/>
+      <text x="980" y="80" fill="#e8f1ff" text-anchor="middle" font-size="16">TaskPanel MVC</text>
+      <text x="980" y="103" fill="#adc2df" text-anchor="middle" font-size="12">Controller 订阅 TasksChanged → Model → View渲染</text>
+
+      <rect x="280" y="205" width="220" height="105" rx="12" fill="#1c2333" stroke="#4f6a8e"/>
+      <text x="390" y="238" fill="#e8f1ff" text-anchor="middle" font-size="16">TaskManager</text>
+      <text x="390" y="260" fill="#adc2df" text-anchor="middle" font-size="12">转发入口</text>
+      <text x="390" y="279" fill="#adc2df" text-anchor="middle" font-size="12">AcceptTask / NotifyTaskProgress</text>
+
+      <line x1="240" y1="100" x2="280" y2="100" stroke="#7cb8ff" stroke-width="3" marker-end="url(#arr)"/>
+      <line x1="500" y1="100" x2="540" y2="100" stroke="#7cb8ff" stroke-width="3" marker-end="url(#arr)"/>
+      <line x1="760" y1="100" x2="800" y2="100" stroke="#7cb8ff" stroke-width="3" marker-end="url(#arr)"/>
+      <line x1="390" y1="205" x2="390" y2="155" stroke="#7cb8ff" stroke-width="3" marker-end="url(#arr)"/>
+      <text x="410" y="182" fill="#9ec4ff" font-size="12">SetTaskService 注入</text>
+    </svg>
+  </div>
+
+  <h2>二、配图 2：以 AcceptTask("2") 为主线的时序图</h2>
+  <div class="card">
+    <svg viewBox="0 0 1180 440" width="100%" role="img" aria-label="AcceptTask 时序图">
+      <defs>
+        <marker id="arr2" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto-start-reverse">
+          <path d="M0,0 L12,6 L0,12 Z" fill="#8ec5ff"/>
+        </marker>
+      </defs>
+      <text x="120" y="28" fill="#dbeaff" font-size="14">GameMain</text>
+      <text x="300" y="28" fill="#dbeaff" font-size="14">TaskManager</text>
+      <text x="500" y="28" fill="#dbeaff" font-size="14">TaskService</text>
+      <text x="700" y="28" fill="#dbeaff" font-size="14">TaskPanelController</text>
+      <text x="930" y="28" fill="#dbeaff" font-size="14">TaskPanelModel/View</text>
+      <line x1="120" y1="35" x2="120" y2="410" stroke="#3f5b80"/>
+      <line x1="300" y1="35" x2="300" y2="410" stroke="#3f5b80"/>
+      <line x1="500" y1="35" x2="500" y2="410" stroke="#3f5b80"/>
+      <line x1="700" y1="35" x2="700" y2="410" stroke="#3f5b80"/>
+      <line x1="930" y1="35" x2="930" y2="410" stroke="#3f5b80"/>
+
+      <line x1="120" y1="80" x2="500" y2="80" stroke="#8ec5ff" stroke-width="3" marker-end="url(#arr2)"/>
+      <text x="230" y="70" fill="#9ec6f7" font-size="12">Start: Initialize(taskDefinitions)</text>
+
+      <line x1="120" y1="120" x2="300" y2="120" stroke="#8ec5ff" stroke-width="3" marker-end="url(#arr2)"/>
+      <text x="145" y="110" fill="#9ec6f7" font-size="12">AcceptTask("2")</text>
+
+      <line x1="300" y1="160" x2="500" y2="160" stroke="#8ec5ff" stroke-width="3" marker-end="url(#arr2)"/>
+      <text x="328" y="150" fill="#9ec6f7" font-size="12">转发 AcceptTask("2")</text>
+
+      <rect x="470" y="180" width="60" height="82" fill="#254164" stroke="#5a85b5"/>
+      <text x="540" y="206" fill="#bcd8f8" font-size="12">1) 查定义字典</text>
+      <text x="540" y="224" fill="#bcd8f8" font-size="12">2) 不在runtime则创建</text>
+      <text x="540" y="242" fill="#bcd8f8" font-size="12">3) MarkAccepted()</text>
+      <text x="540" y="260" fill="#8ee0aa" font-size="12">4) 触发 TasksChanged</text>
+
+      <line x1="500" y1="300" x2="700" y2="300" stroke="#8ec5ff" stroke-width="3" marker-end="url(#arr2)"/>
+      <text x="528" y="290" fill="#9ec6f7" font-size="12">TasksChanged event</text>
+
+      <line x1="700" y1="338" x2="930" y2="338" stroke="#8ec5ff" stroke-width="3" marker-end="url(#arr2)"/>
+      <text x="720" y="328" fill="#9ec6f7" font-size="12">Model.SetTasks + View.Render</text>
+
+      <text x="930" y="372" fill="#8ee0aa" font-size="13" text-anchor="middle">面板出现“任务2”，并显示详情</text>
+    </svg>
+  </div>
+
+  <h2>三、Task 文件夹：每个脚本每个方法详细解释</h2>
+
+  <div class="card">
+    <h3><span class="file">TaskData.cs</span>（任务定义）</h3>
+    <table>
+      <tr><th>成员</th><th>作用</th><th>在流程中的位置</th></tr>
+      <tr><td><code>taskId</code></td><td>任务唯一标识（必须唯一）</td><td><code>AcceptTask("2")</code> 就是按这个匹配</td></tr>
+      <tr><td><code>taskName</code></td><td>任务标题</td><td>给左侧按钮和右侧详情显示</td></tr>
+      <tr><td><code>desc</code></td><td>任务描述</td><td>右侧详情描述文本</td></tr>
+      <tr><td><code>targetCount</code></td><td>目标数量</td><td>Runtime 初始化时赋值给 <code>TargetCount</code></td></tr>
+      <tr><td><code>targetType</code></td><td>进度事件类型</td><td><code>NotifyTaskProgress</code> 用它定位任务</td></tr>
+      <tr><td><code>rewardGold</code></td><td>奖励值</td><td>后续提交发奖使用</td></tr>
+    </table>
+    <p class="warn">关键：<code>taskId</code> 不能重复、不能空。否则在 Service 初始化时会被跳过。</p>
+  </div>
+
+  <div class="card">
+    <h3><span class="file">TaskStatus.cs</span>（任务状态机）</h3>
+    <table>
+      <tr><th>状态</th><th>语义</th><th>谁触发切换</th></tr>
+      <tr><td><code>Locked</code></td><td>未解锁</td><td>后续前置任务链逻辑</td></tr>
+      <tr><td><code>Available</code></td><td>可接取</td><td>Initialize / runtime初建</td></tr>
+      <tr><td><code>InProgress</code></td><td>进行中</td><td><code>MarkAccepted()</code></td></tr>
+      <tr><td><code>Completed</code></td><td>可提交</td><td><code>ApplyProgress</code> 达标后</td></tr>
+      <tr><td><code>Submitted</code></td><td>已提交</td><td><code>SubmitTask</code></td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3><span class="file">TaskRunTime.cs</span>（运行态）</h3>
+    <p>这是“玩家当前任务进度”的真实存储，不是配置。</p>
+    <table>
+      <tr><th>方法</th><th>入参</th><th>做了什么</th><th>返回</th></tr>
+      <tr>
+        <td><code>ApplyProgress(int amount)</code></td>
+        <td>本次增量</td>
+        <td>
+          1) 状态必须是 <code>InProgress</code>；<br/>
+          2) amount 必须 > 0；<br/>
+          3) 累加并不超过目标；<br/>
+          4) 达标后改为 <code>Completed</code>。
+        </td>
+        <td>无（内部改字段）</td>
+      </tr>
+      <tr>
+        <td><code>MarkAccepted()</code></td>
+        <td>无</td>
+        <td>把状态改到 <code>InProgress</code> 并记录时间。</td>
+        <td>无</td>
+      </tr>
+      <tr>
+        <td><code>MarkSubmitted()</code></td>
+        <td>无</td>
+        <td>把状态改到 <code>Submitted</code>。</td>
+        <td>无</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3><span class="file">TaskService.cs</span>（核心业务层）</h3>
+    <p>你现在的任务系统“是否正确运行”，几乎都由这个类决定。</p>
+
+    <h4>字段解释</h4>
+    <table>
+      <tr><th>字段</th><th>含义</th><th>为什么要有</th></tr>
+      <tr><td><code>_definitionByTaskId</code></td><td>定义字典</td><td>按 id O(1) 查任务定义</td></tr>
+      <tr><td><code>_runtimeByTaskId</code></td><td>运行态字典</td><td>按 id O(1) 改状态/进度</td></tr>
+      <tr><td><code>_taskIdsByTargetType</code></td><td>反向索引</td><td>进度事件按类型快速命中任务</td></tr>
+      <tr><td><code>TasksChanged</code></td><td>刷新事件</td><td>通知 UI 重绘</td></tr>
+    </table>
+
+    <h4>方法解释（逐个）</h4>
+    <table>
+      <tr><th>方法</th><th>什么时候调</th><th>内部步骤</th><th>关键注意</th></tr>
+      <tr>
+        <td><code>Initialize(definitions)</code></td>
+        <td>GameMain.Start</td>
+        <td>
+          清三张表 -> 遍历 definitions -> 校验 id -> 入定义字典；<br/>
+          你现在注释掉了“默认创建 runtime”，改成“动态接任务时创建”。
+        </td>
+        <td>会打印：<code>definitions=?, runtime=?</code>，目前 runtime 初始是 0。</td>
+      </tr>
+      <tr>
+        <td><code>AcceptTask(taskId)</code></td>
+        <td>NPC对话/你的测试语句</td>
+        <td>
+          1) 先查定义是否存在；<br/>
+          2) 若 runtime 不存在则创建；<br/>
+          3) 调 <code>MarkAccepted()</code>；<br/>
+          4) 触发 <code>TasksChanged</code>。
+        </td>
+        <td><code>taskId</code> 必须和 SO 的 <code>taskId</code> 完全一致（包括字符串数字）。</td>
+      </tr>
+      <tr>
+        <td><code>SubmitTask(taskId)</code></td>
+        <td>点“提交”按钮</td>
+        <td>仅当状态是 <code>Completed</code> 才能提交，随后发刷新事件。</td>
+        <td>你当前 UI 的提交按钮可用状态来自 <code>CanSubmit</code>。</td>
+      </tr>
+      <tr>
+        <td><code>NotifyTaskProgress(targetType, amount)</code></td>
+        <td>击杀/采集等事件</td>
+        <td>
+          通过 <code>targetType</code> 查到受影响任务 -> 逐个 <code>ApplyProgress</code> -> 有变化就发事件。
+        </td>
+        <td>未接取的任务不在 runtime 字典，不会被推进。</td>
+      </tr>
+      <tr>
+        <td><code>BuildPanelItems()</code></td>
+        <td>Controller 刷 UI</td>
+        <td>把 runtime+definition 映射成 <code>TaskPanelItem</code> 列表供 UI 使用。</td>
+        <td>只显示 runtime 里有的任务，即“已接取任务”。</td>
+      </tr>
+      <tr>
+        <td><code>TryGetRuntime</code></td>
+        <td>调试/详情查询</td>
+        <td>TryGet 封装。</td>
+        <td>只读查询。</td>
+      </tr>
+      <tr>
+        <td><code>SetTracked</code></td>
+        <td>追踪按钮</td>
+        <td>改 <code>IsTracked</code> 并刷新。</td>
+        <td>后续可接小地图引导。</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3><span class="file">TaskManager.cs</span>（转发层）</h3>
+    <table>
+      <tr><th>方法</th><th>作用</th><th>在这条主线里的角色</th></tr>
+      <tr><td><code>SetTaskService</code></td><td>注入 service</td><td>让 TaskManager 能把调用转给 TaskService</td></tr>
+      <tr><td><code>NotifyTaskProgress</code></td><td>转发进度</td><td>游戏逻辑统一入口</td></tr>
+      <tr><td><code>AcceptTask</code></td><td>转发接任务</td><td>你的 <code>AcceptTask("2")</code> 就走这里</td></tr>
+      <tr><td><code>Awake</code></td><td>单例初始化</td><td>保障 <code>TaskManager.Instance</code> 可用</td></tr>
+    </table>
+  </div>
+
+  <h2>四、TaskPanel 文件夹：每个脚本每个方法详细解释</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3><span class="file">TaskPanelModel.cs</span></h3>
+      <table>
+        <tr><th>成员/方法</th><th>作用</th></tr>
+        <tr><td><code>Items</code></td><td>当前列表快照（只读暴露给View）</td></tr>
+        <tr><td><code>SelectedTaskId</code></td><td>当前选中任务id（右侧详情依据）</td></tr>
+        <tr><td><code>OnDataChanged</code></td><td>列表变了（重渲染左侧+详情）</td></tr>
+        <tr><td><code>OnSelectedChanged</code></td><td>选中项变了（切右侧详情）</td></tr>
+        <tr><td><code>SelectTask</code></td><td>设置选中任务</td></tr>
+        <tr><td><code>SetTasks</code></td><td>整批替换任务列表；首次默认选第一条</td></tr>
+        <tr><td><code>TryGetSelectedItem</code></td><td>取当前选中任务的完整数据显示详情</td></tr>
+        <tr><td><code>Clear</code></td><td>清空模型数据</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3><span class="file">TaskPanelView.cs</span></h3>
+      <table>
+        <tr><th>方法</th><th>作用</th></tr>
+        <tr><td><code>Bind/Unbind</code></td><td>挂接/卸载按钮监听，防止脏事件</td></tr>
+        <tr><td><code>RenderTaskList</code></td><td>动态创建左侧按钮，显示标题+进度，绑定点击事件</td></tr>
+        <tr><td><code>RenderTaskDetail</code></td><td>右侧详情区显示名称/描述/进度/状态</td></tr>
+        <tr><td><code>ClearTaskDetail</code></td><td>清空详情</td></tr>
+        <tr><td><code>ClearTaskButtons</code></td><td>销毁旧按钮，避免重复堆积</td></tr>
+        <tr><td><code>TaskItemClicked</code></td><td>把“点了哪个任务”通知 Controller</td></tr>
+      </table>
+      <p class="warn">你当前同时有 <code>RenderTaskList</code> 和 <code>RebuildTaskButtons</code>，功能重叠。建议只保留一个，避免重复维护。</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="file">TaskPanelController.cs</span></h3>
+    <table>
+      <tr><th>方法</th><th>作用</th><th>关键点</th></tr>
+      <tr><td><code>SetTaskService</code></td><td>注入业务层</td><td>没有它就不会有任务数据</td></tr>
+      <tr><td><code>OnInitialize</code></td><td>订阅 View / Model / Service 事件并初始化 UI</td><td>会先 <code>Model.SetTasks(service.BuildPanelItems())</code></td></tr>
+      <tr><td><code>OnDispose</code></td><td>统一退订</td><td>避免切场景后重复监听</td></tr>
+      <tr><td><code>OnTasksChanged</code></td><td>收到 service 刷新，重建 model</td><td>数据入口统一点</td></tr>
+      <tr><td><code>OnModelDataChanged</code></td><td>刷新左侧列表并更新详情</td><td>调用 <code>View.RenderTaskList</code> + <code>RefreshDetail</code></td></tr>
+      <tr><td><code>OnModelSelectedChanged</code></td><td>用户切换选中项后刷新详情</td><td>右侧详情切换核心</td></tr>
+      <tr><td><code>OnTaskItemClicked</code></td><td>处理左侧点击</td><td><code>Model.SelectTask(taskId)</code></td></tr>
+      <tr><td><code>OnSubmitClicked</code></td><td>提交任务</td><td>调用 <code>_taskService.SubmitTask</code></td></tr>
+      <tr><td><code>CloseClicked</code></td><td>关面板并恢复鼠标锁定逻辑标记</td><td>设置 <code>TaskManager.IsOpenTaskPanel=false</code></td></tr>
+    </table>
+  </div>
+
+  <h2>五、配图 3：最终显示到 UI 的渲染过程</h2>
+  <div class="card">
+    <svg viewBox="0 0 1180 330" width="100%" role="img" aria-label="UI渲染流程图">
+      <defs><marker id="arr3" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto-start-reverse"><path d="M0,0 L12,6 L0,12 Z" fill="#90c6ff"/></marker></defs>
+      <rect x="20" y="120" width="220" height="80" rx="10" fill="#1f2c44" stroke="#5a84b5"/>
+      <text x="130" y="154" fill="#e8f1ff" text-anchor="middle" font-size="15">BuildPanelItems()</text>
+      <text x="130" y="174" fill="#aac0df" text-anchor="middle" font-size="12">TaskService 输出 UI 列表</text>
+
+      <rect x="280" y="120" width="220" height="80" rx="10" fill="#1d2a40" stroke="#567fae"/>
+      <text x="390" y="154" fill="#e8f1ff" text-anchor="middle" font-size="15">Model.SetTasks()</text>
+      <text x="390" y="174" fill="#aac0df" text-anchor="middle" font-size="12">保存Items + 默认选中</text>
+
+      <rect x="540" y="120" width="220" height="80" rx="10" fill="#1b283a" stroke="#5078a6"/>
+      <text x="650" y="154" fill="#e8f1ff" text-anchor="middle" font-size="15">OnDataChanged</text>
+      <text x="650" y="174" fill="#aac0df" text-anchor="middle" font-size="12">Controller 接收模型变化</text>
+
+      <rect x="800" y="60" width="340" height="80" rx="10" fill="#1a2a3a" stroke="#4e83a8"/>
+      <text x="970" y="94" fill="#e8f1ff" text-anchor="middle" font-size="15">View.RenderTaskList(...)</text>
+      <text x="970" y="114" fill="#aac0df" text-anchor="middle" font-size="12">左侧动态按钮（标题+进度）</text>
+
+      <rect x="800" y="190" width="340" height="80" rx="10" fill="#1f2638" stroke="#4f78a4"/>
+      <text x="970" y="224" fill="#e8f1ff" text-anchor="middle" font-size="15">View.RenderTaskDetail(...)</text>
+      <text x="970" y="244" fill="#aac0df" text-anchor="middle" font-size="12">右侧详情（名称/描述/状态）</text>
+
+      <line x1="240" y1="160" x2="280" y2="160" stroke="#90c6ff" stroke-width="3" marker-end="url(#arr3)"/>
+      <line x1="500" y1="160" x2="540" y2="160" stroke="#90c6ff" stroke-width="3" marker-end="url(#arr3)"/>
+      <line x1="760" y1="160" x2="800" y2="100" stroke="#90c6ff" stroke-width="3" marker-end="url(#arr3)"/>
+      <line x1="760" y1="160" x2="800" y2="230" stroke="#90c6ff" stroke-width="3" marker-end="url(#arr3)"/>
+    </svg>
+  </div>
+
+  <h2>六、你现在这句 AcceptTask("2") 的实战检查清单</h2>
+  <div class="card">
+    <ol>
+      <li><strong>SO检查：</strong>SecondTask.asset 的 <code>taskId</code> 必须正好是字符串 <code>2</code>。</li>
+      <li><strong>注入检查：</strong><code>GameMain.Start</code> 里已执行 <code>TaskManager.Instance.SetTaskService(_taskService)</code>。</li>
+      <li><strong>绑定检查：</strong><code>UIManager.BindController(TaskPanel,...)</code> 已执行。</li>
+      <li><strong>显示检查：</strong>打开 TaskPanel 时左侧应出现“任务2”按钮。</li>
+      <li><strong>日志检查：</strong>Initialize 打印 <code>definitions=2, runtime=0</code>；调用 Accept 后应触发 UI 刷新。</li>
+    </ol>
+    <p class="tip">你的设计现在已经是“动态接任务显示”的正确方向：初始化不创建 runtime，接任务时才创建并显示。</p>
+  </div>
+
+  <h2>七、建议的下一步（你会更顺）</h2>
+  <div class="card">
+    <ol>
+      <li>把 <code>TaskItemButtonPrefab</code> 改成专用“任务条目预制体”（别复用普通 Button）。</li>
+      <li>保留一个列表渲染方法（建议保留 <code>RenderTaskList</code>，删 <code>RebuildTaskButtons</code>）。</li>
+      <li>新增“接取成功提示”与“重复接取提示”。</li>
+      <li>下一步再加：JSON 存档 + 前置任务链（Locked -&gt; Available）。</li>
+    </ol>
+    <p class="small">文档依据：你当前项目 2026-04-23 的 Task 与 TaskPanel 脚本内容生成。</p>
+  </div>
+</div>
+</body>
+</html>

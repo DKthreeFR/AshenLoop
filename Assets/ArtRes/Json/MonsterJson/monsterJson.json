@@ -1,0 +1,6 @@
+{
+  "monsters": [
+    {"monsterID":1,"monsterName":"wolfMan","monsterHP":100,"monsterMaxHP":100,"monsterATK":10,"monsterDEF":5},
+    {"monsterID":2,"monsterName":"bat","monsterHP":80,"monsterMaxHP":80,"monsterATK":5,"monsterDEF":2}
+  ]
+}

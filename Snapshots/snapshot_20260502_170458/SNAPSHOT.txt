@@ -1,0 +1,10 @@
+﻿Snapshot Time: 20260502_170458
+Root: d:\UnityHub\UnityProject\AshenLoop
+
+Files:
+
+[OK] Assets\Scripts\Monster\Monster.cs
+[OK] Assets\Scripts\UI\Panels\NPCInteractPanel\NPCInteractView.cs
+[OK] Assets\Scripts\UI\Panels\NPCInteractPanel\NPCInteractModel.cs
+[OK] Assets\Scripts\CharacterController\Input\CharacterInputAdapter.cs
+[OK] Assets\Scripts\NPC\NPCIRIS.cs

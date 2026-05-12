@@ -1,0 +1,4046 @@
+fileFormatVersion: 2
+guid: db121bf2b3ae3c04ead063aecc7a5f78
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cheek
+    second: {fileID: 2100000, guid: b66931a9f536e8d4da0f2b13772e9d4f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_Bangs
+    second: {fileID: 2100000, guid: a35c99c9129ff7a4092512161f030381, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_Down
+    second: {fileID: 2100000, guid: 8eb47f298a9753343a542fc129ce2a51, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_Eye
+    second: {fileID: 2100000, guid: fa617f22b549f6f4a92483bb9abf1db8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_Face
+    second: {fileID: 2100000, guid: 94121b868c6d5194a8deaf72933c7366, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_Hair
+    second: {fileID: 2100000, guid: 8ebe0eb9272e9964d82780d15749a660, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_Up01
+    second: {fileID: 2100000, guid: e82e3ecf9f625724f9eb3ebc93abf131, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_Up02
+    second: {fileID: 2100000, guid: d19855e27a4f0c2419222e6f9b22f8ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: body
+    second: {fileID: 2100000, guid: 93b9e7ee098b4024792d03a7214ab71e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: emo1
+    second: {fileID: 2100000, guid: 3cd5703285d625441a4f7dbdf3b3177c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: emo3
+    second: {fileID: 2100000, guid: ccdf37146123f66479ea865e7371e8e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: face
+    second: {fileID: 2100000, guid: a0f18c7bd12e05a4ea2716e4de2c28f5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u767D"
+    second: {fileID: 2100000, guid: c7abc4b5a2d89154dbce762f45300ab0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u767D2"
+    second: {fileID: 2100000, guid: ddf10ff8f2bfaaa499d7aca770a73f5e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u776B\u6BDB"
+    second: {fileID: 2100000, guid: a469f3a3c1936304192cc1c41ca4dbc6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u817F"
+    second: {fileID: 2100000, guid: 7d6d6d44828918b4cba7d3a1937ba2c2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u820C\u5934"
+    second: {fileID: 2100000, guid: 23bde7450a1468c4f84118bdcfc3dcf0, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human:
+    - boneName: "\u8170"
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u8DB3D.L"
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u8DB3D.R"
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u3072\u3056D.L"
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u3072\u3056D.R"
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u8DB3\u9996D.L"
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u8DB3\u9996D.R"
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u4E0A\u534A\u8EAB"
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u4E0A\u534A\u8EAB3"
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u9996"
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u982D"
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u80A9.L"
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u80A9.R"
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u8155.L"
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u8155.R"
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u3072\u3058.L"
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u3072\u3058.R"
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u624B\u9996.L"
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u624B\u9996.R"
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u8DB3\u5148EX.L"
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u8DB3\u5148EX.R"
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bone_Piao019_L
+      humanName: LeftEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bone_Hair002_R
+      humanName: RightEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u820C"
+      humanName: Jaw
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u89AA\u6307\uFF10.L"
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u89AA\u6307\uFF11.L"
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u89AA\u6307\uFF12.L"
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u4EBA\u6307\uFF11.L"
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u4EBA\u6307\uFF12.L"
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u4EBA\u6307\uFF13.L"
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u4E2D\u6307\uFF11.L"
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u4E2D\u6307\uFF12.L"
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u4E2D\u6307\uFF13.L"
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u85AC\u6307\uFF11.L"
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u85AC\u6307\uFF12.L"
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u85AC\u6307\uFF13.L"
+      humanName: Left Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u5C0F\u6307\uFF11.L"
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u5C0F\u6307\uFF12.L"
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u5C0F\u6307\uFF13.L"
+      humanName: Left Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u89AA\u6307\uFF10.R"
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u89AA\u6307\uFF11.R"
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u89AA\u6307\uFF12.R"
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u4EBA\u6307\uFF11.R"
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u4EBA\u6307\uFF12.R"
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u4EBA\u6307\uFF13.R"
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u4E2D\u6307\uFF11.R"
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u4E2D\u6307\uFF12.R"
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u4E2D\u6307\uFF13.R"
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u85AC\u6307\uFF11.R"
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u85AC\u6307\uFF12.R"
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u85AC\u6307\uFF13.R"
+      humanName: Right Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u5C0F\u6307\uFF11.R"
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u5C0F\u6307\uFF12.R"
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u5C0F\u6307\uFF13.R"
+      humanName: Right Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\u4E0A\u534A\u8EAB2"
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: IRIS(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u9E23\u6F6E_\u4F0A\u8389\u4E1D\uFF08I.R.I.S\uFF09"
+      parentName: IRIS(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: "\u9E23\u6F6E_\u4F0A\u8389\u4E1D\uFF08I.R.I.S\uFF09_arm"
+      parentName: "\u9E23\u6F6E_\u4F0A\u8389\u4E1D\uFF08I.R.I.S\uFF09"
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u5168\u3066\u306E\u89AA"
+      parentName: "\u9E23\u6F6E_\u4F0A\u8389\u4E1D\uFF08I.R.I.S\uFF09_arm"
+      position: {x: -4.2473875e-11, y: 0.00032573356, z: 0}
+      rotation: {x: 0.71769327, y: -1.2067791e-17, z: -5.0562915e-10, w: 0.6963594}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+    - name: "\u30BB\u30F3\u30BF\u30FC"
+      parentName: "\u5168\u3066\u306E\u89AA"
+      position: {x: 8.352694e-18, y: 0.009501553, z: 4.6566128e-12}
+      rotation: {x: -0.015085323, y: 3.5753378e-10, z: 3.5753378e-10, w: 0.9998862}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+    - name: "\u30B0\u30EB\u30FC\u30D6"
+      parentName: "\u30BB\u30F3\u30BF\u30FC"
+      position: {x: 4.7124397e-19, y: 0.0001600033, z: -4.6566128e-12}
+      rotation: {x: 4.440892e-16, y: -2.775558e-17, z: -2.428613e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u30B0\u30EB\u30FC\u30D62"
+      parentName: "\u30B0\u30EB\u30FC\u30D6"
+      position: {x: -2.220446e-18, y: -0.00015999912, z: -4.6566128e-12}
+      rotation: {x: 4.440892e-16, y: 4.9630837e-24, z: 4.135903e-25, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_shadow_\u8170\u30AD\u30E3\u30F3\u30BB\u30EB.L"
+      parentName: "\u30B0\u30EB\u30FC\u30D62"
+      position: {x: -6.6909833e-12, y: 0.00022319256, z: -0.00032944643}
+      rotation: {x: 0.000000026077036, y: 0.00000002001996, z: 0.000000020019959,
+        w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_shadow_\u8170\u30AD\u30E3\u30F3\u30BB\u30EB.L_end"
+      parentName: "_shadow_\u8170\u30AD\u30E3\u30F3\u30BB\u30EB.L"
+      position: {x: -0, y: 0.0007999998, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_shadow_\u8170\u30AD\u30E3\u30F3\u30BB\u30EB.R"
+      parentName: "\u30B0\u30EB\u30FC\u30D62"
+      position: {x: -6.6909833e-12, y: 0.00022319256, z: -0.00032944643}
+      rotation: {x: -0.000000018626453, y: 0.00000002001996, z: 0.000000020019957,
+        w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_shadow_\u8170\u30AD\u30E3\u30F3\u30BB\u30EB.R_end"
+      parentName: "_shadow_\u8170\u30AD\u30E3\u30F3\u30BB\u30EB.R"
+      position: {x: -0, y: 0.0007999998, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8170"
+      parentName: "\u30B0\u30EB\u30FC\u30D62"
+      position: {x: -6.6909833e-12, y: 0.00022319256, z: -0.00032944643}
+      rotation: {x: 0.37896562, y: -0.000000011063494, z: -0.000000011063494, w: 0.92541075}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_dummy_\u8170\u30AD\u30E3\u30F3\u30BB\u30EB.L"
+      parentName: "\u8170"
+      position: {x: -4.440892e-18, y: 5.5879353e-11, z: 1.4901161e-10}
+      rotation: {x: -0.3789656, y: 0.00000003717706, z: 0.00000002200331, w: 0.9254108}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+    - name: "_dummy_\u8170\u30AD\u30E3\u30F3\u30BB\u30EB.L_end"
+      parentName: "_dummy_\u8170\u30AD\u30E3\u30F3\u30BB\u30EB.L"
+      position: {x: -0, y: 0.0007999998, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_dummy_\u8170\u30AD\u30E3\u30F3\u30BB\u30EB.R"
+      parentName: "\u8170"
+      position: {x: -4.440892e-18, y: 5.5879353e-11, z: 1.4901161e-10}
+      rotation: {x: -0.37896562, y: 0.000000037177056, z: 0.000000022003308, w: 0.92541075}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+    - name: "_dummy_\u8170\u30AD\u30E3\u30F3\u30BB\u30EB.R_end"
+      parentName: "_dummy_\u8170\u30AD\u30E3\u30F3\u30BB\u30EB.R"
+      position: {x: -0, y: 0.0007999998, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u4E0A\u534A\u8EAB"
+      parentName: "\u8170"
+      position: {x: -8.069822e-11, y: 0.00047239324, z: -0.000014114088}
+      rotation: {x: -0.33076796, y: 0.0000001402357, z: 0.00000006436027, w: 0.9437121}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+    - name: "\u4E0A\u534A\u8EAB3"
+      parentName: "\u4E0A\u534A\u8EAB"
+      position: {x: 2.7450263e-16, y: 0.0006266817, z: 9.7788826e-11}
+      rotation: {x: -0.06691351, y: -0.00000009707362, z: -0.000000100110974, w: 0.9977588}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: "\u4E0A\u534A\u8EAB2"
+      parentName: "\u4E0A\u534A\u8EAB3"
+      position: {x: -4.900872e-18, y: 0.00080490834, z: -1.04773785e-11}
+      rotation: {x: -0.13578093, y: -0.00000035004894, z: -0.00000036100172, w: 0.9907389}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_shadow_\u80A9C.L"
+      parentName: "\u4E0A\u534A\u8EAB2"
+      position: {x: -0.00008010578, y: 0.0018270003, z: -0.000044866716}
+      rotation: {x: 0.15102409, y: 0.00000035235212, z: 0.00000038272677, w: 0.9885301}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_shadow_\u80A9C.L_end"
+      parentName: "_shadow_\u80A9C.L"
+      position: {x: -0, y: 0.0008000016, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_shadow_\u80A9C.R"
+      parentName: "\u4E0A\u534A\u8EAB2"
+      position: {x: 0.00008010405, y: 0.0018270003, z: -0.000044866585}
+      rotation: {x: 0.1510241, y: 0.00000035938473, z: 0.00000032915776, w: 0.9885301}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_shadow_\u80A9C.R_end"
+      parentName: "_shadow_\u80A9C.R"
+      position: {x: -0, y: 0.0008000016, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone_Piao006_M
+      parentName: "\u4E0A\u534A\u8EAB2"
+      position: {x: -0.00000021838486, y: 0.0019122587, z: 0.0006969998}
+      rotation: {x: -0.7039646, y: -0.00075830834, z: -0.0010311956, w: 0.710234}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone_Piao005_L
+      parentName: Bone_Piao006_M
+      position: {x: -0.000066459754, y: 0.000075155505, z: -0.000000025281416}
+      rotation: {x: 0.15013874, y: -0.11179284, z: 0.7554306, w: 0.62792146}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone_Piao016_L
+      parentName: Bone_Piao005_L
+      position: {x: -9.313225e-11, y: 0.00022622249, z: -9.391806e-10}
+      rotation: {x: -0.000000001164153, y: -0.0000000060535963, z: 0.000000003259629,
+        w: 1}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: Bone_Piao016_L_end
+      parentName: Bone_Piao016_L
+      position: {x: -0, y: 0.00022622253, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone_Piao005_R
+      parentName: Bone_Piao006_M
+      position: {x: 0.00006645976, y: 0.00007549187, z: 0.000000024530582}
+      rotation: {x: 0.11501044, y: 0.112152524, z: -0.7555414, w: 0.6350997}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone_Piao016_R
+      parentName: Bone_Piao005_R
+      position: {x: 2.7939677e-11, y: 0.00022622227, z: -0.0000000019406434}
+      rotation: {x: -0.0000000059371814, y: -0.000000058556907, z: 0.000000007799827,
+        w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone_Piao016_R_end
+      parentName: Bone_Piao016_R
+      position: {x: -0, y: 0.00022622233, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u304A\u3063\u3071\u3044\u8ABF\u6574"
+      parentName: "\u4E0A\u534A\u8EAB2"
+      position: {x: 1.1431833e-11, y: 0.0005225862, z: 0.00033718147}
+      rotation: {x: 0.15102409, y: 0.00000035556755, z: 0.0000003555675, w: 0.9885301}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: "\u80F8\u4E0A.L"
+      parentName: "\u304A\u3063\u3071\u3044\u8ABF\u6574"
+      position: {x: -0.00052913063, y: 0.00032287597, z: -0.00030721424}
+      rotation: {x: 0.5514581, y: 0.048937272, z: 0.048937272, w: 0.8313268}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: "\u80F8\u4E0A.L_end"
+      parentName: "\u80F8\u4E0A.L"
+      position: {x: -0, y: 0.0006583895, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u80F8\u4E0A.R"
+      parentName: "\u304A\u3063\u3071\u3044\u8ABF\u6574"
+      position: {x: 0.00052913063, y: 0.00032287597, z: -0.00030721424}
+      rotation: {x: 0.55145025, y: -0.048969023, z: -0.04896902, w: 0.8313283}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: "\u80F8\u4E0A.R_end"
+      parentName: "\u80F8\u4E0A.R"
+      position: {x: -0, y: 0.0006583888, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u80F8\u4E0A2.L"
+      parentName: "\u304A\u3063\u3071\u3044\u8ABF\u6574"
+      position: {x: -0.0005471652, y: 0.0005776715, z: 0.00029960592}
+      rotation: {x: -0.000000011641525, y: -8.5265135e-14, z: 4.5130982e-21, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u5FBD\u7AE0"
+      parentName: "\u80F8\u4E0A2.L"
+      position: {x: -0.000102889055, y: 0.00010683536, z: 0.0002325603}
+      rotation: {x: 2.220446e-16, y: 6.984713e-21, z: 3.5734207e-21, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u5FBD\u7AE0_end"
+      parentName: "\u5FBD\u7AE0"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u80F8\u5148.L"
+      parentName: "\u80F8\u4E0A2.L"
+      position: {x: -0.00008069504, y: -0.0005652237, z: 0.00037368792}
+      rotation: {x: 2.220446e-16, y: 6.984713e-21, z: 3.5734207e-21, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u80F8\u5148.L_end"
+      parentName: "\u80F8\u5148.L"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u80F8\u4E0A2.R"
+      parentName: "\u304A\u3063\u3071\u3044\u8ABF\u6574"
+      position: {x: 0.0005471775, y: 0.0005776787, z: 0.0002996018}
+      rotation: {x: -0.000000011641525, y: -8.5265135e-14, z: 4.5130982e-21, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u80F8\u5148.R"
+      parentName: "\u80F8\u4E0A2.R"
+      position: {x: 0.000080682745, y: -0.00056523085, z: 0.00037369205}
+      rotation: {x: 2.220446e-16, y: 6.984713e-21, z: 3.5734207e-21, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u80F8\u5148.R_end"
+      parentName: "\u80F8\u5148.R"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u80F8\u4E0B.L"
+      parentName: "\u304A\u3063\u3071\u3044\u8ABF\u6574"
+      position: {x: -0.00055069325, y: -0.0003445637, z: -0.00020056184}
+      rotation: {x: 0.53858405, y: 0.14647068, z: 0.14647073, w: 0.8167129}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: "\u80F8\u4E0B\u5148.L"
+      parentName: "\u80F8\u4E0B.L"
+      position: {x: 2.840534e-10, y: 0.00094711944, z: 8.754432e-10}
+      rotation: {x: -0.53858393, y: -0.14647067, z: -0.14647067, w: 0.816713}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: "\u80F8\u4E0B\u5148.L_end"
+      parentName: "\u80F8\u4E0B\u5148.L"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u80F8\u4E0B.R"
+      parentName: "\u304A\u3063\u3071\u3044\u8ABF\u6574"
+      position: {x: 0.00055069325, y: -0.0003445637, z: -0.00020056184}
+      rotation: {x: 0.5385839, y: -0.14647095, z: -0.14647096, w: 0.81671286}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: "\u80F8\u4E0B\u5148.R"
+      parentName: "\u80F8\u4E0B.R"
+      position: {x: 1.8626451e-11, y: 0.00094711926, z: 3.9115547e-10}
+      rotation: {x: -0.5385839, y: 0.14647096, z: 0.14647093, w: 0.8167129}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u80F8\u4E0B\u5148.R_end"
+      parentName: "\u80F8\u4E0B\u5148.R"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u540E\u5E26\u5B501"
+      parentName: "\u4E0A\u534A\u8EAB2"
+      position: {x: -0.000000002063441, y: 0.0022341693, z: -0.000424664}
+      rotation: {x: 0.97302645, y: 0.00000041031788, z: -0.00000026790775, w: -0.23069358}
+      scale: {x: 1, y: 1, z: 0.9999989}
+    - name: "\u540E\u5E26\u5B502"
+      parentName: "\u540E\u5E26\u5B501"
+      position: {x: -1.7763567e-16, y: 0.0002682832, z: 7.450578e-11}
+      rotation: {x: 0.000000007450581, y: -2.300382e-13, z: -2.1493918e-13, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u540E\u5E26\u5B503"
+      parentName: "\u540E\u5E26\u5B502"
+      position: {x: -3.0198067e-16, y: 0.00026828385, z: -2.1649348e-17}
+      rotation: {x: -0.04278297, y: -0.00000009724288, z: 0.00000010501131, w: 0.9990844}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: "\u540E\u5E26\u5B504"
+      parentName: "\u540E\u5E26\u5B503"
+      position: {x: -2.1967376e-18, y: 0.0002890277, z: 1.4901161e-10}
+      rotation: {x: -0.0000001564622, y: 1.06581526e-13, z: -3.55269e-15, w: 1}
+      scale: {x: 1, y: 0.9999999, z: 0.99999994}
+    - name: "\u540E\u5E26\u5B505"
+      parentName: "\u540E\u5E26\u5B504"
+      position: {x: -8.882256e-18, y: 0.00028902796, z: 7.4505804e-11}
+      rotation: {x: -0.031025376, y: -9.5438884e-20, z: 3.3234449e-21, w: 0.99951863}
+      scale: {x: 1, y: 1, z: 0.9999999}
+    - name: "\u540E\u5E26\u5B506"
+      parentName: "\u540E\u5E26\u5B505"
+      position: {x: -8.881784e-18, y: 0.00034406802, z: -3.7252902e-11}
+      rotation: {x: 0.00000013434328, y: -7.8085785e-20, z: -8.470334e-22, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u540E\u5E26\u5B507"
+      parentName: "\u540E\u5E26\u5B506"
+      position: {x: -8.881784e-18, y: 0.0003440678, z: 9.313225e-11}
+      rotation: {x: 8.5211814e-19, y: -0.0000006704656, z: 0.0000006804081, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u540E\u5E26\u5B508"
+      parentName: "\u540E\u5E26\u5B507"
+      position: {x: 9.237055e-16, y: 0.00034406726, z: -1.1175792e-10}
+      rotation: {x: -0.00000002514571, y: 2.9989344e-12, z: -2.225331e-12, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u540E\u5E26\u5B509"
+      parentName: "\u540E\u5E26\u5B508"
+      position: {x: 7.81597e-16, y: 0.0003440678, z: -5.587794e-11}
+      rotation: {x: 8.6736174e-19, y: 4.2188475e-14, z: -3.996803e-15, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u540E\u5E26\u5B5010"
+      parentName: "\u540E\u5E26\u5B509"
+      position: {x: 2.2737367e-15, y: 0.00034406842, z: -3.7250862e-11}
+      rotation: {x: 0.00000002514571, y: -2.2613023e-12, z: 2.1560531e-12, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u540E\u5E26\u5B5011"
+      parentName: "\u540E\u5E26\u5B5010"
+      position: {x: 5.684342e-16, y: 0.00034406676, z: 2.668421e-15}
+      rotation: {x: 0.99997294, y: -0.0000006754559, z: -0.0000006755473, w: 0.007359752}
+      scale: {x: 1, y: 0.99999994, z: 1.0000001}
+    - name: "\u540E\u5E26\u5B5011_end"
+      parentName: "\u540E\u5E26\u5B5011"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u80A9P.L"
+      parentName: "\u4E0A\u534A\u8EAB2"
+      position: {x: -0.00008010578, y: 0.0018270003, z: -0.000044866716}
+      rotation: {x: 0.1067899, y: 0.69899654, z: 0.1067904, w: 0.6989961}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_dummy_\u80A9C.L"
+      parentName: "\u80A9P.L"
+      position: {x: -5.227396e-12, y: 1.8914531e-11, z: -4.193298e-12}
+      rotation: {x: 8.881785e-16, y: -0.7071067, z: 8.8817837e-16, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_dummy_\u80A9C.L_end"
+      parentName: "_dummy_\u80A9C.L"
+      position: {x: -0, y: 0.0008000016, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u80A9.L"
+      parentName: "\u80A9P.L"
+      position: {x: -5.227396e-12, y: 1.8914531e-11, z: -4.193298e-12}
+      rotation: {x: -0.77887225, y: -0.0025927436, z: -0.0020877742, w: 0.6271738}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: "\u80A9C.L"
+      parentName: "\u80A9.L"
+      position: {x: -7.21775e-11, y: 0.0010551489, z: 3.9110207e-10}
+      rotation: {x: 0.55222213, y: -0.44164553, z: -0.54926944, w: 0.44531226}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000002}
+    - name: "_shadow_\u80A9\u8ABF\u65741.L"
+      parentName: "\u80A9C.L"
+      position: {x: -4.4649794e-11, y: -6.719796e-11, z: -6.0967495e-11}
+      rotation: {x: 0.52137333, y: -0.49694476, z: -0.4969454, w: -0.48400518}
+      scale: {x: 1.0000001, y: 1, z: 1.0000001}
+    - name: "_shadow_\u80A9\u8ABF\u65741.L_end"
+      parentName: "_shadow_\u80A9\u8ABF\u65741.L"
+      position: {x: -0, y: 0.0010627105, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_shadow_\u80A9\u8ABF\u65742.L"
+      parentName: "\u80A9C.L"
+      position: {x: -4.4649794e-11, y: -6.719796e-11, z: -6.0967495e-11}
+      rotation: {x: 0.5215015, y: -0.5013335, z: -0.5013337, w: -0.47472674}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: "_shadow_\u80A9\u8ABF\u65742.L_end"
+      parentName: "_shadow_\u80A9\u8ABF\u65742.L"
+      position: {x: -0, y: 0.0010579395, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_shadow_\u80A9\u8ABF\u65743.L"
+      parentName: "\u80A9C.L"
+      position: {x: -4.4649794e-11, y: -6.719796e-11, z: -6.0967495e-11}
+      rotation: {x: 0.53232396, y: -0.4939998, z: -0.49399912, w: -0.4780798}
+      scale: {x: 1.0000001, y: 1, z: 1.0000001}
+    - name: "_shadow_\u80A9\u8ABF\u65743.L_end"
+      parentName: "_shadow_\u80A9\u8ABF\u65743.L"
+      position: {x: -0, y: 0.0010559348, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8155.L"
+      parentName: "\u80A9C.L"
+      position: {x: 1.0436182e-10, y: -6.719795e-11, z: 1.353831e-11}
+      rotation: {x: -0.5183843, y: 0.49443057, z: 0.50831616, w: 0.47794437}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: "_dummy_\u80A9\u8ABF\u65741.L"
+      parentName: "\u8155.L"
+      position: {x: 1.0710209e-10, y: -8.754432e-10, z: 4.5679402e-10}
+      rotation: {x: 0.30058596, y: 0.0076463255, z: -0.037265968, w: 0.9529958}
+      scale: {x: 0.9999999, y: 0.9999999, z: 1}
+    - name: "_dummy_\u80A9\u8ABF\u65741.L_end"
+      parentName: "_dummy_\u80A9\u8ABF\u65741.L"
+      position: {x: -0, y: 0.0010627105, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_dummy_\u80A9\u8ABF\u65742.L"
+      parentName: "\u8155.L"
+      position: {x: 1.0710209e-10, y: -8.754432e-10, z: 4.5679402e-10}
+      rotation: {x: 0.29613438, y: 0.0094341235, z: -0.027332174, w: 0.9547086}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.9999999}
+    - name: "_dummy_\u80A9\u8ABF\u65742.L_end"
+      parentName: "_dummy_\u80A9\u8ABF\u65742.L"
+      position: {x: -0, y: 0.0010579395, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_dummy_\u80A9\u8ABF\u65743.L"
+      parentName: "\u8155.L"
+      position: {x: 1.0710209e-10, y: -8.754432e-10, z: 4.5679402e-10}
+      rotation: {x: 0.29283908, y: 0.017696962, z: -0.039846655, w: 0.9551672}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: "_dummy_\u80A9\u8ABF\u65743.L_end"
+      parentName: "_dummy_\u80A9\u8ABF\u65743.L"
+      position: {x: -0, y: 0.0010559348, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_shadow_\u8155\u63691.L"
+      parentName: "\u8155.L"
+      position: {x: 2.3283063e-11, y: 0.00121295, z: 9.259943e-10}
+      rotation: {x: -0.6200325, y: 0.33994055, z: 0.64498484, w: -0.28981838}
+      scale: {x: 0.99999994, y: 1, z: 0.9999998}
+    - name: "_shadow_\u8155\u63691.L_end"
+      parentName: "_shadow_\u8155\u63691.L"
+      position: {x: -0, y: 0.0007999992, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_shadow_\u8155\u63692.L"
+      parentName: "\u8155.L"
+      position: {x: 2.3283063e-11, y: 0.00121295, z: 9.259943e-10}
+      rotation: {x: -0.62003255, y: 0.3399406, z: 0.6449847, w: -0.28981844}
+      scale: {x: 0.99999994, y: 1.0000001, z: 1.0000001}
+    - name: "_shadow_\u8155\u63692.L_end"
+      parentName: "_shadow_\u8155\u63692.L"
+      position: {x: -0, y: 0.0008000016, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_shadow_\u8155\u63693.L"
+      parentName: "\u8155.L"
+      position: {x: 2.3283063e-11, y: 0.00121295, z: 9.259943e-10}
+      rotation: {x: -0.6200326, y: 0.33994052, z: 0.6449847, w: -0.2898184}
+      scale: {x: 0.9999999, y: 1, z: 0.9999999}
+    - name: "_shadow_\u8155\u63693.L_end"
+      parentName: "_shadow_\u8155\u63693.L"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone_Piao017_L
+      parentName: "\u8155.L"
+      position: {x: -0.00027211817, y: 0.00045670554, z: 0.00039751016}
+      rotation: {x: 0.35675588, y: -0.14346863, z: 0.16947278, w: 0.9074255}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: Bone_Piao017_L_end
+      parentName: Bone_Piao017_L
+      position: {x: -0, y: 0.00066380977, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8155\u6369.L"
+      parentName: "\u8155.L"
+      position: {x: 2.3283063e-11, y: 0.00121295, z: 9.259943e-10}
+      rotation: {x: 0.0000002728645, y: 0.00000008644701, z: 0.00000003632158, w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: "_dummy_\u8155\u63691.L"
+      parentName: "\u8155\u6369.L"
+      position: {x: 4.1909514e-11, y: -9.2666597e-10, z: 2.9046923e-10}
+      rotation: {x: -0.62003255, y: 0.33994064, z: 0.6449848, w: -0.28981856}
+      scale: {x: 1, y: 1, z: 0.9999998}
+    - name: "_dummy_\u8155\u63691.L_end"
+      parentName: "_dummy_\u8155\u63691.L"
+      position: {x: -0, y: 0.0007999992, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_dummy_\u8155\u63692.L"
+      parentName: "\u8155\u6369.L"
+      position: {x: 4.1909514e-11, y: -9.2666597e-10, z: 2.9046923e-10}
+      rotation: {x: -0.62003255, y: 0.3399406, z: 0.64498466, w: -0.28981858}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    - name: "_dummy_\u8155\u63692.L_end"
+      parentName: "_dummy_\u8155\u63692.L"
+      position: {x: -0, y: 0.0008000016, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_dummy_\u8155\u63693.L"
+      parentName: "\u8155\u6369.L"
+      position: {x: 4.1909514e-11, y: -9.2666597e-10, z: 2.9046923e-10}
+      rotation: {x: -0.6200326, y: 0.33994067, z: 0.6449846, w: -0.28981853}
+      scale: {x: 0.9999999, y: 1, z: 0.99999994}
+    - name: "_dummy_\u8155\u63693.L_end"
+      parentName: "_dummy_\u8155\u63693.L"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u3072\u3058.L"
+      parentName: "\u8155\u6369.L"
+      position: {x: 1.3504177e-10, y: 0.00080863334, z: -6.026471e-10}
+      rotation: {x: 0.0032454105, y: -0.00021224008, z: -0.013897259, w: 0.99989814}
+      scale: {x: 0.9999999, y: 0.99999994, z: 0.99999994}
+    - name: "_shadow_\u624B\u63691.L"
+      parentName: "\u3072\u3058.L"
+      position: {x: -1.8626451e-11, y: 0.0013193676, z: 0.000000001930163}
+      rotation: {x: -0.62361616, y: 0.33332112, z: 0.6399195, w: -0.300837}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: "_shadow_\u624B\u63691.L_end"
+      parentName: "_shadow_\u624B\u63691.L"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_shadow_\u624B\u63692.L"
+      parentName: "\u3072\u3058.L"
+      position: {x: -1.8626451e-11, y: 0.0013193676, z: 0.000000001930163}
+      rotation: {x: -0.6236161, y: 0.33332106, z: 0.63991964, w: -0.300837}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_shadow_\u624B\u63692.L_end"
+      parentName: "_shadow_\u624B\u63692.L"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_shadow_\u624B\u63693.L"
+      parentName: "\u3072\u3058.L"
+      position: {x: -1.8626451e-11, y: 0.0013193676, z: 0.000000001930163}
+      rotation: {x: -0.62361616, y: 0.33332112, z: 0.6399195, w: -0.300837}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: "_shadow_\u624B\u63693.L_end"
+      parentName: "_shadow_\u624B\u63693.L"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u624B\u6369.L"
+      parentName: "\u3072\u3058.L"
+      position: {x: -1.8626451e-11, y: 0.0013193676, z: 0.000000001930163}
+      rotation: {x: -0.00000014213293, y: -0.000000024619633, z: 0.0000000069849193,
+        w: 1}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: "_dummy_\u624B\u63691.L"
+      parentName: "\u624B\u6369.L"
+      position: {x: -2.7939677e-11, y: -2.561137e-10, z: 0.0000000016069825}
+      rotation: {x: -0.6236161, y: 0.333321, z: 0.6399197, w: -0.3008369}
+      scale: {x: 1, y: 1, z: 0.9999999}
+    - name: "_dummy_\u624B\u63691.L_end"
+      parentName: "_dummy_\u624B\u63691.L"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_dummy_\u624B\u63692.L"
+      parentName: "\u624B\u6369.L"
+      position: {x: -2.7939677e-11, y: -2.561137e-10, z: 0.0000000016069825}
+      rotation: {x: -0.62361616, y: 0.333321, z: 0.63991964, w: -0.30083695}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_dummy_\u624B\u63692.L_end"
+      parentName: "_dummy_\u624B\u63692.L"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_dummy_\u624B\u63693.L"
+      parentName: "\u624B\u6369.L"
+      position: {x: -2.7939677e-11, y: -2.561137e-10, z: 0.0000000016069825}
+      rotation: {x: -0.6236161, y: 0.333321, z: 0.6399197, w: -0.3008369}
+      scale: {x: 1, y: 1, z: 0.9999999}
+    - name: "_dummy_\u624B\u63693.L_end"
+      parentName: "_dummy_\u624B\u63693.L"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u624B\u9996.L"
+      parentName: "\u624B\u6369.L"
+      position: {x: -3.7252902e-11, y: 0.0008795788, z: 0.000000002355913}
+      rotation: {x: -0.06791422, y: 0.0045073666, z: 0.014830013, w: 0.99757075}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: "\u30C0\u30DF\u30FC.L"
+      parentName: "\u624B\u9996.L"
+      position: {x: 0.000025271525, y: 0.00031078572, z: -0.00017673078}
+      rotation: {x: -0.67904216, y: 0.027562633, z: -0.029751869, w: 0.7329781}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: "\u30C0\u30DF\u30FC.L_end"
+      parentName: "\u30C0\u30DF\u30FC.L"
+      position: {x: -0, y: 0.00096000003, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u4E2D\u6307\uFF11.L"
+      parentName: "\u624B\u9996.L"
+      position: {x: -0.000041272328, y: 0.0005984216, z: 0.0000453752}
+      rotation: {x: 0.009515649, y: -0.0005174779, z: -0.026797226, w: 0.99959546}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: "\u4E2D\u6307\uFF12.L"
+      parentName: "\u4E2D\u6307\uFF11.L"
+      position: {x: 5.5879353e-11, y: 0.0002853157, z: -0.0000000014862188}
+      rotation: {x: 0.013137189, y: -0.00035157282, z: -0.00077990466, w: 0.99991333}
+      scale: {x: 1.0000001, y: 1, z: 1.0000001}
+    - name: "\u4E2D\u6307\uFF13.L"
+      parentName: "\u4E2D\u6307\uFF12.L"
+      position: {x: -4.6566126e-11, y: 0.0001642498, z: 0.0000000032701788}
+      rotation: {x: -0.0000000069950943, y: 0.000000015437326, z: 0.000000056810677,
+        w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u4E2D\u6307\uFF13.L_end"
+      parentName: "\u4E2D\u6307\uFF13.L"
+      position: {x: -0, y: 0.00016425217, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u4EBA\u6307\uFF11.L"
+      parentName: "\u624B\u9996.L"
+      position: {x: -0.00017837684, y: 0.000589585, z: 0.00005227058}
+      rotation: {x: 0.017425569, y: 0.10829848, z: 0.07998615, w: 0.99074215}
+      scale: {x: 0.9999999, y: 0.99999994, z: 0.9999999}
+    - name: "\u4EBA\u6307\uFF12.L"
+      parentName: "\u4EBA\u6307\uFF11.L"
+      position: {x: -5.867332e-10, y: 0.00028174868, z: -0.0000000029819083}
+      rotation: {x: 0.018112425, y: 0.0006354828, z: -0.0063789287, w: 0.9998154}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1}
+    - name: "\u4EBA\u6307\uFF13.L"
+      parentName: "\u4EBA\u6307\uFF12.L"
+      position: {x: 4.0978193e-10, y: 0.00016188963, z: -6.0426075e-10}
+      rotation: {x: -3.756759e-10, y: 2.0995472e-10, z: -0.000000005587936, w: 1}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: "\u4EBA\u6307\uFF13.L_end"
+      parentName: "\u4EBA\u6307\uFF13.L"
+      position: {x: -0, y: 0.00016189013, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u5C0F\u6307\uFF11.L"
+      parentName: "\u624B\u9996.L"
+      position: {x: 0.00021819148, y: 0.00055727863, z: -0.000011321658}
+      rotation: {x: 0.0025503787, y: -0.00018999666, z: -0.0067787366, w: 0.9999738}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: "\u5C0F\u6307\uFF12.L"
+      parentName: "\u5C0F\u6307\uFF11.L"
+      position: {x: 7.0780515e-10, y: 0.00022268685, z: -0.000000002742108}
+      rotation: {x: 0.009306739, y: -0.0006396241, z: 0.0010477944, w: 0.99995595}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    - name: "\u5C0F\u6307\uFF13.L"
+      parentName: "\u5C0F\u6307\uFF12.L"
+      position: {x: -2.4214386e-10, y: 0.00011420108, z: 6.0497396e-10}
+      rotation: {x: 0.000000015673137, y: 0.0000000026798563, z: 0.000000004656613,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: "\u5C0F\u6307\uFF13.L_end"
+      parentName: "\u5C0F\u6307\uFF13.L"
+      position: {x: -0, y: 0.000114203984, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u624B\u9996\u5148.L"
+      parentName: "\u624B\u9996.L"
+      position: {x: 3.2014214e-11, y: 0.0004272169, z: -0.0000000012240002}
+      rotation: {x: -0.64047354, y: 0.2996558, z: 0.66265297, w: -0.24676126}
+      scale: {x: 0.99999994, y: 0.9999998, z: 0.9999997}
+    - name: "\u624B\u9996\u5148.L_end"
+      parentName: "\u624B\u9996\u5148.L"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u85AC\u6307\uFF11.L"
+      parentName: "\u624B\u9996.L"
+      position: {x: 0.0000920494, y: 0.00058549165, z: 0.000029721816}
+      rotation: {x: -0.0007589225, y: 0.000055800265, z: -0.0077944123, w: 0.99996936}
+      scale: {x: 0.99999994, y: 1.0000001, z: 0.99999994}
+    - name: "\u85AC\u6307\uFF12.L"
+      parentName: "\u85AC\u6307\uFF11.L"
+      position: {x: 3.259629e-10, y: 0.0002817818, z: -0.0000000023947897}
+      rotation: {x: 0.016118657, y: -0.0010819563, z: 0.0014792207, w: 0.99986845}
+      scale: {x: 1.0000001, y: 1, z: 0.99999994}
+    - name: "\u85AC\u6307\uFF13.L"
+      parentName: "\u85AC\u6307\uFF12.L"
+      position: {x: -2.0489097e-10, y: 0.00014149277, z: 0.0000000021106614}
+      rotation: {x: 0.000000052850297, y: -9.738875e-11, z: -0.000000006519258, w: 1}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: "\u85AC\u6307\uFF13.L_end"
+      parentName: "\u85AC\u6307\uFF13.L"
+      position: {x: -0, y: 0.00014149517, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u89AA\u6307\uFF10.L"
+      parentName: "\u624B\u9996.L"
+      position: {x: -0.00010445931, y: -0.000080598365, z: 0.000006365155}
+      rotation: {x: -0.039185606, y: 0.021342505, z: 0.35738638, w: 0.9328902}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u89AA\u6307\uFF11.L"
+      parentName: "\u89AA\u6307\uFF10.L"
+      position: {x: 0.0000000014342367, y: 0.00046312637, z: -2.84037e-10}
+      rotation: {x: -0.013276939, y: 0.014132723, z: -0.038460646, w: 0.999072}
+      scale: {x: 1, y: 0.9999998, z: 0.9999999}
+    - name: "\u89AA\u6307\uFF12.L"
+      parentName: "\u89AA\u6307\uFF11.L"
+      position: {x: -4.5634804e-10, y: 0.00019352726, z: -1.8000167e-10}
+      rotation: {x: -0.0035391185, y: 0.0022627679, z: -0.010655709, w: 0.99993443}
+      scale: {x: 0.9999999, y: 1, z: 0.99999994}
+    - name: Bip001LFinger03
+      parentName: "\u89AA\u6307\uFF12.L"
+      position: {x: -7.8231094e-10, y: 0.00017546001, z: 2.9999248e-10}
+      rotation: {x: 0.00000000778895, y: 0.5399618, z: -0.00000006196354, w: 0.8416895}
+      scale: {x: 0.9999999, y: 1, z: 0.9999998}
+    - name: Bip001LFinger03_end
+      parentName: Bip001LFinger03
+      position: {x: -0, y: 0.00017546053, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u624B\u63691.L"
+      parentName: "\u3072\u3058.L"
+      position: {x: -1.8626451e-11, y: 0.00072979985, z: 0.0000000032707033}
+      rotation: {x: -0.6236161, y: 0.333321, z: 0.63991964, w: -0.30083707}
+      scale: {x: 0.9999998, y: 0.9999998, z: 0.9999996}
+    - name: "\u624B\u63691.L_end"
+      parentName: "\u624B\u63691.L"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u624B\u63692.L"
+      parentName: "\u3072\u3058.L"
+      position: {x: -1.8626451e-11, y: 0.0011957271, z: 0.0000000032711491}
+      rotation: {x: -0.6236161, y: 0.33332098, z: 0.63991976, w: -0.30083707}
+      scale: {x: 0.9999998, y: 0.9999998, z: 0.9999996}
+    - name: "\u624B\u63692.L_end"
+      parentName: "\u624B\u63692.L"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u624B\u63693.L"
+      parentName: "\u3072\u3058.L"
+      position: {x: -1.8626451e-11, y: 0.0016616546, z: 0.0000000011854324}
+      rotation: {x: -0.6236161, y: 0.33332098, z: 0.63991976, w: -0.30083707}
+      scale: {x: 0.9999998, y: 0.9999998, z: 0.9999996}
+    - name: "\u624B\u63693.L_end"
+      parentName: "\u624B\u63693.L"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8896\u5B500.L"
+      parentName: "\u8155\u6369.L"
+      position: {x: 0.000088614164, y: 0.000018820218, z: -0.000022704015}
+      rotation: {x: 0.050857227, y: 0.31771323, z: -0.16599296, w: 0.9321578}
+      scale: {x: 0.99999994, y: 1.0000001, z: 1.0000001}
+    - name: "\u8896\u5B50A_0_0.L"
+      parentName: "\u8896\u5B500.L"
+      position: {x: 0.000022670347, y: 0.00017356596, z: -0.00042921936}
+      rotation: {x: -0.09563223, y: 0.0659404, z: -0.017938249, w: 0.9930683}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: "\u8896\u5B50A_1_0.L"
+      parentName: "\u8896\u5B50A_0_0.L"
+      position: {x: 3.5390257e-10, y: 0.00019345625, z: -1.11758706e-10}
+      rotation: {x: 0.007767576, y: 0.005978595, z: -0.016738908, w: 0.9998118}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8896\u5B50A_2_0.L"
+      parentName: "\u8896\u5B50A_1_0.L"
+      position: {x: 1.3038516e-10, y: 0.00019953477, z: -4.0978193e-10}
+      rotation: {x: 0.0059503876, y: 0.004323992, z: -0.012402933, w: 0.99989605}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8896\u5B50A_3_0.L"
+      parentName: "\u8896\u5B50A_2_0.L"
+      position: {x: 2.9802322e-10, y: 0.0002062769, z: -2.2351741e-10}
+      rotation: {x: 0.0041573313, y: 0.0028797626, z: -0.008430044, w: 0.9999517}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8896\u5B50A_4_0.L"
+      parentName: "\u8896\u5B50A_3_0.L"
+      position: {x: 4.4703483e-10, y: 0.00021354505, z: 2.2351741e-10}
+      rotation: {x: 0.0024586306, y: 0.001606077, z: -0.0048219967, w: 0.9999841}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: "\u8896\u5B50A_5_0.L"
+      parentName: "\u8896\u5B50A_4_0.L"
+      position: {x: -4.842877e-10, y: 0.00022124843, z: 0.00000000115484}
+      rotation: {x: 0.0008951702, y: 0.00047011755, z: -0.0015611416, w: 0.9999983}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8896\u5B50A_6_0.L"
+      parentName: "\u8896\u5B50A_5_0.L"
+      position: {x: 1.11758706e-10, y: 0.00022933108, z: 1.11758706e-10}
+      rotation: {x: -0.00053921033, y: -0.000528664, z: 0.0013580004, w: 0.9999988}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: "\u8896\u5B50A_7_0.L"
+      parentName: "\u8896\u5B50A_6_0.L"
+      position: {x: 3.7252902e-11, y: 0.00023778396, z: -4.0978193e-10}
+      rotation: {x: -0.0017981235, y: -0.0014438075, z: 0.0039863186, w: 0.9999894}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8896\u5B50A_8_0.L"
+      parentName: "\u8896\u5B50A_7_0.L"
+      position: {x: -1.862645e-10, y: 0.000246612, z: 4.842877e-10}
+      rotation: {x: -0.0029046272, y: -0.0022675036, z: 0.0063297627, w: 0.9999732}
+      scale: {x: 0.9999999, y: 1, z: 0.99999994}
+    - name: "\u8896\u5B50A_9_0.L"
+      parentName: "\u8896\u5B50A_8_0.L"
+      position: {x: 3.7252902e-11, y: 0.00025585486, z: 0.0000000017136335}
+      rotation: {x: -0.003853567, y: -0.003015199, z: 0.008409291, w: 0.9999527}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: "\u8896\u5B50A_10_0.L"
+      parentName: "\u8896\u5B50A_9_0.L"
+      position: {x: -7.8231094e-10, y: 0.00026556876, z: 3.72529e-10}
+      rotation: {x: -0.0046373243, y: -0.0037051912, z: 0.010246954, w: 0.9999299}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8896\u5B50A_11_0.L"
+      parentName: "\u8896\u5B50A_10_0.L"
+      position: {x: -7.4505804e-11, y: 0.00027582285, z: 4.4703483e-10}
+      rotation: {x: -0.0052708485, y: -0.0043330686, z: 0.011846335, w: 0.9999066}
+      scale: {x: 0.99999994, y: 1, z: 0.99999994}
+    - name: "\u8896\u5B50A_12_0.L"
+      parentName: "\u8896\u5B50A_11_0.L"
+      position: {x: -0, y: 0.00028670466, z: 2.9802322e-10}
+      rotation: {x: -0.0057504196, y: -0.004911333, z: 0.013221411, w: 0.999884}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8896\u5B50A_13_0.L"
+      parentName: "\u8896\u5B50A_12_0.L"
+      position: {x: 3.72529e-10, y: 0.00029830233, z: 9.685754e-10}
+      rotation: {x: 0.8716205, y: -0.31694064, z: -0.31694046, w: 0.19843175}
+      scale: {x: 0.99999994, y: 0.9999998, z: 0.99999994}
+    - name: "\u8896\u5B50A_13_0.L_end"
+      parentName: "\u8896\u5B50A_13_0.L"
+      position: {x: -0, y: 0.0007999998, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8896\u5B50A_0_1.L"
+      parentName: "\u8896\u5B500.L"
+      position: {x: 0.00014428362, y: 0.0002959262, z: 0.00014121275}
+      rotation: {x: -0.027516512, y: -0.028130827, z: 0.09603083, w: 0.99460024}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: "\u8896\u5B50A_1_1.L"
+      parentName: "\u8896\u5B50A_0_1.L"
+      position: {x: -2.2351741e-10, y: 0.00018759581, z: 5.9604643e-10}
+      rotation: {x: 0.00093438243, y: 0.01615941, z: -0.032926083, w: 0.9993267}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: "\u8896\u5B50A_2_1.L"
+      parentName: "\u8896\u5B50A_1_1.L"
+      position: {x: -5.2154064e-10, y: 0.00019259921, z: 3.72529e-10}
+      rotation: {x: 0.0027464335, y: 0.01188363, z: -0.027063865, w: 0.99955934}
+      scale: {x: 0.99999994, y: 0.9999999, z: 0.99999994}
+    - name: "\u8896\u5B50A_3_1.L"
+      parentName: "\u8896\u5B50A_2_1.L"
+      position: {x: -7.4505804e-11, y: 0.00019905054, z: -4.842877e-10}
+      rotation: {x: 0.0039323107, y: 0.0081704045, z: -0.021273594, w: 0.9997326}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: "\u8896\u5B50A_4_1.L"
+      parentName: "\u8896\u5B50A_3_1.L"
+      position: {x: -0, y: 0.00020664826, z: 2.2351741e-10}
+      rotation: {x: 0.004663963, y: 0.0049909796, z: -0.015824217, w: 0.99985147}
+      scale: {x: 1.0000001, y: 1, z: 1.0000001}
+    - name: "\u8896\u5B50A_5_1.L"
+      parentName: "\u8896\u5B50A_4_1.L"
+      position: {x: 1.4901161e-10, y: 0.00021514978, z: -2.2351741e-10}
+      rotation: {x: 0.005119695, y: 0.002263052, z: -0.010834586, w: 0.9999257}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: "\u8896\u5B50A_6_1.L"
+      parentName: "\u8896\u5B50A_5_1.L"
+      position: {x: 8.9406965e-10, y: 0.00022437525, z: -5.9604643e-10}
+      rotation: {x: 0.0053606494, y: -0.000031438834, z: -0.006382205, w: 0.9999653}
+      scale: {x: 0.9999999, y: 1.0000001, z: 1}
+    - name: "\u8896\u5B50A_7_1.L"
+      parentName: "\u8896\u5B50A_6_1.L"
+      position: {x: -0, y: 0.0002342156, z: 4.4703483e-10}
+      rotation: {x: 0.005539173, y: -0.0020134263, z: -0.0024287454, w: 0.9999797}
+      scale: {x: 0.9999999, y: 0.9999999, z: 1}
+    - name: "\u8896\u5B50A_8_1.L"
+      parentName: "\u8896\u5B50A_7_1.L"
+      position: {x: -2.9802322e-10, y: 0.00024460262, z: 4.4703483e-10}
+      rotation: {x: 0.005664225, y: -0.0036984102, z: 0.0010279174, w: 0.99997663}
+      scale: {x: 0.99999994, y: 1, z: 0.99999994}
+    - name: "\u8896\u5B50A_9_1.L"
+      parentName: "\u8896\u5B50A_8_1.L"
+      position: {x: 7.45058e-10, y: 0.0002555184, z: 1.4901161e-10}
+      rotation: {x: 0.005793189, y: -0.005148485, z: 0.004032092, w: 0.99996185}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1}
+    - name: "\u8896\u5B50A_10_1.L"
+      parentName: "\u8896\u5B50A_9_1.L"
+      position: {x: -0, y: 0.00026697663, z: -0.0000000010430813}
+      rotation: {x: 0.005939629, y: -0.0063943984, z: 0.006617277, w: 0.99994004}
+      scale: {x: 0.9999998, y: 1, z: 0.9999998}
+    - name: "\u8896\u5B50A_11_1.L"
+      parentName: "\u8896\u5B50A_10_1.L"
+      position: {x: -2.2351741e-10, y: 0.00027902544, z: -0.0000000011920929}
+      rotation: {x: 0.0061156373, y: -0.007466298, z: 0.008818042, w: 0.9999146}
+      scale: {x: 0.99999994, y: 1, z: 0.99999994}
+    - name: "\u8896\u5B50A_12_1.L"
+      parentName: "\u8896\u5B50A_11_1.L"
+      position: {x: -6.705522e-10, y: 0.00029172582, z: -2.9802322e-10}
+      rotation: {x: 0.0063192253, y: -0.008381677, z: 0.010659641, w: 0.9998881}
+      scale: {x: 1, y: 1, z: 0.9999999}
+    - name: "\u8896\u5B50A_13_1.L"
+      parentName: "\u8896\u5B50A_12_1.L"
+      position: {x: 4.4703483e-10, y: 0.00030516318, z: -2.9802322e-10}
+      rotation: {x: 0.8052419, y: -0.34922716, z: -0.34922695, w: 0.3281258}
+      scale: {x: 1, y: 1.0000001, z: 1.0000002}
+    - name: "\u8896\u5B50A_13_1.L_end"
+      parentName: "\u8896\u5B50A_13_1.L"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8896\u5B50A_0_2.L"
+      parentName: "\u8896\u5B500.L"
+      position: {x: -0.00034132178, y: 0.00020620007, z: 0.00024228025}
+      rotation: {x: 0.06295123, y: -0.08339062, z: 0.09770575, w: 0.98971546}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8896\u5B50A_1_2.L"
+      parentName: "\u8896\u5B50A_0_2.L"
+      position: {x: 1.11758706e-10, y: 0.00020522039, z: -2.4214386e-10}
+      rotation: {x: -0.0010358407, y: 0.0040657637, z: -0.009049554, w: 0.9999503}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.9999999}
+    - name: "\u8896\u5B50A_2_2.L"
+      parentName: "\u8896\u5B50A_1_2.L"
+      position: {x: 4.842877e-10, y: 0.00020578071, z: 3.1664968e-10}
+      rotation: {x: -0.0006544724, y: 0.0036901876, z: -0.008800928, w: 0.9999543}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8896\u5B50A_3_2.L"
+      parentName: "\u8896\u5B50A_2_2.L"
+      position: {x: -0, y: 0.00020795196, z: -4.656613e-10}
+      rotation: {x: -0.00028852047, y: 0.003261551, z: -0.008360911, w: 0.9999597}
+      scale: {x: 0.99999994, y: 0.9999999, z: 0.99999994}
+    - name: "\u8896\u5B50A_4_2.L"
+      parentName: "\u8896\u5B50A_3_2.L"
+      position: {x: 1.11758706e-10, y: 0.00021172836, z: -7.636845e-10}
+      rotation: {x: 0.00005068803, y: 0.0027971363, z: -0.007757321, w: 0.999966}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+    - name: "\u8896\u5B50A_5_2.L"
+      parentName: "\u8896\u5B50A_4_2.L"
+      position: {x: 2.2351741e-10, y: 0.00021710122, z: -3.352761e-10}
+      rotation: {x: 0.00036930377, y: 0.002304811, z: -0.0070248945, w: 0.99997264}
+      scale: {x: 1.0000001, y: 1, z: 1.0000001}
+    - name: "\u8896\u5B50A_6_2.L"
+      parentName: "\u8896\u5B50A_5_2.L"
+      position: {x: -7.4505804e-11, y: 0.00022406015, z: 9.313226e-10}
+      rotation: {x: 0.0006164611, y: 0.0018407796, z: -0.00622326, w: 0.9999788}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: "\u8896\u5B50A_7_2.L"
+      parentName: "\u8896\u5B50A_6_2.L"
+      position: {x: 2.9802322e-10, y: 0.00023259745, z: 4.4703483e-10}
+      rotation: {x: 0.00084475626, y: 0.001375641, z: -0.005373991, w: 0.99998426}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: "\u8896\u5B50A_8_2.L"
+      parentName: "\u8896\u5B50A_7_2.L"
+      position: {x: -2.9802322e-10, y: 0.00024270001, z: -5.9604643e-10}
+      rotation: {x: 0.0010043143, y: 0.0009637323, z: -0.0045346944, w: 0.99998873}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: "\u8896\u5B50A_9_2.L"
+      parentName: "\u8896\u5B50A_8_2.L"
+      position: {x: -7.4505804e-11, y: 0.00025436268, z: -7.8231094e-10}
+      rotation: {x: 0.0011220699, y: 0.0005931676, z: -0.0037258405, w: 0.99999225}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: "\u8896\u5B50A_10_2.L"
+      parentName: "\u8896\u5B50A_9_2.L"
+      position: {x: -7.4505804e-11, y: 0.0002675757, z: 3.352761e-10}
+      rotation: {x: 0.0012111508, y: 0.00026096174, z: -0.0029647779, w: 0.9999949}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: "\u8896\u5B50A_11_2.L"
+      parentName: "\u8896\u5B50A_10_2.L"
+      position: {x: 4.4703483e-10, y: 0.0002823318, z: 1.11758706e-10}
+      rotation: {x: 0.0012585488, y: -0.000015843714, z: -0.0022766334, w: 0.9999966}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8896\u5B50A_12_2.L"
+      parentName: "\u8896\u5B50A_11_2.L"
+      position: {x: -7.4505804e-11, y: 0.00029862727, z: -0.0000000012293457}
+      rotation: {x: 0.0012784741, y: -0.00024796333, z: -0.0016598925, w: 0.9999978}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: "\u8896\u5B50A_13_2.L"
+      parentName: "\u8896\u5B50A_12_2.L"
+      position: {x: -0, y: 0.00031645948, z: 5.9604643e-10}
+      rotation: {x: 0.76844597, y: -0.37047356, z: -0.37047356, w: 0.3674092}
+      scale: {x: 1, y: 1.0000002, z: 1.0000001}
+    - name: "\u8896\u5B50A_13_2.L_end"
+      parentName: "\u8896\u5B50A_13_2.L"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8155\u63691.L"
+      parentName: "\u8155.L"
+      position: {x: 1.3504177e-10, y: 0.0006469068, z: -0.0000000013940296}
+      rotation: {x: -0.6200326, y: 0.33994052, z: 0.6449847, w: -0.2898184}
+      scale: {x: 1, y: 0.99999994, z: 0.9999999}
+    - name: "\u8155\u63691.L_end"
+      parentName: "\u8155\u63691.L"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8155\u63692.L"
+      parentName: "\u8155.L"
+      position: {x: -4.6566128e-12, y: 0.0010512227, z: 9.230389e-10}
+      rotation: {x: -0.6200326, y: 0.3399405, z: 0.6449847, w: -0.28981847}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1.0000001}
+    - name: "\u8155\u63692.L_end"
+      parentName: "\u8155\u63692.L"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8155\u63693.L"
+      parentName: "\u8155.L"
+      position: {x: -6.984919e-11, y: 0.0014555387, z: 0.0000000016754854}
+      rotation: {x: -0.6200326, y: 0.33994052, z: 0.6449847, w: -0.2898184}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8155\u63693.L_end"
+      parentName: "\u8155\u63693.L"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u80A9\u8ABF\u65741.L"
+      parentName: "\u80A9.L"
+      position: {x: 0.0000043877294, y: 0.0010626303, z: 0.000012285597}
+      rotation: {x: 0.08858738, y: 0.019487642, z: -0.00039171582, w: 0.9958777}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u80A9\u8ABF\u65741.L_end"
+      parentName: "\u80A9\u8ABF\u65741.L"
+      position: {x: -0, y: 0.0010627105, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u80A9\u8ABF\u65742.L"
+      parentName: "\u80A9.L"
+      position: {x: -0.000015008482, y: 0.0010578295, z: 0.0000026719076}
+      rotation: {x: 0.08387925, y: 0.023186248, z: 0.00902568, w: 0.9961653}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: "\u80A9\u8ABF\u65742.L_end"
+      parentName: "\u80A9\u8ABF\u65742.L"
+      position: {x: -0, y: 0.0010579393, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u80A9\u8ABF\u65743.L"
+      parentName: "\u80A9.L"
+      position: {x: 0.000015056685, y: 0.0010558103, z: -0.0000060255065}
+      rotation: {x: 0.0801211, y: 0.028434994, z: -0.004911649, w: 0.9963674}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: "\u80A9\u8ABF\u65743.L_end"
+      parentName: "\u80A9\u8ABF\u65743.L"
+      position: {x: -0, y: 0.0010559348, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u80A9P.R"
+      parentName: "\u4E0A\u534A\u8EAB2"
+      position: {x: 0.00008010405, y: 0.0018270003, z: -0.000044866585}
+      rotation: {x: 0.10678995, y: 0.69899654, z: 0.10679036, w: 0.6989961}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_dummy_\u80A9C.R"
+      parentName: "\u80A9P.R"
+      position: {x: 5.9402674e-12, y: 1.1225864e-12, z: -4.1933154e-12}
+      rotation: {x: -1.776357e-15, y: -0.7071067, z: -1.7763567e-15, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_dummy_\u80A9C.R_end"
+      parentName: "_dummy_\u80A9C.R"
+      position: {x: -0, y: 0.0008000016, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u80A9.R"
+      parentName: "\u80A9P.R"
+      position: {x: 5.9402674e-12, y: 1.1225864e-12, z: -4.1933154e-12}
+      rotation: {x: 0.77887225, y: 0.0025916481, z: -0.0020869905, w: 0.6271738}
+      scale: {x: 0.99999994, y: 1.0000001, z: 1.0000002}
+    - name: "\u80A9C.R"
+      parentName: "\u80A9.R"
+      position: {x: -3.8417054e-11, y: 0.001055149, z: -6.3155103e-10}
+      rotation: {x: -0.5492701, y: -0.4453114, z: 0.5522216, w: 0.44164628}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: "_shadow_\u80A9\u8ABF\u65741.R"
+      parentName: "\u80A9C.R"
+      position: {x: -2.8879996e-10, y: -3.8433814e-10, z: 8.962853e-11}
+      rotation: {x: 0.52137274, y: 0.49694648, z: 0.49694526, w: -0.48400432}
+      scale: {x: 0.9999998, y: 0.9999998, z: 0.99999994}
+    - name: "_shadow_\u80A9\u8ABF\u65741.R_end"
+      parentName: "_shadow_\u80A9\u8ABF\u65741.R"
+      position: {x: -0, y: 0.0010627105, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_shadow_\u80A9\u8ABF\u65742.R"
+      parentName: "\u80A9C.R"
+      position: {x: -2.8879996e-10, y: -3.8433814e-10, z: 8.962853e-11}
+      rotation: {x: 0.5215017, y: 0.50133365, z: 0.50133485, w: -0.4747251}
+      scale: {x: 0.9999998, y: 0.9999995, z: 0.9999998}
+    - name: "_shadow_\u80A9\u8ABF\u65742.R_end"
+      parentName: "_shadow_\u80A9\u8ABF\u65742.R"
+      position: {x: -0, y: 0.0010579395, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_shadow_\u80A9\u8ABF\u65743.R"
+      parentName: "\u80A9C.R"
+      position: {x: -2.8879996e-10, y: -3.8433814e-10, z: 8.962853e-11}
+      rotation: {x: 0.5323248, y: 0.49400002, z: 0.49399963, w: -0.47807813}
+      scale: {x: 0.9999998, y: 0.99999976, z: 0.9999998}
+    - name: "_shadow_\u80A9\u8ABF\u65743.R_end"
+      parentName: "_shadow_\u80A9\u8ABF\u65743.R"
+      position: {x: -0, y: 0.0010559338, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8155.R"
+      parentName: "\u80A9C.R"
+      position: {x: -1.3978835e-10, y: -3.8433817e-10, z: 1.5122712e-11}
+      rotation: {x: 0.5083167, y: 0.47794273, z: -0.51838386, w: 0.49443215}
+      scale: {x: 0.9999998, y: 0.9999999, z: 0.9999999}
+    - name: "_dummy_\u80A9\u8ABF\u65741.R"
+      parentName: "\u8155.R"
+      position: {x: -4.6566126e-11, y: -2.0489097e-10, z: 8.5100776e-10}
+      rotation: {x: 0.0372649, y: 0.9529961, z: -0.30058506, w: 0.0076465867}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_dummy_\u80A9\u8ABF\u65741.R_end"
+      parentName: "_dummy_\u80A9\u8ABF\u65741.R"
+      position: {x: -0, y: 0.0010627105, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_dummy_\u80A9\u8ABF\u65742.R"
+      parentName: "\u8155.R"
+      position: {x: -4.6566126e-11, y: -2.0489097e-10, z: 8.5100776e-10}
+      rotation: {x: 0.02733126, y: 0.9547087, z: -0.29613402, w: 0.009433849}
+      scale: {x: 1, y: 0.99999964, z: 0.99999994}
+    - name: "_dummy_\u80A9\u8ABF\u65742.R_end"
+      parentName: "_dummy_\u80A9\u8ABF\u65742.R"
+      position: {x: -0, y: 0.0010579395, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_dummy_\u80A9\u8ABF\u65743.R"
+      parentName: "\u8155.R"
+      position: {x: -4.6566126e-11, y: -2.0489097e-10, z: 8.5100776e-10}
+      rotation: {x: 0.03984617, y: 0.9551674, z: -0.29283834, w: 0.017697496}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+    - name: "_dummy_\u80A9\u8ABF\u65743.R_end"
+      parentName: "_dummy_\u80A9\u8ABF\u65743.R"
+      position: {x: -0, y: 0.0010559338, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_shadow_\u8155\u63691.R"
+      parentName: "\u8155.R"
+      position: {x: 9.313225e-11, y: 0.0012129529, z: 0.0000000013675432}
+      rotation: {x: 0.64498496, y: 0.28981775, z: -0.62003255, w: -0.33994073}
+      scale: {x: 0.9999999, y: 0.9999998, z: 0.99999976}
+    - name: "_shadow_\u8155\u63691.R_end"
+      parentName: "_shadow_\u8155\u63691.R"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_shadow_\u8155\u63692.R"
+      parentName: "\u8155.R"
+      position: {x: 9.313225e-11, y: 0.0012129529, z: 0.0000000013675432}
+      rotation: {x: 0.64498496, y: 0.289818, z: -0.6200326, w: -0.3399406}
+      scale: {x: 1, y: 1.0000001, z: 1.0000004}
+    - name: "_shadow_\u8155\u63692.R_end"
+      parentName: "_shadow_\u8155\u63692.R"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_shadow_\u8155\u63693.R"
+      parentName: "\u8155.R"
+      position: {x: 9.313225e-11, y: 0.0012129529, z: 0.0000000013675432}
+      rotation: {x: 0.64498496, y: 0.289818, z: -0.6200326, w: -0.3399406}
+      scale: {x: 1, y: 1.0000002, z: 1.0000004}
+    - name: "_shadow_\u8155\u63693.R_end"
+      parentName: "_shadow_\u8155\u63693.R"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone_Piao017_R
+      parentName: "\u8155.R"
+      position: {x: -0.00027211933, y: 0.00045667443, z: -0.00039745768}
+      rotation: {x: -0.16949601, y: 0.90742797, z: -0.35674146, w: -0.14346127}
+      scale: {x: 0.99999994, y: 0.99999964, z: 1}
+    - name: Bone_Piao017_R_end
+      parentName: Bone_Piao017_R
+      position: {x: -0, y: 0.00066375785, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8155\u6369.R"
+      parentName: "\u8155.R"
+      position: {x: 9.313225e-11, y: 0.0012129529, z: 0.0000000013675432}
+      rotation: {x: 0.00000024233424, y: -0.00000007527137, z: -0.00000002561137,
+        w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_dummy_\u8155\u63691.R"
+      parentName: "\u8155\u6369.R"
+      position: {x: 1.8626451e-11, y: -0.0000000010430813, z: -7.7338524e-10}
+      rotation: {x: 0.644985, y: 0.28981766, z: -0.62003267, w: -0.3399405}
+      scale: {x: 0.99999994, y: 0.9999999, z: 0.99999976}
+    - name: "_dummy_\u8155\u63691.R_end"
+      parentName: "_dummy_\u8155\u63691.R"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_dummy_\u8155\u63692.R"
+      parentName: "\u8155\u6369.R"
+      position: {x: 1.8626451e-11, y: -0.0000000010430813, z: -7.7338524e-10}
+      rotation: {x: 0.64498496, y: 0.2898178, z: -0.62003267, w: -0.33994055}
+      scale: {x: 1, y: 1.0000001, z: 1.0000004}
+    - name: "_dummy_\u8155\u63692.R_end"
+      parentName: "_dummy_\u8155\u63692.R"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_dummy_\u8155\u63693.R"
+      parentName: "\u8155\u6369.R"
+      position: {x: 1.8626451e-11, y: -0.0000000010430813, z: -7.7338524e-10}
+      rotation: {x: 0.64498496, y: 0.2898178, z: -0.62003267, w: -0.33994055}
+      scale: {x: 1, y: 1.0000002, z: 1.0000004}
+    - name: "_dummy_\u8155\u63693.R_end"
+      parentName: "_dummy_\u8155\u63693.R"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u3072\u3058.R"
+      parentName: "\u8155\u6369.R"
+      position: {x: -4.6566126e-11, y: 0.0008086343, z: -0.0000000016638797}
+      rotation: {x: -0.0032461525, y: 0.00021237317, z: -0.013897098, w: 0.99989814}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_shadow_\u624B\u63691.R"
+      parentName: "\u3072\u3058.R"
+      position: {x: -4.6566126e-11, y: 0.0013193669, z: -1.09180574e-10}
+      rotation: {x: 0.63992006, y: 0.30083624, z: -0.62361586, w: -0.33332136}
+      scale: {x: 0.99999994, y: 1, z: 1.0000001}
+    - name: "_shadow_\u624B\u63691.R_end"
+      parentName: "_shadow_\u624B\u63691.R"
+      position: {x: -0, y: 0.0007999992, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_shadow_\u624B\u63692.R"
+      parentName: "\u3072\u3058.R"
+      position: {x: -4.6566126e-11, y: 0.0013193669, z: -1.09180574e-10}
+      rotation: {x: 0.63991994, y: 0.3008366, z: -0.623616, w: -0.33332127}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: "_shadow_\u624B\u63692.R_end"
+      parentName: "_shadow_\u624B\u63692.R"
+      position: {x: -0, y: 0.0008000016, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_shadow_\u624B\u63693.R"
+      parentName: "\u3072\u3058.R"
+      position: {x: -4.6566126e-11, y: 0.0013193669, z: -1.09180574e-10}
+      rotation: {x: 0.63991976, y: 0.30083653, z: -0.623616, w: -0.33332145}
+      scale: {x: 0.99999994, y: 1, z: 0.9999999}
+    - name: "_shadow_\u624B\u63693.R_end"
+      parentName: "_shadow_\u624B\u63693.R"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u624B\u6369.R"
+      parentName: "\u3072\u3058.R"
+      position: {x: -4.6566126e-11, y: 0.0013193669, z: -1.09180574e-10}
+      rotation: {x: 0.000000071325864, y: -0.00000009300175, z: -0.000000003259629,
+        w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_dummy_\u624B\u63691.R"
+      parentName: "\u624B\u6369.R"
+      position: {x: 1.8626451e-11, y: 4.796311e-10, z: -0.0000000012193457}
+      rotation: {x: 0.63992006, y: 0.30083615, z: -0.6236159, w: -0.33332136}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: "_dummy_\u624B\u63691.R_end"
+      parentName: "_dummy_\u624B\u63691.R"
+      position: {x: -0, y: 0.0007999992, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_dummy_\u624B\u63692.R"
+      parentName: "\u624B\u6369.R"
+      position: {x: 1.8626451e-11, y: 4.796311e-10, z: -0.0000000012193457}
+      rotation: {x: 0.6399198, y: 0.30083647, z: -0.62361604, w: -0.3333213}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: "_dummy_\u624B\u63692.R_end"
+      parentName: "_dummy_\u624B\u63692.R"
+      position: {x: -0, y: 0.0008000016, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_dummy_\u624B\u63693.R"
+      parentName: "\u624B\u6369.R"
+      position: {x: 1.8626451e-11, y: 4.796311e-10, z: -0.0000000012193457}
+      rotation: {x: 0.63991976, y: 0.3008365, z: -0.62361604, w: -0.33332142}
+      scale: {x: 0.99999994, y: 1, z: 0.9999999}
+    - name: "_dummy_\u624B\u63693.R_end"
+      parentName: "_dummy_\u624B\u63693.R"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u624B\u9996.R"
+      parentName: "\u624B\u6369.R"
+      position: {x: 5.5879353e-11, y: 0.00087957934, z: -9.1803914e-10}
+      rotation: {x: 0.072483905, y: -0.0048362105, z: 0.015174354, w: 0.9972424}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u30C0\u30DF\u30FC.R"
+      parentName: "\u624B\u9996.R"
+      position: {x: 0.00002562121, y: 0.00031237217, z: 0.00017385723}
+      rotation: {x: 0.67565876, y: -0.027662776, z: -0.03013652, w: 0.7360787}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: "\u30C0\u30DF\u30FC.R_end"
+      parentName: "\u30C0\u30DF\u30FC.R"
+      position: {x: -0, y: 0.00095999986, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u4E2D\u6307\uFF11.R"
+      parentName: "\u624B\u9996.R"
+      position: {x: -0.000040889285, y: 0.00059801055, z: -0.000050822488}
+      rotation: {x: -0.014100713, y: 0.0007718685, z: -0.027145665, w: 0.99953175}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1}
+    - name: "\u4E2D\u6307\uFF12.R"
+      parentName: "\u4E2D\u6307\uFF11.R"
+      position: {x: -2.0489097e-10, y: 0.00028531445, z: 0.0000000041697272}
+      rotation: {x: -0.013138787, y: 0.0003515305, z: -0.00078042166, w: 0.99991333}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: "\u4E2D\u6307\uFF13.R"
+      parentName: "\u4E2D\u6307\uFF12.R"
+      position: {x: 3.7252902e-11, y: 0.00016425025, z: -3.6342873e-11}
+      rotation: {x: -0.000000007770753, y: 0.0000000139862095, z: -0.000000056345016,
+        w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u4E2D\u6307\uFF13.R_end"
+      parentName: "\u4E2D\u6307\uFF13.R"
+      position: {x: -0, y: 0.0001642526, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u4EBA\u6307\uFF11.R"
+      parentName: "\u624B\u9996.R"
+      position: {x: -0.00017800549, y: 0.0005892062, z: -0.000057533376}
+      rotation: {x: -0.04713309, y: -0.043249715, z: 0.041784134, w: 0.99707675}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.9999999}
+    - name: "\u4EBA\u6307\uFF12.R"
+      parentName: "\u4EBA\u6307\uFF11.R"
+      position: {x: 1.7695129e-10, y: 0.0002817495, z: -3.0483172e-10}
+      rotation: {x: -0.018112427, y: -0.0006354489, z: -0.0063782125, w: 0.9998154}
+      scale: {x: 0.9999999, y: 1, z: 0.99999994}
+    - name: "\u4EBA\u6307\uFF13.R"
+      parentName: "\u4EBA\u6307\uFF12.R"
+      position: {x: -2.6077032e-10, y: 0.00016188982, z: 8.879475e-13}
+      rotation: {x: 0.000000023146029, y: -9.905505e-10, z: -4.6566126e-10, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u4EBA\u6307\uFF13.R_end"
+      parentName: "\u4EBA\u6307\uFF13.R"
+      position: {x: -0, y: 0.0001618901, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u5C0F\u6307\uFF11.R"
+      parentName: "\u624B\u9996.R"
+      position: {x: 0.00021858833, y: 0.000557205, z: 0.0000060552507}
+      rotation: {x: -0.007130193, y: 0.0005336156, z: -0.007128835, w: 0.99994904}
+      scale: {x: 1, y: 1.0000001, z: 0.99999994}
+    - name: "\u5C0F\u6307\uFF12.R"
+      parentName: "\u5C0F\u6307\uFF11.R"
+      position: {x: 6.1467287e-10, y: 0.00022268729, z: 0.0000000014392938}
+      rotation: {x: -0.009306746, y: 0.0006397558, z: 0.0010471398, w: 0.99995595}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: "\u5C0F\u6307\uFF13.R"
+      parentName: "\u5C0F\u6307\uFF12.R"
+      position: {x: -2.7939676e-10, y: 0.00011420187, z: 1.7854651e-12}
+      rotation: {x: -0.000000038704066, y: 6.2637207e-10, z: 9.313226e-10, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u5C0F\u6307\uFF13.R_end"
+      parentName: "\u5C0F\u6307\uFF13.R"
+      position: {x: -0, y: 0.000114203984, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u624B\u9996\u5148.R"
+      parentName: "\u624B\u9996.R"
+      position: {x: -5.2386893e-11, y: 0.00042876368, z: 6.048355e-10}
+      rotation: {x: 0.6638647, y: 0.2434824, z: -0.641739, w: -0.2969361}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: "\u624B\u9996\u5148.R_end"
+      parentName: "\u624B\u9996\u5148.R"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u85AC\u6307\uFF11.R"
+      parentName: "\u624B\u9996.R"
+      position: {x: 0.000092435104, y: 0.0005851297, z: -0.00003515004}
+      rotation: {x: -0.0038206894, y: 0.00028205125, z: -0.008144831, w: 0.9999595}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u85AC\u6307\uFF12.R"
+      parentName: "\u85AC\u6307\uFF11.R"
+      position: {x: 2.7939676e-10, y: 0.0002817816, z: 0.0000000011881165}
+      rotation: {x: -0.016119476, y: 0.0010821886, z: 0.0014796921, w: 0.99986845}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: "\u85AC\u6307\uFF13.R"
+      parentName: "\u85AC\u6307\uFF12.R"
+      position: {x: -1.4901161e-10, y: 0.0001414929, z: -0.0000000023145597}
+      rotation: {x: 0.00000009582067, y: -2.1040945e-10, z: -0.0000000018626454, w: 1}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1}
+    - name: "\u85AC\u6307\uFF13.R_end"
+      parentName: "\u85AC\u6307\uFF13.R"
+      position: {x: -0, y: 0.00014149517, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u89AA\u6307\uFF10.R"
+      parentName: "\u624B\u9996.R"
+      position: {x: -0.000104520266, y: -0.00008057954, z: -0.0000055503774}
+      rotation: {x: 0.03372548, y: -0.021510279, z: 0.34737456, w: 0.9368729}
+      scale: {x: 0.9999999, y: 0.99999994, z: 1}
+    - name: "\u89AA\u6307\uFF11.R"
+      parentName: "\u89AA\u6307\uFF10.R"
+      position: {x: 1.7229468e-10, y: 0.0004631259, z: -8.726208e-10}
+      rotation: {x: 0.013274398, y: -0.014133733, z: -0.038462248, w: 0.999072}
+      scale: {x: 1.0000001, y: 0.99999994, z: 1}
+    - name: "\u89AA\u6307\uFF12.R"
+      parentName: "\u89AA\u6307\uFF11.R"
+      position: {x: -3.9115547e-10, y: 0.00019352669, z: 3.8340556e-10}
+      rotation: {x: 0.003536302, y: -0.0022598733, z: -0.010654101, w: 0.99993443}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bip001RFinger03
+      parentName: "\u89AA\u6307\uFF12.R"
+      position: {x: -1.8626451e-11, y: 0.0001754597, z: 1.2855474e-10}
+      rotation: {x: 0.000000013277901, y: 0.8416902, z: 0.000000041926405, w: 0.5399608}
+      scale: {x: 1, y: 1.0000001, z: 0.99999994}
+    - name: Bip001RFinger03_end
+      parentName: Bip001RFinger03
+      position: {x: -0, y: 0.0001754597, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u624B\u63691.R"
+      parentName: "\u3072\u3058.R"
+      position: {x: -9.313225e-11, y: 0.00072979956, z: 3.410707e-10}
+      rotation: {x: 0.63991994, y: 0.30083647, z: -0.6236159, w: -0.33332136}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: "\u624B\u63691.R_end"
+      parentName: "\u624B\u63691.R"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u624B\u63692.R"
+      parentName: "\u3072\u3058.R"
+      position: {x: -1.8626451e-11, y: 0.0011957274, z: 6.36552e-10}
+      rotation: {x: 0.63991994, y: 0.30083647, z: -0.6236159, w: -0.33332136}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: "\u624B\u63692.R_end"
+      parentName: "\u624B\u63692.R"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u624B\u63693.R"
+      parentName: "\u3072\u3058.R"
+      position: {x: -3.7252902e-11, y: 0.0016616529, z: 9.320333e-10}
+      rotation: {x: 0.63991994, y: 0.30083647, z: -0.62361586, w: -0.3333214}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: "\u624B\u63693.R_end"
+      parentName: "\u624B\u63693.R"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8896\u5B500.R"
+      parentName: "\u8155\u6369.R"
+      position: {x: 0.0000886189, y: 0.000018817214, z: 0.000022702481}
+      rotation: {x: 0.16599333, y: 0.93215775, z: -0.050858185, w: 0.3177131}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: "\u8896\u5B50A_0_0.R"
+      parentName: "\u8896\u5B500.R"
+      position: {x: -0.000022669397, y: 0.00017356522, z: -0.00042921948}
+      rotation: {x: -0.095632486, y: -0.06594059, z: 0.017938204, w: 0.9930682}
+      scale: {x: 0.9999999, y: 0.99999994, z: 0.9999999}
+    - name: "\u8896\u5B50A_1_0.R"
+      parentName: "\u8896\u5B50A_0_0.R"
+      position: {x: -0, y: 0.00019345662, z: -4.0978193e-10}
+      rotation: {x: 0.0077678594, y: -0.0059786183, z: 0.016738826, w: 0.9998119}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: "\u8896\u5B50A_2_0.R"
+      parentName: "\u8896\u5B50A_1_0.R"
+      position: {x: 5.5879353e-11, y: 0.00019953532, z: -4.4703483e-10}
+      rotation: {x: 0.005950358, y: -0.0043239803, z: 0.012403005, w: 0.99989605}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: "\u8896\u5B50A_3_0.R"
+      parentName: "\u8896\u5B50A_2_0.R"
+      position: {x: 6.3329936e-10, y: 0.00020627733, z: -8.5681673e-10}
+      rotation: {x: 0.0041573765, y: -0.0028797144, z: 0.008430004, w: 0.9999517}
+      scale: {x: 0.9999999, y: 0.9999999, z: 0.9999999}
+    - name: "\u8896\u5B50A_4_0.R"
+      parentName: "\u8896\u5B50A_3_0.R"
+      position: {x: 4.4703483e-10, y: 0.00021354597, z: 3.72529e-10}
+      rotation: {x: 0.0024586453, y: -0.0016060689, z: 0.0048220516, w: 0.9999841}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: "\u8896\u5B50A_5_0.R"
+      parentName: "\u8896\u5B50A_4_0.R"
+      position: {x: -1.862645e-10, y: 0.00022124851, z: -7.4505804e-11}
+      rotation: {x: 0.00089515524, y: -0.00047017343, z: 0.0015611117, w: 0.9999983}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: "\u8896\u5B50A_6_0.R"
+      parentName: "\u8896\u5B50A_5_0.R"
+      position: {x: 2.6077032e-10, y: 0.00022933097, z: 7.8231094e-10}
+      rotation: {x: -0.00053919916, y: 0.0005286864, z: -0.0013580004, w: 0.9999988}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8896\u5B50A_7_0.R"
+      parentName: "\u8896\u5B50A_6_0.R"
+      position: {x: -4.4703483e-10, y: 0.00023778404, z: -3.352761e-10}
+      rotation: {x: -0.0017981014, y: 0.0014438187, z: -0.003986308, w: 0.9999894}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: "\u8896\u5B50A_8_0.R"
+      parentName: "\u8896\u5B50A_7_0.R"
+      position: {x: -8.1956386e-10, y: 0.00024661273, z: 3.352761e-10}
+      rotation: {x: -0.0029046647, y: 0.0022674815, z: -0.006329793, w: 0.9999732}
+      scale: {x: 0.9999999, y: 0.99999994, z: 0.9999999}
+    - name: "\u8896\u5B50A_9_0.R"
+      parentName: "\u8896\u5B50A_8_0.R"
+      position: {x: -0, y: 0.00025585425, z: 7.4505804e-11}
+      rotation: {x: -0.0038535406, y: 0.0030151806, z: -0.008409254, w: 0.9999527}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1}
+    - name: "\u8896\u5B50A_10_0.R"
+      parentName: "\u8896\u5B50A_9_0.R"
+      position: {x: 3.72529e-10, y: 0.00026556893, z: -0.0000000011920929}
+      rotation: {x: -0.0046372614, y: 0.0037052212, z: -0.010246932, w: 0.9999299}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8896\u5B50A_11_0.R"
+      parentName: "\u8896\u5B50A_10_0.R"
+      position: {x: 7.4505804e-11, y: 0.00027582346, z: -0.0000000014156103}
+      rotation: {x: -0.0052708387, y: 0.0043330505, z: -0.011846305, w: 0.9999066}
+      scale: {x: 0.9999999, y: 1, z: 0.9999999}
+    - name: "\u8896\u5B50A_12_0.R"
+      parentName: "\u8896\u5B50A_11_0.R"
+      position: {x: -1.4901161e-10, y: 0.00028670512, z: 6.705522e-10}
+      rotation: {x: -0.0057504997, y: 0.004911285, z: -0.013221353, w: 0.999884}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: "\u8896\u5B50A_13_0.R"
+      parentName: "\u8896\u5B50A_12_0.R"
+      position: {x: -4.4703483e-10, y: 0.00029830274, z: 2.2351741e-10}
+      rotation: {x: 0.87162066, y: 0.31694022, z: 0.3169402, w: 0.19843188}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: "\u8896\u5B50A_13_0.R_end"
+      parentName: "\u8896\u5B50A_13_0.R"
+      position: {x: -0, y: 0.0007999998, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8896\u5B50A_0_1.R"
+      parentName: "\u8896\u5B500.R"
+      position: {x: -0.00014428324, y: 0.00029592562, z: 0.00014121215}
+      rotation: {x: -0.027516538, y: 0.028130626, z: -0.09603094, w: 0.99460024}
+      scale: {x: 1, y: 0.99999994, z: 0.9999999}
+    - name: "\u8896\u5B50A_1_1.R"
+      parentName: "\u8896\u5B50A_0_1.R"
+      position: {x: -0, y: 0.00018759572, z: -0.000000001117587}
+      rotation: {x: 0.0009344057, y: -0.01615938, z: 0.032926124, w: 0.9993267}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: "\u8896\u5B50A_2_1.R"
+      parentName: "\u8896\u5B50A_1_1.R"
+      position: {x: 2.2351741e-10, y: 0.00019259921, z: -7.4505804e-11}
+      rotation: {x: 0.0027464742, y: -0.01188363, z: 0.02706386, w: 0.99955934}
+      scale: {x: 0.99999994, y: 1, z: 0.99999994}
+    - name: "\u8896\u5B50A_3_1.R"
+      parentName: "\u8896\u5B50A_2_1.R"
+      position: {x: -7.4505804e-11, y: 0.0001990518, z: 0.0000000013411044}
+      rotation: {x: 0.0039322656, y: -0.008170426, z: 0.021273613, w: 0.9997326}
+      scale: {x: 0.99999994, y: 0.9999999, z: 0.99999994}
+    - name: "\u8896\u5B50A_4_1.R"
+      parentName: "\u8896\u5B50A_3_1.R"
+      position: {x: 2.2351741e-10, y: 0.0002066488, z: 7.4505804e-11}
+      rotation: {x: 0.0046639773, y: -0.004990984, z: 0.015824232, w: 0.99985147}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: "\u8896\u5B50A_5_1.R"
+      parentName: "\u8896\u5B50A_4_1.R"
+      position: {x: -7.4505804e-11, y: 0.00021514978, z: -2.9802322e-10}
+      rotation: {x: 0.005119731, y: -0.0022630927, z: 0.010834573, w: 0.9999257}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: "\u8896\u5B50A_6_1.R"
+      parentName: "\u8896\u5B50A_5_1.R"
+      position: {x: 3.72529e-10, y: 0.00022437521, z: 3.72529e-10}
+      rotation: {x: 0.0053605977, y: 0.00003146864, z: 0.006382195, w: 0.9999653}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: "\u8896\u5B50A_7_1.R"
+      parentName: "\u8896\u5B50A_6_1.R"
+      position: {x: 1.4901161e-10, y: 0.0002342157, z: 1.4901161e-10}
+      rotation: {x: 0.0055392245, y: 0.0020134186, z: 0.002428708, w: 0.9999797}
+      scale: {x: 1.0000001, y: 1, z: 1.0000001}
+    - name: "\u8896\u5B50A_8_1.R"
+      parentName: "\u8896\u5B50A_7_1.R"
+      position: {x: -1.4901161e-10, y: 0.00024460247, z: 5.9604643e-10}
+      rotation: {x: 0.0056642774, y: 0.003698458, z: -0.0010279061, w: 0.99997663}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: "\u8896\u5B50A_9_1.R"
+      parentName: "\u8896\u5B50A_8_1.R"
+      position: {x: -0, y: 0.00025551746, z: 0.000000001490116}
+      rotation: {x: 0.0057931556, y: 0.005148455, z: -0.0040321173, w: 0.99996185}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: "\u8896\u5B50A_10_1.R"
+      parentName: "\u8896\u5B50A_9_1.R"
+      position: {x: 2.9802322e-10, y: 0.00026697735, z: 1.4901161e-10}
+      rotation: {x: 0.0059395987, y: 0.006394394, z: -0.006617236, w: 0.99994004}
+      scale: {x: 0.99999994, y: 0.9999999, z: 0.9999998}
+    - name: "\u8896\u5B50A_11_1.R"
+      parentName: "\u8896\u5B50A_10_1.R"
+      position: {x: 4.4703483e-10, y: 0.00027902488, z: 4.4703483e-10}
+      rotation: {x: 0.006115664, y: 0.0074663307, z: -0.008818056, w: 0.9999146}
+      scale: {x: 1, y: 1, z: 0.9999999}
+    - name: "\u8896\u5B50A_12_1.R"
+      parentName: "\u8896\u5B50A_11_1.R"
+      position: {x: -2.9802322e-10, y: 0.0002917261, z: -9.685754e-10}
+      rotation: {x: 0.0063192067, y: 0.008381698, z: -0.010659693, w: 0.9998881}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: "\u8896\u5B50A_13_1.R"
+      parentName: "\u8896\u5B50A_12_1.R"
+      position: {x: 1.4901161e-10, y: 0.00030516385, z: 7.4505804e-11}
+      rotation: {x: 0.8052419, y: 0.34922692, z: 0.34922704, w: 0.32812586}
+      scale: {x: 0.99999994, y: 1, z: 0.99999994}
+    - name: "\u8896\u5B50A_13_1.R_end"
+      parentName: "\u8896\u5B50A_13_1.R"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8896\u5B50A_0_2.R"
+      parentName: "\u8896\u5B500.R"
+      position: {x: 0.0003413224, y: 0.00020619994, z: 0.0002422801}
+      rotation: {x: 0.06295123, y: 0.08339046, z: -0.09770573, w: 0.9897155}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+    - name: "\u8896\u5B50A_1_2.R"
+      parentName: "\u8896\u5B50A_0_2.R"
+      position: {x: 5.9604643e-10, y: 0.0002052202, z: -4.4703483e-10}
+      rotation: {x: -0.0010358909, y: -0.0040657073, z: 0.009049482, w: 0.9999503}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: "\u8896\u5B50A_2_2.R"
+      parentName: "\u8896\u5B50A_1_2.R"
+      position: {x: 1.862645e-10, y: 0.00020578054, z: 1.11758706e-10}
+      rotation: {x: -0.0006544686, y: -0.003690245, z: 0.008800956, w: 0.9999543}
+      scale: {x: 0.9999999, y: 0.99999994, z: 0.99999994}
+    - name: "\u8896\u5B50A_3_2.R"
+      parentName: "\u8896\u5B50A_2_2.R"
+      position: {x: -3.352761e-10, y: 0.00020795215, z: 6.1467287e-10}
+      rotation: {x: -0.0002885428, y: -0.0032615282, z: 0.008360899, w: 0.9999597}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: "\u8896\u5B50A_4_2.R"
+      parentName: "\u8896\u5B50A_3_2.R"
+      position: {x: -2.6077032e-10, y: 0.00021172797, z: -0.0000000018440186}
+      rotation: {x: 0.000050771854, y: -0.0027971736, z: 0.007757306, w: 0.999966}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+    - name: "\u8896\u5B50A_5_2.R"
+      parentName: "\u8896\u5B50A_4_2.R"
+      position: {x: -6.705522e-10, y: 0.000217101, z: 0.0000000024214386}
+      rotation: {x: 0.00036926105, y: -0.0023047947, z: 0.0070248786, w: 0.99997264}
+      scale: {x: 1, y: 0.9999999, z: 1.0000001}
+    - name: "\u8896\u5B50A_6_2.R"
+      parentName: "\u8896\u5B50A_5_2.R"
+      position: {x: 3.72529e-10, y: 0.00022406022, z: 1.862645e-10}
+      rotation: {x: 0.00061645184, y: -0.0018407574, z: 0.006223313, w: 0.9999788}
+      scale: {x: 0.99999994, y: 1, z: 1.0000001}
+    - name: "\u8896\u5B50A_7_2.R"
+      parentName: "\u8896\u5B50A_6_2.R"
+      position: {x: -7.4505804e-11, y: 0.00023259701, z: 5.2154064e-10}
+      rotation: {x: 0.0008448047, y: -0.0013756559, z: 0.0053739315, w: 0.99998426}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: "\u8896\u5B50A_8_2.R"
+      parentName: "\u8896\u5B50A_7_2.R"
+      position: {x: 7.4505804e-11, y: 0.00024269968, z: -0.0000000018626451}
+      rotation: {x: 0.0010043163, y: -0.0009637212, z: 0.0045346688, w: 0.9999888}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8896\u5B50A_9_2.R"
+      parentName: "\u8896\u5B50A_8_2.R"
+      position: {x: -2.9802322e-10, y: 0.0002543622, z: -0.0000000015646219}
+      rotation: {x: 0.0011220811, y: -0.00059319, z: 0.0037258482, w: 0.99999225}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8896\u5B50A_10_2.R"
+      parentName: "\u8896\u5B50A_9_2.R"
+      position: {x: 2.9802322e-10, y: 0.00026757547, z: -2.9802322e-10}
+      rotation: {x: 0.0012111767, y: -0.0002609766, z: 0.0029647883, w: 0.9999949}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: "\u8896\u5B50A_11_2.R"
+      parentName: "\u8896\u5B50A_10_2.R"
+      position: {x: 1.4901161e-10, y: 0.0002823319, z: -4.842877e-10}
+      rotation: {x: 0.0012584594, y: 0.00001584744, z: 0.0022765924, w: 0.9999966}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: "\u8896\u5B50A_12_2.R"
+      parentName: "\u8896\u5B50A_11_2.R"
+      position: {x: 1.4901161e-10, y: 0.00029862663, z: 0}
+      rotation: {x: 0.0012784781, y: 0.00024796338, z: 0.001659837, w: 0.9999978}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: "\u8896\u5B50A_13_2.R"
+      parentName: "\u8896\u5B50A_12_2.R"
+      position: {x: -4.4703483e-10, y: 0.00031646006, z: 2.2351741e-10}
+      rotation: {x: 0.768446, y: 0.37047353, z: 0.3704735, w: 0.3674091}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: "\u8896\u5B50A_13_2.R_end"
+      parentName: "\u8896\u5B50A_13_2.R"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8155\u63691.R"
+      parentName: "\u8155.R"
+      position: {x: 9.313225e-11, y: 0.0006469092, z: 0.0000000020404314}
+      rotation: {x: 0.644985, y: 0.28981796, z: -0.62003255, w: -0.33994064}
+      scale: {x: 0.9999998, y: 0.99999994, z: 0.99999994}
+    - name: "\u8155\u63691.R_end"
+      parentName: "\u8155\u63691.R"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8155\u63692.R"
+      parentName: "\u8155.R"
+      position: {x: 3.7252902e-11, y: 0.0010512247, z: 2.5062352e-10}
+      rotation: {x: 0.64498496, y: 0.28981796, z: -0.6200326, w: -0.33994055}
+      scale: {x: 1, y: 1.0000002, z: 1.0000002}
+    - name: "\u8155\u63692.R_end"
+      parentName: "\u8155\u63692.R"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8155\u63693.R"
+      parentName: "\u8155.R"
+      position: {x: 1.3969838e-10, y: 0.001455544, z: 0.0000000019625885}
+      rotation: {x: 0.644985, y: 0.2898178, z: -0.62003255, w: -0.33994064}
+      scale: {x: 0.9999999, y: 1, z: 0.99999994}
+    - name: "\u8155\u63693.R_end"
+      parentName: "\u8155\u63693.R"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u80A9\u8ABF\u65741.R"
+      parentName: "\u80A9.R"
+      position: {x: 0.000004387667, y: 0.0010626313, z: -0.000012282225}
+      rotation: {x: 0.00039160287, y: 0.99587774, z: -0.088586815, w: 0.019487785}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: "\u80A9\u8ABF\u65741.R_end"
+      parentName: "\u80A9\u8ABF\u65741.R"
+      position: {x: -0, y: 0.0010627105, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u80A9\u8ABF\u65742.R"
+      parentName: "\u80A9.R"
+      position: {x: -0.00001500859, y: 0.0010578302, z: -0.0000026709358}
+      rotation: {x: -0.009025815, y: 0.99616534, z: -0.08387813, w: 0.023187023}
+      scale: {x: 0.99999994, y: 1.0000002, z: 1.0000001}
+    - name: "\u80A9\u8ABF\u65742.R_end"
+      parentName: "\u80A9\u8ABF\u65742.R"
+      position: {x: -0, y: 0.0010579396, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u80A9\u8ABF\u65743.R"
+      parentName: "\u80A9.R"
+      position: {x: 0.0000150577325, y: 0.0010558094, z: 0.0000060279103}
+      rotation: {x: 0.0049120756, y: 0.99636745, z: -0.08012053, w: 0.028435348}
+      scale: {x: 1.0000002, y: 0.99999976, z: 1.0000002}
+    - name: "\u80A9\u8ABF\u65743.R_end"
+      parentName: "\u80A9\u8ABF\u65743.R"
+      position: {x: -0, y: 0.0010559338, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u9996"
+      parentName: "\u4E0A\u534A\u8EAB2"
+      position: {x: -1.847411e-15, y: 0.0020221984, z: 2.9802238e-10}
+      rotation: {x: 0.2959601, y: 0.0000006397704, z: 0.0000006192021, w: 0.9552003}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: "\u982D"
+      parentName: "\u9996"
+      position: {x: -2.664535e-16, y: 0.0007430967, z: -3.725223e-11}
+      rotation: {x: -0.14830725, y: -0.00000028107485, z: -0.00000028107496, w: 0.9889413}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_shadow_\u76EE.L"
+      parentName: "\u982D"
+      position: {x: 1.8516433e-10, y: 0.0023734723, z: 0.00052402966}
+      rotation: {x: 0.6069018, y: 0.22006309, z: 0.38050935, w: 0.6621594}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_shadow_\u76EE.L_end"
+      parentName: "_shadow_\u76EE.L"
+      position: {x: -0, y: 0.00030667492, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_shadow_\u76EE.R"
+      parentName: "\u982D"
+      position: {x: 1.8516433e-10, y: 0.0023734723, z: 0.00052402966}
+      rotation: {x: 0.38050914, y: 0.6621596, z: 0.606902, w: 0.22006229}
+      scale: {x: 0.99999994, y: 0.99999976, z: 0.99999994}
+    - name: "_shadow_\u76EE.R_end"
+      parentName: "_shadow_\u76EE.R"
+      position: {x: -0, y: 0.00030667504, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone_Hair001_L
+      parentName: "\u982D"
+      position: {x: -0.0006378518, y: 0.0013888979, z: 0.0005488131}
+      rotation: {x: 1, y: 5.3582907e-16, z: 0.00000004371139, w: 0.0000000754979}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone_Hair002_L
+      parentName: Bone_Hair001_L
+      position: {x: 1.3588686e-11, y: 0.0004245043, z: -2.1368196e-12}
+      rotation: {x: 0.00000007285509, y: -0.000000043711417, z: -2.1967633e-14, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone_Hair003_L
+      parentName: Bone_Hair002_L
+      position: {x: -0, y: 0.0004339361, z: -3.625572e-17}
+      rotation: {x: 2.4074124e-35, y: 0, z: 4.2351657e-22, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "Bone_Hair003_L\u5148"
+      parentName: Bone_Hair003_L
+      position: {x: -0, y: 0.00043393252, z: -3.625572e-17}
+      rotation: {x: 1, y: 1.9106865e-15, z: 0.00000004371139, w: -0.00000004371139}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "Bone_Hair003_L\u5148_end"
+      parentName: "Bone_Hair003_L\u5148"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone_Piao019_L
+      parentName: Bone_Hair001_L
+      position: {x: 0.000017626464, y: 0.00035745747, z: -0.00018377432}
+      rotation: {x: 1, y: 4.1530534e-15, z: 0.0000000754979, w: -0.00000019470718}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone_Piao019_L_end
+      parentName: Bone_Piao019_L
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone_Hair001_M
+      parentName: "\u982D"
+      position: {x: 0.000075556294, y: 0.0013375854, z: 0.0008575016}
+      rotation: {x: 1, y: -1.9106859e-15, z: 0.00000004371139, w: 0.00000004371139}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone_Hair002_M
+      parentName: Bone_Hair001_M
+      position: {x: -1.3345234e-12, y: 0.00045664786, z: 7.0885394e-12}
+      rotation: {x: -0.00000001490116, y: -0.000000043711417, z: -2.1967633e-14, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "Bone_Hair002_M\u5148"
+      parentName: Bone_Hair002_M
+      position: {x: -0, y: 0.00045665266, z: 4.3021143e-18}
+      rotation: {x: 1, y: -1.9106819e-15, z: 0.00000004371139, w: 0.00000004371139}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "Bone_Hair002_M\u5148_end"
+      parentName: "Bone_Hair002_M\u5148"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone_Hair001_R
+      parentName: "\u982D"
+      position: {x: 0.0005701199, y: 0.0013282727, z: 0.0006910868}
+      rotation: {x: 1, y: -1.9106859e-15, z: 0.00000004371139, w: 0.00000004371139}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone_Hair002_R
+      parentName: Bone_Hair001_R
+      position: {x: -1.1226367e-11, y: 0.00046067117, z: -5.9520787e-12}
+      rotation: {x: -0.00000001490116, y: -0.000000043711417, z: -2.1967633e-14, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "Bone_Hair002_R\u5148"
+      parentName: Bone_Hair002_R
+      position: {x: -0, y: 0.0004606688, z: 3.2404635e-17}
+      rotation: {x: 1, y: -1.9106819e-15, z: 0.00000004371139, w: 0.00000004371139}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "Bone_Hair002_R\u5148_end"
+      parentName: "Bone_Hair002_R\u5148"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone_Hair003_M
+      parentName: "\u982D"
+      position: {x: 0.000019297586, y: 0.00059947255, z: -0.0008327575}
+      rotation: {x: 1, y: -1.1775864e-15, z: 0.00000004371139, w: 0.00000019470718}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone_Hair004_M
+      parentName: Bone_Hair003_M
+      position: {x: -8.9903094e-14, y: 0.00044410184, z: -4.6084917e-11}
+      rotation: {x: 0.00000015286608, y: -0.000000043711417, z: -2.196764e-14, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "Bone_Hair004_M\u5148"
+      parentName: Bone_Hair004_M
+      position: {x: -0, y: 0.00044410102, z: 1.110223e-18}
+      rotation: {x: 1, y: 1.9106848e-15, z: 0.00000004371139, w: -0.00000004371139}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "Bone_Hair004_M\u5148_end"
+      parentName: "Bone_Hair004_M\u5148"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone_Hair003_R
+      parentName: "\u982D"
+      position: {x: 0.00082388456, y: 0.0013268017, z: 0.00033195812}
+      rotation: {x: 1, y: 4.58193e-16, z: 0.00000004371139, w: 0.0000000754979}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone_Hair004_R
+      parentName: Bone_Hair003_R
+      position: {x: -5.3693924e-12, y: 0.0004332733, z: 3.0988456e-12}
+      rotation: {x: 0.000000071078986, y: -0.000000043711417, z: -2.1967633e-14, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone_Hair005_R
+      parentName: Bone_Hair004_R
+      position: {x: -0, y: 0.0004321921, z: 4.682886e-17}
+      rotation: {x: 1.2037062e-35, y: 0, z: 6.352748e-22, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "Bone_Hair005_R\u5148"
+      parentName: Bone_Hair005_R
+      position: {x: -0, y: 0.00043219328, z: 4.682886e-17}
+      rotation: {x: 1, y: 1.9106865e-15, z: 0.00000004371139, w: -0.00000004371139}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "Bone_Hair005_R\u5148_end"
+      parentName: "Bone_Hair005_R\u5148"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone_Hair004_L
+      parentName: "\u982D"
+      position: {x: -0.0008092154, y: 0.0014836729, z: 0.00027299742}
+      rotation: {x: 1, y: -1.6340442e-15, z: 0.00000004371139, w: 0.0000000754979}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone_Hair005_L
+      parentName: Bone_Hair004_L
+      position: {x: -1.0523972e-11, y: 0.00048868655, z: 9.094423e-12}
+      rotation: {x: 0.000000023214167, y: -0.000000043711417, z: -2.196763e-14, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone_Hair006_L
+      parentName: Bone_Hair005_L
+      position: {x: -0, y: 0.0004936647, z: -4.6004864e-17}
+      rotation: {x: 6.018531e-35, y: -0, z: -1.9058241e-21, w: 1}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: "Bone_Hair006_L\u5148"
+      parentName: Bone_Hair006_L
+      position: {x: -0, y: 0.00049366, z: -4.6004864e-17}
+      rotation: {x: 1, y: 1.9106863e-15, z: 0.00000004371139, w: -0.00000004371139}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "Bone_Hair006_L\u5148_end"
+      parentName: "Bone_Hair006_L\u5148"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone_Hair006_R
+      parentName: "\u982D"
+      position: {x: 0.00070431887, y: 0.000550344, z: -0.00031028764}
+      rotation: {x: 1, y: -1.9106859e-15, z: 0.00000004371139, w: 0.00000004371139}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone_Hair007_R
+      parentName: Bone_Hair006_R
+      position: {x: 1.2989383e-11, y: 0.0004471087, z: -3.562636e-11}
+      rotation: {x: -0.00000001490116, y: -0.000000043711417, z: -2.1967633e-14, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "Bone_Hair007_R\u5148"
+      parentName: Bone_Hair007_R
+      position: {x: -0, y: 0.00044710512, z: 3.9968027e-17}
+      rotation: {x: 1, y: -1.9106819e-15, z: 0.00000004371139, w: 0.00000004371139}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "Bone_Hair007_R\u5148_end"
+      parentName: "Bone_Hair007_R\u5148"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone_Hair007_L
+      parentName: "\u982D"
+      position: {x: -0.00070430874, y: 0.000550344, z: -0.00031028793}
+      rotation: {x: 1, y: -1.9106859e-15, z: 0.00000004371139, w: 0.00000004371139}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone_Hair008_L
+      parentName: Bone_Hair007_L
+      position: {x: 1.29893605e-11, y: 0.0004471087, z: -9.761045e-12}
+      rotation: {x: -0.00000001490116, y: -0.000000043711417, z: -2.1967633e-14, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "Bone_Hair008_L\u5148"
+      parentName: Bone_Hair008_L
+      position: {x: -0, y: 0.00044710631, z: -3.9968027e-17}
+      rotation: {x: 1, y: -1.9106819e-15, z: 0.00000004371139, w: 0.00000004371139}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "Bone_Hair008_L\u5148_end"
+      parentName: "Bone_Hair008_L\u5148"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone_Hair008_R
+      parentName: "\u982D"
+      position: {x: 0.0005588112, y: 0.00056456093, z: -0.00067098154}
+      rotation: {x: 1, y: -1.1822476e-15, z: 0.00000004371139, w: 0.00000019470718}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone_Hair009_R
+      parentName: Bone_Hair008_R
+      position: {x: -1.8543283e-11, y: 0.00044438444, z: -5.962359e-11}
+      rotation: {x: 0.00000015275941, y: -0.000000043711417, z: -2.1967637e-14, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "Bone_Hair009_R\u5148"
+      parentName: Bone_Hair009_R
+      position: {x: -0, y: 0.00044438473, z: 3.1780134e-17}
+      rotation: {x: 1, y: 1.9106857e-15, z: 0.00000004371139, w: -0.00000004371139}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "Bone_Hair009_R\u5148_end"
+      parentName: "Bone_Hair009_R\u5148"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone_Hair009_L
+      parentName: "\u982D"
+      position: {x: -0.00055881205, y: 0.00056456093, z: -0.00067098154}
+      rotation: {x: 1, y: -1.1822281e-15, z: 0.00000004371139, w: 0.00000019470718}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone_Hair010_L
+      parentName: Bone_Hair009_L
+      position: {x: -1.8543283e-11, y: 0.00044438324, z: -8.331189e-12}
+      rotation: {x: 0.00000015275987, y: -0.000000043711417, z: -2.1967637e-14, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "Bone_Hair010_L\u5148"
+      parentName: Bone_Hair010_L
+      position: {x: -0, y: 0.00044438592, z: -3.1780134e-17}
+      rotation: {x: 1, y: 1.9106865e-15, z: 0.00000004371139, w: -0.00000004371139}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "Bone_Hair010_L\u5148_end"
+      parentName: "Bone_Hair010_L\u5148"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: emo
+      parentName: "\u982D"
+      position: {x: -0.0000000010534768, y: 0.0008870959, z: -0.000177318}
+      rotation: {x: -0.000000011641525, y: 2.842171e-14, z: -5.16161e-22, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: emo_end
+      parentName: emo
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u4E21\u76EE"
+      parentName: "\u982D"
+      position: {x: 1.8516433e-10, y: 0.0023734723, z: 0.0005240297}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.49999997}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: "_dummy_\u76EE.L"
+      parentName: "\u4E21\u76EE"
+      position: {x: -0.000000001188199, y: -6.359059e-11, z: -1.06925694e-16}
+      rotation: {x: 0.052594375, y: 0.93481684, z: 0.10785188, w: 0.33424437}
+      scale: {x: 0.99999994, y: 1.0000001, z: 1}
+    - name: "_dummy_\u76EE.L_end"
+      parentName: "_dummy_\u76EE.L"
+      position: {x: -0, y: 0.00030667492, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_dummy_\u76EE.R"
+      parentName: "\u4E21\u76EE"
+      position: {x: -0.000000001188199, y: -6.359059e-11, z: -1.06925694e-16}
+      rotation: {x: 0.05259458, y: 0.9348165, z: -0.10785222, w: -0.33424526}
+      scale: {x: 0.9999999, y: 0.9999999, z: 1}
+    - name: "_dummy_\u76EE.R_end"
+      parentName: "_dummy_\u76EE.R"
+      position: {x: -0, y: 0.00030667504, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u76EE.L"
+      parentName: "\u982D"
+      position: {x: -0.0002783851, y: 0.0005596864, z: 0.00029435608}
+      rotation: {x: 0.60690725, y: 0.2200522, z: 0.38049823, w: 0.6621644}
+      scale: {x: 1.0000002, y: 1, z: 1}
+    - name: "\u76EE\u623B.L"
+      parentName: "\u76EE.L"
+      position: {x: 4.726462e-10, y: 0.00030667466, z: -5.9604643e-10}
+      rotation: {x: -0.60690707, y: -0.22005257, z: -0.38049865, w: 0.6621642}
+      scale: {x: 1, y: 0.9999999, z: 0.9999999}
+    - name: "\u76EE\u623B.L_end"
+      parentName: "\u76EE\u623B.L"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u76EE.R"
+      parentName: "\u982D"
+      position: {x: 0.00027838137, y: 0.0005596888, z: 0.00029435646}
+      rotation: {x: 0.38049832, y: 0.6621646, z: 0.6069072, w: 0.22005169}
+      scale: {x: 1.0000001, y: 0.9999999, z: 1}
+    - name: "\u76EE\u623B.R"
+      parentName: "\u76EE.R"
+      position: {x: -0.0000000022118911, y: 0.00030667512, z: 0.0000000016344711}
+      rotation: {x: 0.38049862, y: 0.66216445, z: 0.606907, w: -0.22005205}
+      scale: {x: 1.0000001, y: 1, z: 0.99999994}
+    - name: "\u76EE\u623B.R_end"
+      parentName: "\u76EE\u623B.R"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u820C"
+      parentName: "\u982D"
+      position: {x: -0.0000000010534768, y: 0.00006920576, z: 0.00041541728}
+      rotation: {x: 0.64507824, y: 1.970041e-14, z: 1.6631368e-14, w: 0.7641165}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u820C_001"
+      parentName: "\u820C"
+      position: {x: 1.2176098e-23, y: 0.00011123715, z: -5.0058585e-10}
+      rotation: {x: 0.122770496, y: -3.000953e-15, z: -2.4258302e-14, w: 0.9924351}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: "\u820C_002"
+      parentName: "\u820C_001"
+      position: {x: -2.4518503e-24, y: 0.00008051416, z: -1.2922101e-10}
+      rotation: {x: 0.19728066, y: 2.7092529e-20, z: -3.5166348e-21, w: 0.9803471}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: "\u820C\u5148"
+      parentName: "\u820C_002"
+      position: {x: -5.040742e-28, y: 0.00009025469, z: -5.5879353e-11}
+      rotation: {x: -0.8535649, y: 9.923578e-22, z: -9.923426e-22, w: 0.5209865}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u820C\u5148_end"
+      parentName: "\u820C\u5148"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u4E0B\u534A\u8EAB"
+      parentName: "\u8170"
+      position: {x: 1.0117179e-12, y: 0.00046970078, z: -4.679896e-10}
+      rotation: {x: 0.9271066, y: 0.000000011013603, z: -0.000000011113164, w: 0.37479773}
+      scale: {x: 1, y: 0.99999994, z: 1.0000001}
+    - name: "\u30B9\u30AB\u30FC\u30C8_0_0"
+      parentName: "\u4E0B\u534A\u8EAB"
+      position: {x: 2.1991655e-11, y: -0.00057222956, z: -0.00080071326}
+      rotation: {x: 0.016120452, y: -0.000000001438042, z: 0.0000000014510384, w: 0.99987006}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_1_0"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_0_0"
+      position: {x: -6.9388935e-19, y: 0.0002739638, z: -3.7252902e-11}
+      rotation: {x: -0.001740925, y: 1.9846613e-10, z: -2.0168713e-10, w: 0.9999985}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: "\u30B9\u30AB\u30FC\u30C8_2_0"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_1_0"
+      position: {x: -1.3877787e-19, y: 0.00028713283, z: 3.7252902e-11}
+      rotation: {x: -0.0017267104, y: 1.691159e-10, z: -1.7124417e-10, w: 0.9999985}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+    - name: "\u30B9\u30AB\u30FC\u30C8_3_0"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_2_0"
+      position: {x: 2.081668e-18, y: 0.00029893237, z: 0}
+      rotation: {x: -0.0017379047, y: 1.4529192e-10, z: -1.4656432e-10, w: 0.9999985}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_4_0"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_3_0"
+      position: {x: 4.1633362e-19, y: 0.00030936152, z: -1.8626451e-11}
+      rotation: {x: -0.0017700149, y: 1.2556783e-10, z: -1.2616161e-10, w: 0.99999845}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_5_0"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_4_0"
+      position: {x: 1.8041123e-18, y: 0.00031841765, z: 1.8626451e-11}
+      rotation: {x: -0.00182236, y: 1.0899683e-10, z: -1.0904693e-10, w: 0.99999833}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_6_0"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_5_0"
+      position: {x: -0, y: 0.0003261009, z: 0}
+      rotation: {x: -0.0018929775, y: 9.488854e-11, z: -9.450203e-11, w: 0.9999982}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_7_0"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_6_0"
+      position: {x: -2.5673908e-18, y: 0.00033241752, z: -7.4505804e-11}
+      rotation: {x: -0.0019828824, y: 8.2631346e-11, z: -8.189001e-11, w: 0.99999803}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+    - name: "\u30B9\u30AB\u30FC\u30C8_8_0"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_7_0"
+      position: {x: 2.2898349e-18, y: 0.00033736392, z: 0}
+      rotation: {x: -0.0020931298, y: 7.1872445e-11, z: -7.084408e-11, w: 0.9999978}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_9_0"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_8_0"
+      position: {x: 8.3266725e-19, y: 0.00034094456, z: -3.7252902e-11}
+      rotation: {x: -0.0022245387, y: 6.2236875e-11, z: -6.097719e-11, w: 0.99999756}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_10_0"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_9_0"
+      position: {x: 2.0469736e-18, y: 0.00034315579, z: -9.3132255e-12}
+      rotation: {x: -0.002380247, y: 5.347601e-11, z: -5.2032705e-11, w: 0.9999972}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_11_0"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_10_0"
+      position: {x: 2.428613e-19, y: 0.00034400402, z: -3.1432135e-11}
+      rotation: {x: 0.9999992, y: -3.308718e-10, z: -3.3084316e-10, w: 0.0012489117}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_11_0_end"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_11_0"
+      position: {x: -0, y: 0.0007999998, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_0_1"
+      parentName: "\u4E0B\u534A\u8EAB"
+      position: {x: -0.00050179154, y: -0.0005715477, z: -0.0007250785}
+      rotation: {x: 0.02594776, y: -0.051722407, z: 0.052189976, w: 0.99695927}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_1_1"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_0_1"
+      position: {x: 7.916242e-11, y: 0.00027529316, z: -9.3132255e-12}
+      rotation: {x: -0.0025282756, y: 0.0069264825, z: -0.007090885, w: 0.9999477}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_2_1"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_1_1"
+      position: {x: 1.862645e-10, y: 0.0002872293, z: -1.9208527e-11}
+      rotation: {x: -0.002405835, y: 0.0059424136, z: -0.0060615, w: 0.9999611}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_3_1"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_2_1"
+      position: {x: 1.2107193e-10, y: 0.00029785573, z: 4.6566128e-12}
+      rotation: {x: -0.0023520086, y: 0.005134979, z: -0.0052159936, w: 0.99997044}
+      scale: {x: 0.9999999, y: 1.0000001, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_4_1"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_3_1"
+      position: {x: 4.6566128e-12, y: 0.00030715877, z: 3.259629e-11}
+      rotation: {x: -0.0023509348, y: 0.0044607227, z: -0.0045097712, w: 0.9999771}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+    - name: "\u30B9\u30AB\u30FC\u30C8_5_1"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_4_1"
+      position: {x: 5.820766e-11, y: 0.00031512472, z: -2.3283063e-11}
+      rotation: {x: -0.0023936178, y: 0.0038906662, z: -0.003912866, w: 0.99998194}
+      scale: {x: 0.99999994, y: 1.0000001, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_6_1"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_5_1"
+      position: {x: 6.984919e-11, y: 0.00032174579, z: -8.381903e-11}
+      rotation: {x: -0.0024740016, y: 0.0034009311, z: -0.0034005418, w: 0.9999854}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_7_1"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_6_1"
+      position: {x: 2.0954757e-11, y: 0.00032701477, z: 4.6566128e-12}
+      rotation: {x: -0.0025897806, y: 0.0029745158, z: -0.002955089, w: 0.9999879}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_8_1"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_7_1"
+      position: {x: -1.16415315e-11, y: 0.00033093314, z: 3.7252902e-11}
+      rotation: {x: -0.0027397024, y: 0.0025968144, z: -0.0025613483, w: 0.9999896}
+      scale: {x: 1.0000001, y: 1, z: 0.99999994}
+    - name: "\u30B9\u30AB\u30FC\u30C8_9_1"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_8_1"
+      position: {x: 5.3551046e-11, y: 0.00033349294, z: -1.8626451e-11}
+      rotation: {x: -0.0029253296, y: 0.0022571392, z: -0.0022081744, w: 0.99999076}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_10_1"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_9_1"
+      position: {x: -3.4924596e-12, y: 0.0003346918, z: -2.3283064e-12}
+      rotation: {x: -0.003149048, y: 0.0019464014, z: -0.0018861742, w: 0.9999914}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+    - name: "\u30B9\u30AB\u30FC\u30C8_11_1"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_10_1"
+      position: {x: 1.9790605e-11, y: 0.00033453226, z: -3.8417054e-11}
+      rotation: {x: 0.9998373, y: -0.012340612, z: -0.012340562, w: 0.004566888}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000001}
+    - name: "\u30B9\u30AB\u30FC\u30C8_11_1_end"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_11_1"
+      position: {x: -0, y: 0.0007999998, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_0_2"
+      parentName: "\u4E0B\u534A\u8EAB"
+      position: {x: -0.00090419716, y: -0.00056964054, z: -0.00051315455}
+      rotation: {x: 0.051405963, y: -0.09045747, z: 0.09127518, w: 0.9903756}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_1_2"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_0_2"
+      position: {x: -2.2351741e-10, y: 0.0002785599, z: -3.7252902e-11}
+      rotation: {x: -0.003885632, y: 0.011197729, z: -0.011780936, w: 0.9998604}
+      scale: {x: 0.9999998, y: 0.9999998, z: 0.9999998}
+    - name: "\u30B9\u30AB\u30FC\u30C8_2_2"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_1_2"
+      position: {x: -1.44355e-10, y: 0.00028758543, z: 8.381903e-11}
+      rotation: {x: -0.003658675, y: 0.009756138, z: -0.0102181025, w: 0.99989355}
+      scale: {x: 0.99999994, y: 0.9999999, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_3_2"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_2_2"
+      position: {x: -4.6566126e-11, y: 0.0002954283, z: 1.11758706e-10}
+      rotation: {x: -0.0035614404, y: 0.008545239, z: -0.008897353, w: 0.99991757}
+      scale: {x: 0.99999994, y: 0.9999999, z: 0.9999999}
+    - name: "\u30B9\u30AB\u30FC\u30C8_4_2"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_3_2"
+      position: {x: -8.381903e-11, y: 0.0003020474, z: 4.6566126e-11}
+      rotation: {x: -0.003565484, y: 0.0075156935, z: -0.007769951, w: 0.9999352}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_5_2"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_4_2"
+      position: {x: 9.778887e-11, y: 0.0003074098, z: 9.313225e-11}
+      rotation: {x: -0.0036539154, y: 0.006628574, z: -0.006796011, w: 0.99994826}
+      scale: {x: 0.99999994, y: 1, z: 0.99999994}
+    - name: "\u30B9\u30AB\u30FC\u30C8_6_2"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_5_2"
+      position: {x: -1.3969838e-10, y: 0.00031148602, z: 8.381903e-11}
+      rotation: {x: -0.0038177844, y: 0.0058566844, z: -0.0059474623, w: 0.9999579}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_7_2"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_6_2"
+      position: {x: 4.1909514e-11, y: 0.00031426613, z: 1.8626451e-11}
+      rotation: {x: -0.0040503833, y: 0.005173256, z: -0.005196226, w: 0.99996495}
+      scale: {x: 0.9999999, y: 0.9999999, z: 0.99999994}
+    - name: "\u30B9\u30AB\u30FC\u30C8_8_2"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_7_2"
+      position: {x: 9.3132255e-12, y: 0.00031572918, z: -2.7939677e-11}
+      rotation: {x: -0.004352807, y: 0.004560742, z: -0.004523713, w: 0.9999699}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_9_2"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_8_2"
+      position: {x: -1.7462297e-11, y: 0.00031587135, z: 2.3283063e-11}
+      rotation: {x: -0.004727923, y: 0.0040007373, z: -0.003910393, w: 0.9999732}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_10_2"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_9_2"
+      position: {x: -5.47152e-11, y: 0.0003146849, z: 3.7252902e-11}
+      rotation: {x: -0.00518264, y: 0.0034809054, z: -0.0033433246, w: 0.99997497}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_11_2"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_10_2"
+      position: {x: -9.313225e-11, y: 0.0003121684, z: 2.3283063e-11}
+      rotation: {x: 0.9993209, y: -0.023581507, z: -0.023580888, w: 0.015670262}
+      scale: {x: 1.0000019, y: 1.0000002, z: 1.000001}
+    - name: "\u30B9\u30AB\u30FC\u30C8_11_2_end"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_11_2"
+      position: {x: -0, y: 0.0007999998, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_0_3"
+      parentName: "\u4E0B\u534A\u8EAB"
+      position: {x: -0.0011275153, y: -0.0005668846, z: -0.00020691573}
+      rotation: {x: 0.083556235, y: -0.108659565, z: 0.10964183, w: 0.98447454}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_1_3"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_0_3"
+      position: {x: -1.862645e-10, y: 0.00028213763, z: 3.7252902e-11}
+      rotation: {x: -0.0042468365, y: 0.012222425, z: -0.013587987, w: 0.9998239}
+      scale: {x: 0.99999994, y: 1.0000001, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_2_3"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_1_3"
+      position: {x: 3.282912e-10, y: 0.00028832114, z: 6.519258e-11}
+      rotation: {x: -0.004161683, y: 0.010805312, z: -0.011925639, w: 0.9998619}
+      scale: {x: 1.0000001, y: 0.99999994, z: 1.0000001}
+    - name: "\u30B9\u30AB\u30FC\u30C8_3_3"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_2_3"
+      position: {x: 1.03609635e-10, y: 0.00029342077, z: -1.44355e-10}
+      rotation: {x: -0.004215168, y: 0.009592045, z: -0.0104891, w: 0.99989015}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: "\u30B9\u30AB\u30FC\u30C8_4_3"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_3_3"
+      position: {x: -2.6193447e-11, y: 0.00029738448, z: 1.1670635e-10}
+      rotation: {x: -0.0043837638, y: 0.008541135, z: -0.009236498, w: 0.9999113}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_5_3"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_4_3"
+      position: {x: -2.7706845e-10, y: 0.0003001656, z: -2.0954757e-11}
+      rotation: {x: -0.0046575135, y: 0.0076226466, z: -0.008136061, w: 0.99992704}
+      scale: {x: 1, y: 0.9999999, z: 0.99999994}
+    - name: "\u30B9\u30AB\u30FC\u30C8_6_3"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_5_3"
+      position: {x: -2.5029293e-11, y: 0.00030173454, z: -2.0023434e-10}
+      rotation: {x: -0.005029877, y: 0.006811088, z: -0.0071604745, w: 0.99993855}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: "\u30B9\u30AB\u30FC\u30C8_7_3"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_6_3"
+      position: {x: 2.3283063e-11, y: 0.00030206708, z: 8.381903e-11}
+      rotation: {x: -0.005501611, y: 0.0060826335, z: -0.0062833303, w: 0.99994665}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_8_3"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_7_3"
+      position: {x: -5.5879353e-11, y: 0.00030114793, z: -1.0244548e-10}
+      rotation: {x: -0.006080285, y: 0.00542005, z: -0.0054853363, w: 0.9999518}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.9999999}
+    - name: "\u30B9\u30AB\u30FC\u30C8_9_3"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_8_3"
+      position: {x: -1.4784746e-10, y: 0.00029896817, z: -6.519258e-11}
+      rotation: {x: -0.00677659, y: 0.004804561, z: -0.004745667, w: 0.9999543}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: "\u30B9\u30AB\u30FC\u30C8_10_3"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_9_3"
+      position: {x: -9.6624715e-11, y: 0.00029552277, z: -4.6566126e-11}
+      rotation: {x: -0.0076107443, y: 0.004222878, z: -0.004049396, w: 0.9999539}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_11_3"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_10_3"
+      position: {x: -5.8207657e-12, y: 0.00029081834, z: -5.5879353e-11}
+      rotation: {x: 0.9983899, y: -0.03097083, z: -0.030965924, w: 0.036050465}
+      scale: {x: 1.0000079, y: 1, z: 1.0000125}
+    - name: "\u30B9\u30AB\u30FC\u30C8_11_3_end"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_11_3"
+      position: {x: -0, y: 0.0007999998, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_0_4"
+      parentName: "\u4E0B\u534A\u8EAB"
+      position: {x: -0.0011275153, y: -0.0005638027, z: 0.00013553863}
+      rotation: {x: 0.10709036, y: -0.10585757, z: 0.106814496, w: 0.98281056}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_1_4"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_0_4"
+      position: {x: -3.5855918e-10, y: 0.0002838454, z: -3.7252902e-11}
+      rotation: {x: -0.0063421754, y: 0.0112324795, z: -0.01256033, w: 0.99983793}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+    - name: "\u30B9\u30AB\u30FC\u30C8_2_4"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_1_4"
+      position: {x: 3.5390257e-10, y: 0.0002885267, z: -1.3038516e-10}
+      rotation: {x: -0.0062426566, y: 0.010074229, z: -0.011145986, w: 0.9998677}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+    - name: "\u30B9\u30AB\u30FC\u30C8_3_4"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_2_4"
+      position: {x: 1.0244548e-10, y: 0.00029224055, z: 1.11758706e-10}
+      rotation: {x: -0.0062857126, y: 0.009063176, z: -0.009900686, w: 0.99989015}
+      scale: {x: 1, y: 0.99999994, z: 0.9999999}
+    - name: "\u30B9\u30AB\u30FC\u30C8_4_4"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_3_4"
+      position: {x: -3.352761e-10, y: 0.00029495053, z: -1.4901161e-10}
+      rotation: {x: -0.006451409, y: 0.008169339, z: -0.008793558, w: 0.9999072}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_5_4"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_4_4"
+      position: {x: -2.7474015e-10, y: 0.00029661058, z: -5.5879353e-11}
+      rotation: {x: -0.006735537, y: 0.0073737246, z: -0.0078036594, w: 0.9999197}
+      scale: {x: 0.9999998, y: 0.99999976, z: 0.99999994}
+    - name: "\u30B9\u30AB\u30FC\u30C8_6_4"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_5_4"
+      position: {x: -9.3132255e-12, y: 0.00029720127, z: -9.3132255e-12}
+      rotation: {x: -0.0071354806, y: 0.0066586453, z: -0.006911676, w: 0.99992853}
+      scale: {x: 0.99999994, y: 0.99999976, z: 0.9999999}
+    - name: "\u30B9\u30AB\u30FC\u30C8_7_4"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_6_4"
+      position: {x: -1.8626451e-11, y: 0.00029670537, z: 1.8626451e-11}
+      rotation: {x: -0.007653336, y: 0.0060060984, z: -0.006097298, w: 0.9999341}
+      scale: {x: 0.9999999, y: 1.0000001, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_8_4"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_7_4"
+      position: {x: 7.4505804e-11, y: 0.00029511616, z: 2.7939677e-11}
+      rotation: {x: -0.008297513, y: 0.005401564, z: -0.0053441105, w: 0.9999367}
+      scale: {x: 0.99999994, y: 0.9999999, z: 0.9999999}
+    - name: "\u30B9\u30AB\u30FC\u30C8_9_4"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_8_4"
+      position: {x: 4.1909514e-11, y: 0.00029242257, z: -1.4901161e-10}
+      rotation: {x: -0.009083066, y: 0.004831246, z: -0.0046365988, w: 0.99993634}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_10_4"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_9_4"
+      position: {x: -2.7939677e-11, y: 0.0002886366, z: 1.3969838e-10}
+      rotation: {x: -0.01003042, y: 0.004282928, z: -0.0039612376, w: 0.9999327}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_11_4"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_10_4"
+      position: {x: 1.3969838e-11, y: 0.00028376613, z: -3.7252902e-11}
+      rotation: {x: 0.9982679, y: -0.031680506, z: -0.03167474, w: 0.03813597}
+      scale: {x: 1.000009, y: 0.99999994, z: 1.000015}
+    - name: "\u30B9\u30AB\u30FC\u30C8_11_4_end"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_11_4"
+      position: {x: -0, y: 0.0007999998, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_0_5"
+      parentName: "\u4E0B\u534A\u8EAB"
+      position: {x: -0.00090419705, y: -0.0005610054, z: 0.00044638113}
+      rotation: {x: 0.11835525, y: -0.084089726, z: 0.08484987, w: 0.9857594}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: "\u30B9\u30AB\u30FC\u30C8_1_5"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_0_5"
+      position: {x: -2.1420418e-10, y: 0.00028288524, z: 2.4214386e-10}
+      rotation: {x: -0.010363439, y: 0.008882963, z: -0.009382343, w: 0.99986285}
+      scale: {x: 0.99999994, y: 1, z: 1.0000001}
+    - name: "\u30B9\u30AB\u30FC\u30C8_2_5"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_1_5"
+      position: {x: 2.0489097e-10, y: 0.00028750132, z: 0}
+      rotation: {x: -0.010029671, y: 0.008075295, z: -0.008424357, w: 0.9998816}
+      scale: {x: 0.99999994, y: 0.9999999, z: 0.99999994}
+    - name: "\u30B9\u30AB\u30FC\u30C8_3_5"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_2_5"
+      position: {x: -1.6763806e-10, y: 0.0002913457, z: -2.9802322e-10}
+      rotation: {x: -0.009835488, y: 0.0073509, z: -0.007561704, w: 0.99989605}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+    - name: "\u30B9\u30AB\u30FC\u30C8_4_5"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_3_5"
+      position: {x: 3.7252902e-11, y: 0.0002943934, z: 9.3132255e-12}
+      rotation: {x: -0.009764175, y: 0.006695299, z: -0.0067800134, w: 0.99990696}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_5_5"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_4_5"
+      position: {x: -1.8626451e-11, y: 0.0002966167, z: 8.381903e-11}
+      rotation: {x: -0.00981108, y: 0.006098326, z: -0.0060683535, w: 0.9999149}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+    - name: "\u30B9\u30AB\u30FC\u30C8_6_5"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_5_5"
+      position: {x: 3.7252902e-11, y: 0.00029800658, z: -2.8871e-10}
+      rotation: {x: -0.0099689, y: 0.005549355, z: -0.0054156366, w: 0.99992025}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_7_5"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_6_5"
+      position: {x: 1.3969838e-11, y: 0.00029854922, z: 1.3038516e-10}
+      rotation: {x: -0.01023728, y: 0.0050372193, z: -0.0048096823, w: 0.99992335}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.9999999}
+    - name: "\u30B9\u30AB\u30FC\u30C8_8_5"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_7_5"
+      position: {x: -4.6566128e-12, y: 0.00029824328, z: -1.8626451e-11}
+      rotation: {x: -0.01061634, y: 0.0045547136, z: -0.004243093, w: 0.9999243}
+      scale: {x: 1, y: 1.0000002, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_9_5"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_8_5"
+      position: {x: 4.6566128e-12, y: 0.00029709347, z: 8.381903e-11}
+      rotation: {x: -0.011112062, y: 0.004091272, z: -0.0037045393, w: 0.99992305}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: "\u30B9\u30AB\u30FC\u30C8_10_5"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_9_5"
+      position: {x: -8.381903e-11, y: 0.0002950989, z: -5.5879353e-11}
+      rotation: {x: -0.011733813, y: 0.003640303, z: -0.0031873893, w: 0.9999195}
+      scale: {x: 0.9999999, y: 1, z: 0.99999994}
+    - name: "\u30B9\u30AB\u30FC\u30C8_11_5"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_10_5"
+      position: {x: -5.5879353e-11, y: 0.00029227897, z: -7.916242e-11}
+      rotation: {x: 0.9991717, y: -0.025084356, z: -0.025083307, w: 0.019938817}
+      scale: {x: 1.0000023, y: 0.99999994, z: 1.0000017}
+    - name: "\u30B9\u30AB\u30FC\u30C8_11_5_end"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_11_5"
+      position: {x: -0, y: 0.0007999998, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_0_6"
+      parentName: "\u4E0B\u534A\u8EAB"
+      position: {x: -0.0005017914, y: -0.00055907073, z: 0.0006614909}
+      rotation: {x: 0.124322884, y: -0.04653359, z: 0.046954233, w: 0.99003726}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_1_6"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_0_6"
+      position: {x: 6.519258e-11, y: 0.00028109486, z: -2.0489097e-10}
+      rotation: {x: -0.012964363, y: 0.0049905432, z: -0.005075704, w: 0.9998906}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.9999999}
+    - name: "\u30B9\u30AB\u30FC\u30C8_2_6"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_1_6"
+      position: {x: 1.3504177e-10, y: 0.00028643466, z: -3.4924597e-10}
+      rotation: {x: -0.012462486, y: 0.0045647956, z: -0.004585085, w: 0.9999014}
+      scale: {x: 0.9999999, y: 1, z: 0.99999994}
+    - name: "\u30B9\u30AB\u30FC\u30C8_3_6"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_2_6"
+      position: {x: 1.8626451e-11, y: 0.00029115754, z: 3.0035152e-10}
+      rotation: {x: -0.012084153, y: 0.0041770814, z: -0.0041387407, w: 0.9999097}
+      scale: {x: 0.9999999, y: 0.9999999, z: 0.9999999}
+    - name: "\u30B9\u30AB\u30FC\u30C8_4_6"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_3_6"
+      position: {x: -3.259629e-11, y: 0.00029525333, z: 3.4226103e-10}
+      rotation: {x: -0.011815103, y: 0.003820514, z: -0.003729599, w: 0.99991596}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_5_6"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_4_6"
+      position: {x: 4.1909514e-11, y: 0.00029870565, z: -1.7695129e-10}
+      rotation: {x: -0.011645604, y: 0.0034903209, z: -0.0033527266, w: 0.9999205}
+      scale: {x: 1, y: 0.99999994, z: 0.9999999}
+    - name: "\u30B9\u30AB\u30FC\u30C8_6_6"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_5_6"
+      position: {x: 6.519258e-11, y: 0.0003015035, z: 1.1641532e-10}
+      rotation: {x: -0.011571582, y: 0.0031823267, z: -0.0030036485, w: 0.9999235}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+    - name: "\u30B9\u30AB\u30FC\u30C8_7_6"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_6_6"
+      position: {x: -4.6566126e-11, y: 0.00030364885, z: 2.956949e-10}
+      rotation: {x: -0.011585387, y: 0.0028918935, z: -0.002677588, w: 0.99992514}
+      scale: {x: 0.9999999, y: 0.9999999, z: 0.9999999}
+    - name: "\u30B9\u30AB\u30FC\u30C8_8_6"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_7_6"
+      position: {x: -1.3038516e-10, y: 0.00030513693, z: 2.0954757e-11}
+      rotation: {x: -0.011685779, y: 0.0026141705, z: -0.0023693917, w: 0.9999255}
+      scale: {x: 0.99999994, y: 0.9999998, z: 0.99999994}
+    - name: "\u30B9\u30AB\u30FC\u30C8_9_6"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_8_6"
+      position: {x: -4.6566128e-12, y: 0.0003059698, z: -2.5145708e-10}
+      rotation: {x: -0.0118711535, y: 0.0023468777, z: -0.0020768552, w: 0.99992466}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_10_6"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_9_6"
+      position: {x: -7.21775e-11, y: 0.0003061525, z: 7.21775e-11}
+      rotation: {x: -0.012142341, y: 0.0020846622, z: -0.0017945734, w: 0.9999225}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_11_6"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_10_6"
+      position: {x: 2.561137e-11, y: 0.00030569528, z: -6.286427e-11}
+      rotation: {x: 0.9997753, y: -0.013441208, z: -0.013441222, w: 0.009381228}
+      scale: {x: 1.0000001, y: 1, z: 1.0000001}
+    - name: "\u30B9\u30AB\u30FC\u30C8_11_6_end"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_11_6"
+      position: {x: -0, y: 0.0007999998, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_0_7"
+      parentName: "\u4E0B\u534A\u8EAB"
+      position: {x: 8.633562e-11, y: -0.00055837864, z: 0.00073826266}
+      rotation: {x: 0.12610392, y: 0.0000000046866915, z: -0.0000000047290474, w: 0.99201703}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_1_7"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_0_7"
+      position: {x: -1.110223e-18, y: 0.00028022984, z: 7.4505804e-11}
+      rotation: {x: -0.013864846, y: -5.0707966e-10, z: 5.092343e-10, w: 0.9999039}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_2_7"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_1_7"
+      position: {x: 2.7755574e-18, y: 0.0002859828, z: 1.4901161e-10}
+      rotation: {x: -0.013293629, y: -4.6454546e-10, z: 4.6085322e-10, w: 0.99991167}
+      scale: {x: 1, y: 0.9999999, z: 0.99999994}
+    - name: "\u30B9\u30AB\u30FC\u30C8_3_7"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_2_7"
+      position: {x: -9.992007e-18, y: 0.00029117888, z: -2.2351741e-10}
+      rotation: {x: -0.012840997, y: -4.256091e-10, z: 4.1666703e-10, w: 0.99991757}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_4_7"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_3_7"
+      position: {x: -4.440892e-18, y: 0.00029581436, z: 7.4505804e-11}
+      rotation: {x: -0.012486273, y: -3.8950357e-10, z: 3.7592193e-10, w: 0.99992204}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_5_7"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_4_7"
+      position: {x: -4.440892e-18, y: 0.0002998695, z: 7.4505804e-11}
+      rotation: {x: -0.012227392, y: -3.5599942e-10, z: 3.383611e-10, w: 0.99992526}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_6_7"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_5_7"
+      position: {x: 6.661338e-18, y: 0.00030334466, z: -7.4505804e-11}
+      rotation: {x: -0.012054255, y: -3.2458558e-10, z: 3.034494e-10, w: 0.99992734}
+      scale: {x: 1, y: 0.9999999, z: 0.99999994}
+    - name: "\u30B9\u30AB\u30FC\u30C8_7_7"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_6_7"
+      position: {x: -3.330669e-18, y: 0.00030623528, z: 7.4505804e-11}
+      rotation: {x: -0.0119609265, y: -2.9477812e-10, z: 2.7067637e-10, w: 0.9999285}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_8_7"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_7_7"
+      position: {x: 4.440892e-18, y: 0.00030853946, z: -7.4505804e-11}
+      rotation: {x: -0.011945022, y: -2.6628535e-10, z: 2.397378e-10, w: 0.99992865}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: "\u30B9\u30AB\u30FC\u30C8_9_7"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_8_7"
+      position: {x: -8.3266725e-19, y: 0.00031025938, z: -3.7252902e-11}
+      rotation: {x: -0.012002159, y: -2.3874724e-10, z: 2.1027324e-10, w: 0.999928}
+      scale: {x: 1, y: 0.9999999, z: 0.99999994}
+    - name: "\u30B9\u30AB\u30FC\u30C8_10_7"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_9_7"
+      position: {x: 3.0531133e-18, y: 0.00031139984, z: 5.5879353e-11}
+      rotation: {x: -0.012132949, y: -2.1179913e-10, z: 1.8191476e-10, w: 0.9999264}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_11_7"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_10_7"
+      position: {x: -3.8857806e-18, y: 0.00031196643, z: 1.8626451e-11}
+      rotation: {x: 0.9999812, y: 0.0000000013309219, z: 0.0000000013309072, w: 0.006128229}
+      scale: {x: 1, y: 0.99999994, z: 0.9999999}
+    - name: "\u30B9\u30AB\u30FC\u30C8_11_7_end"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_11_7"
+      position: {x: -0, y: 0.0007999998, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_0_8"
+      parentName: "\u4E0B\u534A\u8EAB"
+      position: {x: 0.0005017917, y: -0.00055907073, z: 0.00066149083}
+      rotation: {x: 0.12432278, y: 0.046533655, z: -0.046954308, w: 0.99003726}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_1_8"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_0_8"
+      position: {x: 2.7939677e-11, y: 0.00028109475, z: 4.0046869e-10}
+      rotation: {x: -0.0129640065, y: -0.004990642, z: 0.005075873, w: 0.9998906}
+      scale: {x: 0.99999994, y: 0.9999998, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_2_8"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_1_8"
+      position: {x: 5.122274e-11, y: 0.00028643382, z: -1.9557773e-10}
+      rotation: {x: -0.012462557, y: -0.0045645367, z: 0.0045847525, w: 0.9999014}
+      scale: {x: 0.99999994, y: 1, z: 0.99999994}
+    - name: "\u30B9\u30AB\u30FC\u30C8_3_8"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_2_8"
+      position: {x: -9.3132255e-12, y: 0.00029115696, z: 2.3748725e-10}
+      rotation: {x: -0.012084429, y: -0.004177407, z: 0.004139104, w: 0.9999097}
+      scale: {x: 0.9999999, y: 1, z: 0.9999999}
+    - name: "\u30B9\u30AB\u30FC\u30C8_4_8"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_3_8"
+      position: {x: -6.984919e-11, y: 0.00029525365, z: 0}
+      rotation: {x: -0.011815196, y: -0.0038203048, z: 0.0037293425, w: 0.99991596}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_5_8"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_4_8"
+      position: {x: -1.8626451e-11, y: 0.0002987054, z: -2.561137e-11}
+      rotation: {x: -0.011645268, y: -0.0034904787, z: 0.0033529396, w: 0.9999205}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_6_8"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_5_8"
+      position: {x: -4.1909514e-11, y: 0.00030150427, z: -1.862645e-10}
+      rotation: {x: -0.011571556, y: -0.0031822778, z: 0.0030035798, w: 0.9999235}
+      scale: {x: 0.99999994, y: 0.9999999, z: 0.9999999}
+    - name: "\u30B9\u30AB\u30FC\u30C8_7_8"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_6_8"
+      position: {x: -6.0535965e-11, y: 0.00030364862, z: 1.2805686e-10}
+      rotation: {x: -0.0115855, y: -0.0028916665, z: 0.0026773387, w: 0.99992514}
+      scale: {x: 0.9999999, y: 0.99999994, z: 0.9999999}
+    - name: "\u30B9\u30AB\u30FC\u30C8_8_8"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_7_8"
+      position: {x: 4.6566128e-12, y: 0.00030513734, z: 9.546056e-11}
+      rotation: {x: -0.011685799, y: -0.0026145123, z: 0.0023697559, w: 0.9999255}
+      scale: {x: 1, y: 0.9999998, z: 0.99999994}
+    - name: "\u30B9\u30AB\u30FC\u30C8_9_8"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_8_8"
+      position: {x: 7.916242e-11, y: 0.00030597032, z: -1.5599652e-10}
+      rotation: {x: -0.011871149, y: -0.0023467618, z: 0.002076734, w: 0.99992466}
+      scale: {x: 0.9999999, y: 0.99999994, z: 0.99999994}
+    - name: "\u30B9\u30AB\u30FC\u30C8_10_8"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_9_8"
+      position: {x: 7.683411e-11, y: 0.0003061538, z: -1.2572854e-10}
+      rotation: {x: -0.01214222, y: -0.0020846617, z: 0.0017945768, w: 0.9999225}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_11_8"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_10_8"
+      position: {x: -2.3283064e-12, y: 0.00030569566, z: -3.0267983e-11}
+      rotation: {x: 0.9997753, y: 0.013441208, z: 0.013441176, w: 0.009381348}
+      scale: {x: 1.0000001, y: 1, z: 1.0000001}
+    - name: "\u30B9\u30AB\u30FC\u30C8_11_8_end"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_11_8"
+      position: {x: -0, y: 0.0007999998, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_0_9"
+      parentName: "\u4E0B\u534A\u8EAB"
+      position: {x: 0.000904197, y: -0.0005610054, z: 0.00044638108}
+      rotation: {x: 0.11835525, y: 0.08408962, z: -0.08484978, w: 0.9857594}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: "\u30B9\u30AB\u30FC\u30C8_1_9"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_0_9"
+      position: {x: -2.2351741e-10, y: 0.0002828855, z: 2.3283064e-10}
+      rotation: {x: -0.0103632985, y: -0.008882864, z: 0.009382231, w: 0.99986285}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_2_9"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_1_9"
+      position: {x: 9.3132255e-12, y: 0.0002875014, z: -6.519258e-11}
+      rotation: {x: -0.010029983, y: -0.008075215, z: 0.008424215, w: 0.9998816}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_3_9"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_2_9"
+      position: {x: -3.7252902e-11, y: 0.00029134616, z: -1.0244548e-10}
+      rotation: {x: -0.009835211, y: -0.0073509845, z: 0.0075618583, w: 0.99989605}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: "\u30B9\u30AB\u30FC\u30C8_4_9"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_3_9"
+      position: {x: 1.3969838e-10, y: 0.0002943934, z: -1.4901161e-10}
+      rotation: {x: -0.009764283, y: -0.006695295, z: 0.0067799874, w: 0.99990696}
+      scale: {x: 1, y: 0.99999976, z: 0.9999999}
+    - name: "\u30B9\u30AB\u30FC\u30C8_5_9"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_4_9"
+      position: {x: 1.11758706e-10, y: 0.00029661722, z: -9.313225e-11}
+      rotation: {x: -0.009811088, y: -0.00609844, z: 0.006068496, w: 0.9999149}
+      scale: {x: 0.99999994, y: 1, z: 0.9999999}
+    - name: "\u30B9\u30AB\u30FC\u30C8_6_9"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_5_9"
+      position: {x: 1.11758706e-10, y: 0.00029800492, z: -2.2351741e-10}
+      rotation: {x: -0.009969237, y: -0.005549031, z: 0.005415234, w: 0.99992025}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+    - name: "\u30B9\u30AB\u30FC\u30C8_7_9"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_6_9"
+      position: {x: 6.0535965e-11, y: 0.000298549, z: 1.8626451e-11}
+      rotation: {x: -0.010236679, y: -0.005037438, z: 0.004809981, w: 0.99992335}
+      scale: {x: 1, y: 0.99999994, z: 0.9999998}
+    - name: "\u30B9\u30AB\u30FC\u30C8_8_9"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_7_9"
+      position: {x: -4.6566126e-11, y: 0.00029824415, z: 1.3038516e-10}
+      rotation: {x: -0.010616466, y: -0.004554707, z: 0.004243085, w: 0.9999243}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_9_9"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_8_9"
+      position: {x: 8.8475643e-11, y: 0.00029709353, z: -1.9092113e-10}
+      rotation: {x: -0.011112041, y: -0.0040911515, z: 0.0037044066, w: 0.99992305}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: "\u30B9\u30AB\u30FC\u30C8_10_9"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_9_9"
+      position: {x: 1.6298145e-10, y: 0.00029509814, z: -1.4901161e-10}
+      rotation: {x: -0.011734072, y: -0.003640299, z: 0.0031873723, w: 0.9999195}
+      scale: {x: 0.9999999, y: 0.99999994, z: 0.99999994}
+    - name: "\u30B9\u30AB\u30FC\u30C8_11_9"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_10_9"
+      position: {x: -6.0535965e-11, y: 0.00029227836, z: -1.5366822e-10}
+      rotation: {x: 0.9991717, y: 0.025084471, z: 0.025083447, w: 0.019938692}
+      scale: {x: 1.0000024, y: 1, z: 1.0000017}
+    - name: "\u30B9\u30AB\u30FC\u30C8_11_9_end"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_11_9"
+      position: {x: -0, y: 0.0007999998, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_0_10"
+      parentName: "\u4E0B\u534A\u8EAB"
+      position: {x: 0.0011275152, y: -0.0005638027, z: 0.00013553842}
+      rotation: {x: 0.10709024, y: 0.105857454, z: -0.10681437, w: 0.98281056}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_1_10"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_0_10"
+      position: {x: -2.7474015e-10, y: 0.00028384797, z: -1.862645e-10}
+      rotation: {x: -0.0063420823, y: -0.011232182, z: 0.012559947, w: 0.99983793}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_2_10"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_1_10"
+      position: {x: -6.519258e-11, y: 0.00028852606, z: 1.11758706e-10}
+      rotation: {x: -0.00624268, y: -0.010074443, z: 0.011146258, w: 0.9998677}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_3_10"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_2_10"
+      position: {x: -1.9092113e-10, y: 0.00029224102, z: -1.11758706e-10}
+      rotation: {x: -0.006285746, y: -0.009063571, z: 0.00990118, w: 0.99989015}
+      scale: {x: 1, y: 0.9999999, z: 0.9999999}
+    - name: "\u30B9\u30AB\u30FC\u30C8_4_10"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_3_10"
+      position: {x: -1.2572854e-10, y: 0.00029494957, z: 1.11758706e-10}
+      rotation: {x: -0.006451282, y: -0.008168712, z: 0.008792836, w: 0.9999072}
+      scale: {x: 1, y: 0.99999994, z: 0.9999999}
+    - name: "\u30B9\u30AB\u30FC\u30C8_5_10"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_4_10"
+      position: {x: 1.11758706e-10, y: 0.00029661055, z: -2.6077032e-10}
+      rotation: {x: -0.0067357323, y: -0.0073739183, z: 0.00780387, w: 0.9999197}
+      scale: {x: 0.9999999, y: 0.99999976, z: 0.9999999}
+    - name: "\u30B9\u30AB\u30FC\u30C8_6_10"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_5_10"
+      position: {x: 5.122274e-11, y: 0.0002972016, z: 1.0244548e-10}
+      rotation: {x: -0.0071352907, y: -0.0066586407, z: 0.0069116936, w: 0.99992853}
+      scale: {x: 1, y: 0.9999998, z: 0.99999994}
+    - name: "\u30B9\u30AB\u30FC\u30C8_7_10"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_6_10"
+      position: {x: 1.3038516e-10, y: 0.0002967059, z: 2.7939676e-10}
+      rotation: {x: -0.007653398, y: -0.0060058846, z: 0.0060970387, w: 0.9999341}
+      scale: {x: 0.9999998, y: 1.0000001, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_8_10"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_7_10"
+      position: {x: -2.3283063e-11, y: 0.00029511558, z: -1.862645e-10}
+      rotation: {x: -0.008297434, y: -0.0054017883, z: 0.005344362, w: 0.9999367}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_9_10"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_8_10"
+      position: {x: 2.7939677e-11, y: 0.0002924237, z: -4.6566126e-11}
+      rotation: {x: -0.009083228, y: -0.0048314687, z: 0.00463684, w: 0.99993634}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_10_10"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_9_10"
+      position: {x: 1.44355e-10, y: 0.00028863616, z: 1.3969838e-10}
+      rotation: {x: -0.010030194, y: -0.0042824578, z: 0.003960737, w: 0.9999327}
+      scale: {x: 0.99999994, y: 0.9999998, z: 0.99999994}
+    - name: "\u30B9\u30AB\u30FC\u30C8_11_10"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_10_10"
+      position: {x: 1.2107193e-10, y: 0.0002837646, z: -1.4901161e-10}
+      rotation: {x: 0.9982678, y: 0.031680755, z: 0.031675037, w: 0.038136065}
+      scale: {x: 1.0000092, y: 1, z: 1.000015}
+    - name: "\u30B9\u30AB\u30FC\u30C8_11_10_end"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_11_10"
+      position: {x: -0, y: 0.0007999998, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_0_11"
+      parentName: "\u4E0B\u534A\u8EAB"
+      position: {x: 0.0011275152, y: -0.0005668846, z: -0.00020691579}
+      rotation: {x: 0.08355619, y: 0.10865942, z: -0.10964169, w: 0.9844746}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: "\u30B9\u30AB\u30FC\u30C8_1_11"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_0_11"
+      position: {x: 2.2584572e-10, y: 0.00028213844, z: 1.5832484e-10}
+      rotation: {x: -0.0042468156, y: -0.01222209, z: 0.013587639, w: 0.999824}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+    - name: "\u30B9\u30AB\u30FC\u30C8_2_11"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_1_11"
+      position: {x: -2.805609e-10, y: 0.0002883205, z: 5.5879353e-11}
+      rotation: {x: -0.004161709, y: -0.010805523, z: 0.011925873, w: 0.99986184}
+      scale: {x: 1, y: 0.9999998, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_3_11"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_2_11"
+      position: {x: -9.429641e-11, y: 0.00029342136, z: -2.4214386e-10}
+      rotation: {x: -0.004215274, y: -0.0095924605, z: 0.0104896175, w: 0.9998901}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_4_11"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_3_11"
+      position: {x: 1.8168066e-10, y: 0.0002973848, z: 8.527422e-11}
+      rotation: {x: -0.0043836464, y: -0.008540505, z: 0.009235753, w: 0.9999113}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_5_11"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_4_11"
+      position: {x: -1.7578713e-10, y: 0.0003001656, z: 8.1490724e-11}
+      rotation: {x: -0.0046575125, y: -0.0076228585, z: 0.008136292, w: 0.99992704}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_6_11"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_5_11"
+      position: {x: 3.434252e-11, y: 0.00030173446, z: -1.3504177e-10}
+      rotation: {x: -0.0050298623, y: -0.006811093, z: 0.0071604806, w: 0.99993855}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_7_11"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_6_11"
+      position: {x: -1.16415315e-11, y: 0.00030206703, z: 1.8626451e-11}
+      rotation: {x: -0.0055015846, y: -0.0060824067, z: 0.0062830704, w: 0.99994665}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_8_11"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_7_11"
+      position: {x: -6.984919e-12, y: 0.00030114746, z: 2.7939677e-11}
+      rotation: {x: -0.0060802926, y: -0.005420275, z: 0.0054855966, w: 0.9999518}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_9_11"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_8_11"
+      position: {x: -1.8044374e-10, y: 0.00029896872, z: 6.519258e-11}
+      rotation: {x: -0.006776646, y: -0.0048047896, z: 0.0047459076, w: 0.9999543}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+    - name: "\u30B9\u30AB\u30FC\u30C8_10_11"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_9_11"
+      position: {x: 5.2386893e-11, y: 0.00029552195, z: 7.4505804e-11}
+      rotation: {x: -0.007610581, y: -0.0042224047, z: 0.0040489114, w: 0.9999539}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_11_11"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_10_11"
+      position: {x: -1.420267e-10, y: 0.00029081796, z: 1.8626451e-11}
+      rotation: {x: 0.99838984, y: 0.030971056, z: 0.030966131, w: 0.036050566}
+      scale: {x: 1.0000079, y: 0.9999999, z: 1.0000123}
+    - name: "\u30B9\u30AB\u30FC\u30C8_11_11_end"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_11_11"
+      position: {x: -0, y: 0.0007999998, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_0_12"
+      parentName: "\u4E0B\u534A\u8EAB"
+      position: {x: 0.000904197, y: -0.00056964054, z: -0.0005131547}
+      rotation: {x: 0.051405914, y: 0.090457305, z: -0.09127502, w: 0.9903756}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_1_12"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_0_12"
+      position: {x: -1.6763806e-10, y: 0.00027856202, z: 7.4505804e-11}
+      rotation: {x: -0.0038856706, y: -0.011197604, z: 0.011780797, w: 0.9998604}
+      scale: {x: 0.9999999, y: 0.9999999, z: 0.9999999}
+    - name: "\u30B9\u30AB\u30FC\u30C8_2_12"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_1_12"
+      position: {x: 9.313225e-11, y: 0.00028758484, z: 9.313225e-11}
+      rotation: {x: -0.0036587021, y: -0.009755905, z: 0.010217842, w: 0.99989355}
+      scale: {x: 1, y: 0.99999976, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_3_12"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_2_12"
+      position: {x: -2.3283063e-11, y: 0.00029542836, z: -9.3132255e-12}
+      rotation: {x: -0.0035612772, y: -0.008545797, z: 0.008898017, w: 0.99991757}
+      scale: {x: 0.99999994, y: 1, z: 0.9999999}
+    - name: "\u30B9\u30AB\u30FC\u30C8_4_12"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_3_12"
+      position: {x: -1.3969838e-11, y: 0.00030204825, z: -9.3132255e-12}
+      rotation: {x: -0.0035655354, y: -0.0075151445, z: 0.0077693174, w: 0.99993527}
+      scale: {x: 0.9999999, y: 0.99999994, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_5_12"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_4_12"
+      position: {x: -1.3504177e-10, y: 0.00030740973, z: 2.7939677e-11}
+      rotation: {x: -0.0036540546, y: -0.0066287965, z: 0.006796242, w: 0.99994826}
+      scale: {x: 0.9999998, y: 0.99999994, z: 0.9999999}
+    - name: "\u30B9\u30AB\u30FC\u30C8_6_12"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_5_12"
+      position: {x: 8.8475643e-11, y: 0.00031148607, z: 9.3132255e-12}
+      rotation: {x: -0.0038175846, y: -0.005856784, z: 0.0059475913, w: 0.9999579}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_7_12"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_6_12"
+      position: {x: -1.7229468e-10, y: 0.0003142658, z: -9.3132255e-12}
+      rotation: {x: -0.0040504322, y: -0.0051732557, z: 0.005196217, w: 0.99996495}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_8_12"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_7_12"
+      position: {x: -6.984919e-11, y: 0.00031572953, z: -2.7939677e-11}
+      rotation: {x: -0.004352847, y: -0.004560303, z: 0.004523246, w: 0.9999699}
+      scale: {x: 0.9999999, y: 1, z: 0.99999994}
+    - name: "\u30B9\u30AB\u30FC\u30C8_9_12"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_8_12"
+      position: {x: -4.0745362e-11, y: 0.00031587045, z: 2.3283063e-11}
+      rotation: {x: -0.0047278902, y: -0.00400118, z: 0.0039108573, w: 0.9999732}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_10_12"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_9_12"
+      position: {x: -7.334165e-11, y: 0.00031468464, z: 3.259629e-11}
+      rotation: {x: -0.005182603, y: -0.0034807867, z: 0.003343212, w: 0.99997497}
+      scale: {x: 0.99999994, y: 1, z: 1.0000001}
+    - name: "\u30B9\u30AB\u30FC\u30C8_11_12"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_10_12"
+      position: {x: 1.0128133e-10, y: 0.00031216783, z: 4.6566128e-12}
+      rotation: {x: 0.9993209, y: 0.023581494, z: 0.023580946, w: 0.01567038}
+      scale: {x: 1.0000017, y: 1.0000002, z: 1.0000008}
+    - name: "\u30B9\u30AB\u30FC\u30C8_11_12_end"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_11_12"
+      position: {x: -0, y: 0.0007999998, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_0_13"
+      parentName: "\u4E0B\u534A\u8EAB"
+      position: {x: 0.00050179166, y: -0.0005715477, z: -0.0007250784}
+      rotation: {x: 0.025947906, y: 0.05172253, z: -0.05219009, w: 0.9969592}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_1_13"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_0_13"
+      position: {x: -1.11758706e-10, y: 0.00027529075, z: -4.1909514e-11}
+      rotation: {x: -0.0025285573, y: -0.0069266604, z: 0.0070910505, w: 0.99994767}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_2_13"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_1_13"
+      position: {x: -9.3132255e-12, y: 0.00028722943, z: 1.193257e-10}
+      rotation: {x: -0.0024058332, y: -0.005942475, z: 0.006061563, w: 0.9999611}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_3_13"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_2_13"
+      position: {x: 5.122274e-11, y: 0.00029785576, z: -4.6566128e-12}
+      rotation: {x: -0.002351871, y: -0.005134865, z: 0.0052158833, w: 0.99997044}
+      scale: {x: 0.99999994, y: 1, z: 1.0000001}
+    - name: "\u30B9\u30AB\u30FC\u30C8_4_13"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_3_13"
+      position: {x: 8.8475643e-11, y: 0.00030715877, z: 1.8626451e-11}
+      rotation: {x: -0.0023509315, y: -0.0044605983, z: 0.0045096455, w: 0.9999771}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_5_13"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_4_13"
+      position: {x: -7.4505804e-11, y: 0.00031512429, z: 2.561137e-11}
+      rotation: {x: -0.0023935635, y: -0.003890771, z: 0.003912987, w: 0.99998194}
+      scale: {x: 0.99999994, y: 1, z: 0.99999994}
+    - name: "\u30B9\u30AB\u30FC\u30C8_6_13"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_5_13"
+      position: {x: -7.21775e-11, y: 0.0003217463, z: 1.6298145e-11}
+      rotation: {x: -0.0024740612, y: -0.0034009363, z: 0.00340054, w: 0.9999854}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_7_13"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_6_13"
+      position: {x: 9.3132255e-12, y: 0.00032701535, z: 8.381903e-11}
+      rotation: {x: -0.0025897815, y: -0.0029745142, z: 0.0029550863, w: 0.9999879}
+      scale: {x: 0.99999994, y: 1, z: 0.99999994}
+    - name: "\u30B9\u30AB\u30FC\u30C8_8_13"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_7_13"
+      position: {x: 2.7939677e-11, y: 0.00033093314, z: -9.3132255e-12}
+      rotation: {x: -0.0027396977, y: -0.0025967057, z: 0.002561236, w: 0.9999896}
+      scale: {x: 1.0000001, y: 1.0000001, z: 0.99999994}
+    - name: "\u30B9\u30AB\u30FC\u30C8_9_13"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_8_13"
+      position: {x: -5.5879353e-11, y: 0.00033349253, z: 4.1909514e-11}
+      rotation: {x: -0.0029254465, y: -0.0022572496, z: 0.0022082806, w: 0.99999076}
+      scale: {x: 0.9999999, y: 0.9999999, z: 0.99999994}
+    - name: "\u30B9\u30AB\u30FC\u30C8_10_13"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_9_13"
+      position: {x: -3.4924594e-11, y: 0.00033469257, z: 6.984919e-12}
+      rotation: {x: -0.0031489383, y: -0.0019464007, z: 0.0018861787, w: 0.9999914}
+      scale: {x: 0.99999994, y: 0.9999998, z: 0.99999994}
+    - name: "\u30B9\u30AB\u30FC\u30C8_11_13"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_10_13"
+      position: {x: 3.608875e-11, y: 0.0003345317, z: -4.5401974e-11}
+      rotation: {x: 0.9998373, y: 0.012340613, z: 0.012340563, w: 0.004566888}
+      scale: {x: 1.0000001, y: 0.99999994, z: 1}
+    - name: "\u30B9\u30AB\u30FC\u30C8_11_13_end"
+      parentName: "\u30B9\u30AB\u30FC\u30C8_11_13"
+      position: {x: -0, y: 0.0007999998, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8170\u30AD\u30E3\u30F3\u30BB\u30EB.L"
+      parentName: "\u4E0B\u534A\u8EAB"
+      position: {x: -0.00079576153, y: 0.00075556024, z: 0.00023665525}
+      rotation: {x: 0.99998987, y: 2.0052696e-17, z: 4.4566524e-15, w: 0.004499496}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_shadow_\u8DB3D.L"
+      parentName: "\u8170\u30AD\u30E3\u30F3\u30BB\u30EB.L"
+      position: {x: 3.2335245e-17, y: -6.339384e-10, z: 1.776632e-11}
+      rotation: {x: -0.0000022688175, y: 0.00000004819593, z: -0.000000166272, w: 1}
+      scale: {x: 1, y: 1.0000001, z: 1.0000004}
+    - name: "_shadow_\u8DB3D.L_end"
+      parentName: "_shadow_\u8DB3D.L"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_shadow_\u8DB3\u8ABF\u65741.L"
+      parentName: "\u8170\u30AD\u30E3\u30F3\u30BB\u30EB.L"
+      position: {x: 3.2335245e-17, y: -6.339384e-10, z: 1.776632e-11}
+      rotation: {x: 0.50731856, y: -0.49994838, z: -0.49994266, w: -0.49268338}
+      scale: {x: 1.0000002, y: 0.9999999, z: 1.0000005}
+    - name: "_shadow_\u8DB3\u8ABF\u65741.L_end"
+      parentName: "_shadow_\u8DB3\u8ABF\u65741.L"
+      position: {x: -0, y: 0.0008148767, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_shadow_\u8DB3\u8ABF\u65742.L"
+      parentName: "\u8170\u30AD\u30E3\u30F3\u30BB\u30EB.L"
+      position: {x: 3.2335245e-17, y: -6.339384e-10, z: 1.776632e-11}
+      rotation: {x: -0.5032758, y: 0.503999, z: 0.5039947, w: 0.48855686}
+      scale: {x: 1.0000002, y: 1, z: 1.0000006}
+    - name: "_shadow_\u8DB3\u8ABF\u65742.L_end"
+      parentName: "_shadow_\u8DB3\u8ABF\u65742.L"
+      position: {x: -0, y: 0.00080193195, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_shadow_\u8DB3\u8ABF\u65743.L"
+      parentName: "\u8170\u30AD\u30E3\u30F3\u30BB\u30EB.L"
+      position: {x: 3.2335245e-17, y: -6.339384e-10, z: 1.776632e-11}
+      rotation: {x: 0.5110186, y: -0.49614385, z: -0.4961414, w: -0.496533}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1.0000006}
+    - name: "_shadow_\u8DB3\u8ABF\u65743.L_end"
+      parentName: "_shadow_\u8DB3\u8ABF\u65743.L"
+      position: {x: -0, y: 0.0008019194, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8DB3.L"
+      parentName: "\u8170\u30AD\u30E3\u30F3\u30BB\u30EB.L"
+      position: {x: 3.2335245e-17, y: -3.789196e-11, z: 1.7766311e-11}
+      rotation: {x: 0.9999416, y: 0.007554234, z: 0.0075543895, w: -0.0016659022}
+      scale: {x: 0.99999994, y: 1.0000006, z: 1.0000002}
+    - name: "_dummy_\u8DB3D.L"
+      parentName: "\u8DB3.L"
+      position: {x: 3.055902e-11, y: 0.0000000011880911, z: -1.5133991e-11}
+      rotation: {x: 0.9999416, y: 0.0075543835, z: 0.0075544543, w: 0.0016681011}
+      scale: {x: 1, y: 0.9999994, z: 1}
+    - name: "_dummy_\u8DB3D.L_end"
+      parentName: "_dummy_\u8DB3D.L"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_dummy_\u8DB3\u8ABF\u65741.L"
+      parentName: "\u8DB3.L"
+      position: {x: 3.055902e-11, y: 0.0000000011880911, z: -1.5133991e-11}
+      rotation: {x: 0.49180764, y: -0.49919283, z: 0.50830454, w: 0.50055796}
+      scale: {x: 0.9999999, y: 0.9999998, z: 0.99999976}
+    - name: "_dummy_\u8DB3\u8ABF\u65741.L_end"
+      parentName: "_dummy_\u8DB3\u8ABF\u65741.L"
+      position: {x: -0, y: 0.0008148767, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_dummy_\u8DB3\u8ABF\u65742.L"
+      parentName: "\u8DB3.L"
+      position: {x: 3.055902e-11, y: 0.0000000011880911, z: -1.5133991e-11}
+      rotation: {x: 0.48768884, y: -0.5032379, z: 0.5123007, w: 0.49644655}
+      scale: {x: 0.9999998, y: 1, z: 0.9999998}
+    - name: "_dummy_\u8DB3\u8ABF\u65742.L_end"
+      parentName: "_dummy_\u8DB3\u8ABF\u65742.L"
+      position: {x: -0, y: 0.00080193195, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_dummy_\u8DB3\u8ABF\u65743.L"
+      parentName: "\u8DB3.L"
+      position: {x: 3.055902e-11, y: 0.0000000011880911, z: -1.5133991e-11}
+      rotation: {x: 0.49565476, y: -0.4953932, z: 0.504555, w: 0.5043176}
+      scale: {x: 1, y: 1.0000002, z: 0.9999999}
+    - name: "_dummy_\u8DB3\u8ABF\u65743.L_end"
+      parentName: "_dummy_\u8DB3\u8ABF\u65743.L"
+      position: {x: -0, y: 0.0008019194, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_shadow_\u3072\u3056D.L"
+      parentName: "\u8DB3.L"
+      position: {x: 7.4505804e-11, y: 0.004047928, z: -1.9674189e-10}
+      rotation: {x: 0.9999416, y: 0.0075542117, z: 0.0075556063, w: 0.0016645176}
+      scale: {x: 0.99999964, y: 0.99999964, z: 0.9999833}
+    - name: "_shadow_\u3072\u3056D.L_end"
+      parentName: "_shadow_\u3072\u3056D.L"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u3072\u3056.L"
+      parentName: "\u8DB3.L"
+      position: {x: 7.392373e-11, y: 0.004047928, z: -1.5948899e-10}
+      rotation: {x: 0.07571256, y: 0.005285075, z: -0.0041569397, w: 0.997107}
+      scale: {x: 0.9999999, y: 0.9999998, z: 0.99999964}
+    - name: "_dummy_\u3072\u3056D.L"
+      parentName: "\u3072\u3056.L"
+      position: {x: -3.8417054e-11, y: 1.5599652e-10, z: -6.984919e-11}
+      rotation: {x: 0.9968514, y: 0.0122524025, z: 0.0122534875, w: 0.077376336}
+      scale: {x: 0.99999976, y: 0.99999994, z: 0.99998367}
+    - name: "_dummy_\u3072\u3056D.L_end"
+      parentName: "_dummy_\u3072\u3056D.L"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_shadow_\u8DB3\u9996D.L"
+      parentName: "\u3072\u3056.L"
+      position: {x: 3.259629e-11, y: 0.00415752, z: -1.8044374e-10}
+      rotation: {x: 0.9968513, y: 0.01225162, z: 0.012253408, w: 0.07737754}
+      scale: {x: 0.9999997, y: 1.0000007, z: 0.99999994}
+    - name: "_shadow_\u8DB3\u9996D.L_end"
+      parentName: "_shadow_\u8DB3\u9996D.L"
+      position: {x: -0, y: 0.0007999998, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8DB3\u9996.L"
+      parentName: "\u3072\u3056.L"
+      position: {x: 2.7939677e-11, y: 0.00415752, z: 4.307367e-11}
+      rotation: {x: -0.52409625, y: -0.0039848397, z: -0.0093139, w: 0.8515988}
+      scale: {x: 0.9999997, y: 1, z: 1.0000008}
+    - name: "_dummy_\u8DB3\u9996D.L"
+      parentName: "\u8DB3\u9996.L"
+      position: {x: 2.3283064e-12, y: 3.4633557e-10, z: -1.6530975e-10}
+      rotation: {x: 0.8894054, y: 0.013604407, z: 0.01360442, w: -0.45671412}
+      scale: {x: 0.9999998, y: 0.99999994, z: 0.99999976}
+    - name: "_dummy_\u8DB3\u9996D.L_end"
+      parentName: "_dummy_\u8DB3\u9996D.L"
+      position: {x: -0, y: 0.0007999998, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u3064\u307E\u5148.L"
+      parentName: "\u8DB3\u9996.L"
+      position: {x: 1.16415315e-11, y: 0.0018308191, z: -2.3283063e-11}
+      rotation: {x: 0.8894054, y: 0.013604403, z: 0.013604425, w: -0.45671412}
+      scale: {x: 0.9999998, y: 1.0000001, z: 1}
+    - name: "\u3064\u307E\u5148.L_end"
+      parentName: "\u3064\u307E\u5148.L"
+      position: {x: -0, y: 0.0008, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8DB3D.L"
+      parentName: "\u8170\u30AD\u30E3\u30F3\u30BB\u30EB.L"
+      position: {x: 3.2335245e-17, y: -3.789196e-11, z: 1.7766311e-11}
+      rotation: {x: -0.00000227103, y: 5.385692e-13, z: -0.00000023841858, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u3072\u3056D.L"
+      parentName: "\u8DB3D.L"
+      position: {x: 0.000061257655, y: -0.0040474436, z: -0.000013042225}
+      rotation: {x: 0.0000042915335, y: 0.0000023841872, z: 0.00000035761764, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8DB3\u9996D.L"
+      parentName: "\u3072\u3056D.L"
+      position: {x: 0.00010944057, y: -0.0041064904, z: -0.00064010744}
+      rotation: {x: -0.0000019073495, y: 0.0000011920915, z: 0.000000715258, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8DB3\u5148EX.L"
+      parentName: "\u8DB3\u9996D.L"
+      position: {x: 0.000014371415, y: -0.00071091246, z: 0.0009920344}
+      rotation: {x: -0.000000053385108, y: 0.7071068, z: 0.7071067, w: -0.000000053385047}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8DB3\u5148EX.L_end"
+      parentName: "\u8DB3\u5148EX.L"
+      position: {x: -0, y: 0.0008, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8170\u30AD\u30E3\u30F3\u30BB\u30EB.R"
+      parentName: "\u4E0B\u534A\u8EAB"
+      position: {x: 0.000795762, y: 0.0007555602, z: 0.00023664955}
+      rotation: {x: 0.99998987, y: 2.0052696e-17, z: 4.4566524e-15, w: 0.004499496}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_shadow_\u8DB3D.R"
+      parentName: "\u8170\u30AD\u30E3\u30F3\u30BB\u30EB.R"
+      position: {x: 3.2335245e-17, y: 5.5841837e-10, z: 7.802854e-12}
+      rotation: {x: 0.00000006402839, y: -0.000000043772165, z: -0.00000011691098,
+        w: 1}
+      scale: {x: 0.99999994, y: 1.0000004, z: 1.0000004}
+    - name: "_shadow_\u8DB3D.R_end"
+      parentName: "_shadow_\u8DB3D.R"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_shadow_\u8DB3\u8ABF\u65741.R"
+      parentName: "\u8170\u30AD\u30E3\u30F3\u30BB\u30EB.R"
+      position: {x: 3.2335245e-17, y: 5.5841837e-10, z: 7.802854e-12}
+      rotation: {x: 0.50731677, y: 0.4999495, z: 0.49994272, w: -0.49268407}
+      scale: {x: 1.0000001, y: 0.99999976, z: 0.9999999}
+    - name: "_shadow_\u8DB3\u8ABF\u65741.R_end"
+      parentName: "_shadow_\u8DB3\u8ABF\u65741.R"
+      position: {x: -0, y: 0.00081487646, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_shadow_\u8DB3\u8ABF\u65742.R"
+      parentName: "\u8170\u30AD\u30E3\u30F3\u30BB\u30EB.R"
+      position: {x: 3.2335245e-17, y: 5.5841837e-10, z: 7.802854e-12}
+      rotation: {x: 0.5032739, y: 0.5039997, z: 0.5039954, w: -0.48855737}
+      scale: {x: 1.0000002, y: 0.99999994, z: 1}
+    - name: "_shadow_\u8DB3\u8ABF\u65742.R_end"
+      parentName: "_shadow_\u8DB3\u8ABF\u65742.R"
+      position: {x: -0, y: 0.0008019321, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_shadow_\u8DB3\u8ABF\u65743.R"
+      parentName: "\u8170\u30AD\u30E3\u30F3\u30BB\u30EB.R"
+      position: {x: 3.2335245e-17, y: 5.5841837e-10, z: 7.802854e-12}
+      rotation: {x: 0.5110184, y: 0.49614325, z: 0.4961433, w: -0.49653187}
+      scale: {x: 1.0000002, y: 0.9999999, z: 1}
+    - name: "_shadow_\u8DB3\u8ABF\u65743.R_end"
+      parentName: "_shadow_\u8DB3\u8ABF\u65743.R"
+      position: {x: -0, y: 0.00080191926, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8DB3.R"
+      parentName: "\u8170\u30AD\u30E3\u30F3\u30BB\u30EB.R"
+      position: {x: 3.2335245e-17, y: -3.7628078e-11, z: 7.8028625e-12}
+      rotation: {x: 0.9999416, y: -0.007554283, z: -0.0075541646, w: -0.0016682849}
+      scale: {x: 0.9999999, y: 1, z: 1.0000002}
+    - name: "_dummy_\u8DB3D.R"
+      parentName: "\u8DB3.R"
+      position: {x: -6.170012e-11, y: 2.8594512e-11, z: -1.04773785e-11}
+      rotation: {x: 0.9999416, y: -0.0075541665, z: -0.007554209, w: 0.0016682238}
+      scale: {x: 1, y: 1.0000002, z: 1}
+    - name: "_dummy_\u8DB3D.R_end"
+      parentName: "_dummy_\u8DB3D.R"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_dummy_\u8DB3\u8ABF\u65741.R"
+      parentName: "\u8DB3.R"
+      position: {x: -6.170012e-11, y: 2.8594512e-11, z: -1.04773785e-11}
+      rotation: {x: 0.4918055, y: 0.4991934, z: -0.5083051, w: 0.500559}
+      scale: {x: 0.99999976, y: 0.9999998, z: 0.99999976}
+    - name: "_dummy_\u8DB3\u8ABF\u65741.R_end"
+      parentName: "_dummy_\u8DB3\u8ABF\u65741.R"
+      position: {x: -0, y: 0.00081487646, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_dummy_\u8DB3\u8ABF\u65742.R"
+      parentName: "\u8DB3.R"
+      position: {x: -6.170012e-11, y: 2.8594512e-11, z: -1.04773785e-11}
+      rotation: {x: -0.48768672, y: -0.5032388, z: 0.5123011, w: -0.49644738}
+      scale: {x: 0.9999999, y: 1, z: 0.9999999}
+    - name: "_dummy_\u8DB3\u8ABF\u65742.R_end"
+      parentName: "_dummy_\u8DB3\u8ABF\u65742.R"
+      position: {x: -0, y: 0.0008019321, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_dummy_\u8DB3\u8ABF\u65743.R"
+      parentName: "\u8DB3.R"
+      position: {x: -6.170012e-11, y: 2.8594512e-11, z: -1.04773785e-11}
+      rotation: {x: 0.49565127, y: 0.49539512, z: -0.5045541, w: 0.50431997}
+      scale: {x: 0.9999999, y: 1, z: 0.99999994}
+    - name: "_dummy_\u8DB3\u8ABF\u65743.R_end"
+      parentName: "_dummy_\u8DB3\u8ABF\u65743.R"
+      position: {x: -0, y: 0.00080191926, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_shadow_\u3072\u3056D.R"
+      parentName: "\u8DB3.R"
+      position: {x: -2.4738255e-11, y: 0.004047929, z: 4.6566126e-11}
+      rotation: {x: 0.9999416, y: -0.007554072, z: -0.007555285, w: 0.0016689315}
+      scale: {x: 0.99999964, y: 0.99999976, z: 0.9999841}
+    - name: "_shadow_\u3072\u3056D.R_end"
+      parentName: "_shadow_\u3072\u3056D.R"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u3072\u3056.R"
+      parentName: "\u8DB3.R"
+      position: {x: -2.4738255e-11, y: 0.004047929, z: 4.6566126e-11}
+      rotation: {x: 0.07570822, y: -0.005284751, z: 0.004156618, w: 0.9971074}
+      scale: {x: 0.9999999, y: 0.9999999, z: 0.9999997}
+    - name: "_dummy_\u3072\u3056D.R"
+      parentName: "\u3072\u3056.R"
+      position: {x: -2.4447217e-11, y: -2.561137e-11, z: -6.984919e-11}
+      rotation: {x: 0.9968514, y: -0.012251862, z: -0.012252905, w: 0.07737635}
+      scale: {x: 0.9999997, y: 0.99999994, z: 0.9999844}
+    - name: "_dummy_\u3072\u3056D.R_end"
+      parentName: "_dummy_\u3072\u3056D.R"
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "_shadow_\u8DB3\u9996D.R"
+      parentName: "\u3072\u3056.R"
+      position: {x: -1.11758706e-10, y: 0.00415752, z: 3.830064e-10}
+      rotation: {x: 0.9968515, y: -0.012252461, z: -0.012250671, w: 0.077375434}
+      scale: {x: 0.9999997, y: 1.0000001, z: 0.9999998}
+    - name: "_shadow_\u8DB3\u9996D.R_end"
+      parentName: "_shadow_\u8DB3\u9996D.R"
+      position: {x: -0, y: 0.0007999998, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8DB3\u9996.R"
+      parentName: "\u3072\u3056.R"
+      position: {x: -1.1874363e-10, y: 0.00415752, z: 8.498318e-11}
+      rotation: {x: -0.5240941, y: 0.00397556, z: 0.009320276, w: 0.8516001}
+      scale: {x: 0.9999997, y: 0.99999994, z: 1.0000002}
+    - name: "_dummy_\u8DB3\u9996D.R"
+      parentName: "\u8DB3\u9996.R"
+      position: {x: -5.8207657e-12, y: -2.3748725e-10, z: 2.1187588e-10}
+      rotation: {x: 0.8894053, y: -0.013612235, z: -0.013612235, w: -0.45671394}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.9999999}
+    - name: "_dummy_\u8DB3\u9996D.R_end"
+      parentName: "_dummy_\u8DB3\u9996D.R"
+      position: {x: -0, y: 0.0007999998, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u3064\u307E\u5148.R"
+      parentName: "\u8DB3\u9996.R"
+      position: {x: -5.762558e-11, y: 0.0018308194, z: -7.21775e-11}
+      rotation: {x: 0.88940537, y: -0.013612232, z: -0.01361224, w: -0.45671383}
+      scale: {x: 0.99999994, y: 1, z: 1.0000001}
+    - name: "\u3064\u307E\u5148.R_end"
+      parentName: "\u3064\u307E\u5148.R"
+      position: {x: -0, y: 0.0008, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8DB3D.R"
+      parentName: "\u8170\u30AD\u30E3\u30F3\u30BB\u30EB.R"
+      position: {x: 3.2335245e-17, y: -3.7628078e-11, z: 7.8028625e-12}
+      rotation: {x: 0.00000023283059, y: -0.00000023841864, z: -0.00000023841852,
+        w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u3072\u3056D.R"
+      parentName: "\u8DB3D.R"
+      position: {x: -0.00006125581, y: -0.0040474455, z: -0.00001304288}
+      rotation: {x: -4.831694e-13, y: -0.000002026558, z: -0.00000023841855, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8DB3\u9996D.R"
+      parentName: "\u3072\u3056D.R"
+      position: {x: -0.00010943589, y: -0.00410649, z: -0.0006401085}
+      rotation: {x: 0.0000003576261, y: 0.0000021457677, z: 0.0000008344642, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8DB3\u5148EX.R"
+      parentName: "\u8DB3\u9996D.R"
+      position: {x: -0.000014375904, y: -0.0007109126, z: 0.0009920328}
+      rotation: {x: -0.000000053385076, y: 0.7071068, z: 0.7071067, w: -0.000000053385076}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8DB3\u5148EX.R_end"
+      parentName: "\u8DB3\u5148EX.R"
+      position: {x: -0, y: 0.0008, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8DB3\u8ABF\u65741.L"
+      parentName: "\u4E0B\u534A\u8EAB"
+      position: {x: -0.0008147894, y: 0.00075469055, z: 0.00024830914}
+      rotation: {x: 0.4903965, y: -0.49768803, z: 0.5021927, w: 0.5095296}
+      scale: {x: 0.9999999, y: 0.9999998, z: 0.99999994}
+    - name: "\u8DB3\u8ABF\u65741.L_end"
+      parentName: "\u8DB3\u8ABF\u65741.L"
+      position: {x: -0, y: 0.0008148767, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8DB3\u8ABF\u65741.R"
+      parentName: "\u4E0B\u534A\u8EAB"
+      position: {x: 0.00081478915, y: 0.00075469224, z: 0.00024830698}
+      rotation: {x: 0.4903946, y: 0.49769, z: -0.502192, w: 0.5095302}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: "\u8DB3\u8ABF\u65741.R_end"
+      parentName: "\u8DB3\u8ABF\u65741.R"
+      position: {x: -0, y: 0.00081487646, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8DB3\u8ABF\u65742.L"
+      parentName: "\u4E0B\u534A\u8EAB"
+      position: {x: -0.0008017405, y: 0.00075435196, z: 0.00023526272}
+      rotation: {x: 0.48628706, y: -0.5017232, z: 0.50626034, w: 0.5054693}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: "\u8DB3\u8ABF\u65742.L_end"
+      parentName: "\u8DB3\u8ABF\u65742.L"
+      position: {x: -0, y: 0.00080193207, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8DB3\u8ABF\u65742.R"
+      parentName: "\u4E0B\u534A\u8EAB"
+      position: {x: 0.0008017405, y: 0.00075435487, z: 0.00023526033}
+      rotation: {x: 0.48628518, y: 0.5017249, z: -0.5062599, w: 0.50546986}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    - name: "\u8DB3\u8ABF\u65742.R_end"
+      parentName: "\u8DB3\u8ABF\u65742.R"
+      position: {x: -0, y: 0.0008019321, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8DB3\u8ABF\u65743.L"
+      parentName: "\u4E0B\u534A\u8EAB"
+      position: {x: -0.00080174184, y: 0.0007545746, z: 0.00026046476}
+      rotation: {x: 0.4942301, y: -0.49390343, z: 0.49837184, w: 0.5132462}
+      scale: {x: 1, y: 0.99999994, z: 0.9999999}
+    - name: "\u8DB3\u8ABF\u65743.L_end"
+      parentName: "\u8DB3\u8ABF\u65743.L"
+      position: {x: -0, y: 0.0008019193, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8DB3\u8ABF\u65743.R"
+      parentName: "\u4E0B\u534A\u8EAB"
+      position: {x: 0.00080174184, y: 0.00075457693, z: 0.0002604625}
+      rotation: {x: 0.49422958, y: 0.4939043, z: -0.4983722, w: 0.5132454}
+      scale: {x: 1.0000001, y: 1, z: 0.99999994}
+    - name: "\u8DB3\u8ABF\u65743.R_end"
+      parentName: "\u8DB3\u8ABF\u65743.R"
+      position: {x: -0, y: 0.0008019193, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8DB3IK\u89AA.L"
+      parentName: "\u5168\u3066\u306E\u89AA"
+      position: {x: -0.0006250651, y: -0.00001913786, z: -0.0006340654}
+      rotation: {x: -0.004460833, y: 3.5972728e-10, z: -1.6046971e-12, w: 0.99999005}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+    - name: "\u8DB3\uFF29\uFF2B.L"
+      parentName: "\u8DB3IK\u89AA.L"
+      position: {x: -8.014217e-13, y: 0.0011481383, z: 6.984919e-11}
+      rotation: {x: -0.7145798, y: -2.5390667e-10, z: 2.4856764e-10, w: 0.6995539}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u3064\u307E\u5148\uFF29\uFF2B.L"
+      parentName: "\u8DB3\uFF29\uFF2B.L"
+      position: {x: 0.000021558924, y: -0.0014880501, z: -0.0010663688}
+      rotation: {x: -0.7071068, y: 6.133216e-19, z: -6.133174e-19, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u3064\u307E\u5148\uFF29\uFF2B.L_end"
+      parentName: "\u3064\u307E\u5148\uFF29\uFF2B.L"
+      position: {x: -0, y: 0.00058312796, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u8DB3IK\u89AA.R"
+      parentName: "\u5168\u3066\u306E\u89AA"
+      position: {x: 0.0006250684, y: -0.00001913786, z: -0.0006340639}
+      rotation: {x: -0.0044607986, y: 3.5972733e-10, z: -1.6046817e-12, w: 0.99999005}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+    - name: "\u8DB3\uFF29\uFF2B.R"
+      parentName: "\u8DB3IK\u89AA.R"
+      position: {x: -8.0142224e-13, y: 0.001148139, z: 1.2572854e-10}
+      rotation: {x: -0.7145798, y: -2.539067e-10, z: 2.4856767e-10, w: 0.6995539}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u3064\u307E\u5148\uFF29\uFF2B.R"
+      parentName: "\u8DB3\uFF29\uFF2B.R"
+      position: {x: -0.000021561942, y: -0.0014880502, z: -0.001066369}
+      rotation: {x: -0.70710665, y: 6.1332196e-19, z: -6.133201e-19, w: 0.7071069}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u3064\u307E\u5148\uFF29\uFF2B.R_end"
+      parentName: "\u3064\u307E\u5148\uFF29\uFF2B.R"
+      position: {x: -0, y: 0.00058312796, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u64CD\u4F5C\u4E2D\u5FC3"
+      parentName: "\u9E23\u6F6E_\u4F0A\u8389\u4E1D\uFF08I.R.I.S\uFF09_arm"
+      position: {x: -4.2473875e-11, y: 0.00032573356, z: 0}
+      rotation: {x: 0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u64CD\u4F5C\u4E2D\u5FC3_end"
+      parentName: "\u64CD\u4F5C\u4E2D\u5FC3"
+      position: {x: -0, y: 0.0008, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\u9E23\u6F6E_\u4F0A\u8389\u4E1D\uFF08I.R.I.S\uFF09_mesh"
+      parentName: IRIS(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 3
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
