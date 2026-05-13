@@ -572,6 +572,10 @@ MonoBehaviour:
   gravity: -15
   groundedStickVelocity: -2
   jumpForwardSpeed: 2
+  rootMotionGravityDuration: 0.12
+  rootMotionExtraGravity: -22
+  rootMotionMaxDownSpeed: -12
+  useRootMotionVertical: 0
   maxComboCount: 3
   comboChainWindowSeconds: 0.45
   characterEvent: {fileID: 0}
@@ -4703,8 +4707,6 @@ MonoBehaviour:
   monsterMask:
     serializedVersion: 2
     m_Bits: 256
-  frameStopScale: 0.8
-  frameStopDuration: 0.2
 --- !u!114 &1781258637837691490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4794,6 +4796,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854907012684898187, guid: 048fb687ca6d77a47b9b4f4729f9ae23,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5413874748785529368, guid: 048fb687ca6d77a47b9b4f4729f9ae23,
         type: 3}

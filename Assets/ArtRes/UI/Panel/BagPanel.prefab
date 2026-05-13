@@ -623,6 +623,10 @@ MonoBehaviour:
   itemDatabase:
   - {fileID: 11400000, guid: a9a02bc341fc23f42a780e58e7262378, type: 2}
   - {fileID: 11400000, guid: 262397fa7d667cc40b26e4076452ee94, type: 2}
+  - {fileID: 11400000, guid: 30a54ec8e3f8f9240abce39410c7adec, type: 2}
+  - {fileID: 11400000, guid: 919256ee1e57d2d42889e524de71843d, type: 2}
+  - {fileID: 11400000, guid: 1d8cb9a49a0226f4bbc7fa8d8f34f8a0, type: 2}
+  - {fileID: 11400000, guid: 01e7bc076a412894fa44ead0fe263e1c, type: 2}
 --- !u!1 &3667374828257264036
 GameObject:
   m_ObjectHideFlags: 0
@@ -1952,6 +1956,12 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1359180551911319234, guid: 1437a9518aa6c114eaf5e7dbda95035e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b634c8a51d4a2d440b44719a9c1329ba,
+        type: 3}
     - target: {fileID: 4922327117318667222, guid: 1437a9518aa6c114eaf5e7dbda95035e,
         type: 3}
       propertyPath: m_Pivot.x
@@ -2155,6 +2165,12 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1359180551911319234, guid: 1437a9518aa6c114eaf5e7dbda95035e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: af50dc4fa7b6d314895d0f8c79adb4a5,
+        type: 3}
     - target: {fileID: 4922327117318667222, guid: 1437a9518aa6c114eaf5e7dbda95035e,
         type: 3}
       propertyPath: m_Pivot.x
@@ -2358,6 +2374,12 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1359180551911319234, guid: 1437a9518aa6c114eaf5e7dbda95035e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 47c96e5414c2b4449920b448538df93a,
+        type: 3}
     - target: {fileID: 4922327117318667222, guid: 1437a9518aa6c114eaf5e7dbda95035e,
         type: 3}
       propertyPath: m_Pivot.x
@@ -2561,6 +2583,12 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1359180551911319234, guid: 1437a9518aa6c114eaf5e7dbda95035e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 65a9410232dbc154c9cec96a5fbd07b1,
+        type: 3}
     - target: {fileID: 4922327117318667222, guid: 1437a9518aa6c114eaf5e7dbda95035e,
         type: 3}
       propertyPath: m_Pivot.x
@@ -2764,6 +2792,12 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1359180551911319234, guid: 1437a9518aa6c114eaf5e7dbda95035e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f8fceb41b68ef0a4ea35add24f4635e0,
+        type: 3}
     - target: {fileID: 4922327117318667222, guid: 1437a9518aa6c114eaf5e7dbda95035e,
         type: 3}
       propertyPath: m_Pivot.x

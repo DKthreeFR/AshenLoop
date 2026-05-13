@@ -231,7 +231,8 @@ namespace NodeCanvas.DialogueTrees.UI.Examples
 
             optionsGroup.gameObject.SetActive(true);
             var buttonHeight = optionButton.GetComponent<RectTransform>().rect.height;
-            optionsGroup.sizeDelta = new Vector2(optionsGroup.sizeDelta.x, ( info.options.Values.Count * buttonHeight ) + 20);
+            //这行会导致每次创建选项时选项都会增高 我不希望所以注释了
+            // optionsGroup.sizeDelta = new Vector2(optionsGroup.sizeDelta.x, ( info.options.Values.Count * buttonHeight ) + 20);
 
             cachedButtons = new Dictionary<Button, int>();
             int i = 0;
